@@ -6,13 +6,13 @@
 //
 
 import Foundation
-
-struct ProductListItemResponse: Decodable {
-  let id: Int
-  let title: String
-  let category: String
-  let brand: String
-  let price: Double
-  let discountPercentage: Double
-  let thumbnail: String
-}
+//
+//struct ProductListItemResponse: Decodable {
+//  let id: Int
+//  let title: String
+//  let category: String
+//  let brand: String
+//  let price: Double
+//  let discountPercentage: Double
+//  let thumbnail: String
+//}
