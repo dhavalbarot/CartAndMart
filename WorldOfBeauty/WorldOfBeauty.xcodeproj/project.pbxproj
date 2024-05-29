@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A2077AE2C07088E00CEE67B /* WorldOfBeautyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */; };
+		5A2077B02C07088E00CEE67B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077AF2C07088E00CEE67B /* ContentView.swift */; };
+		5A2077B22C07089000CEE67B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2077B12C07089000CEE67B /* Assets.xcassets */; };
+		5A2077B52C07089000CEE67B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2077B42C07089000CEE67B /* Preview Assets.xcassets */; };
+		5A2077BF2C07089100CEE67B /* WorldOfBeautyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */; };
+		5A2077C92C07089100CEE67B /* WorldOfBeautyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */; };
+		5A2077CB2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A2077BB2C07089100CEE67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A2077A22C07088E00CEE67B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A2077A92C07088E00CEE67B;
+			remoteInfo = WorldOfBeauty;
+		};
+		5A2077C52C07089100CEE67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A2077A22C07088E00CEE67B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A2077A92C07088E00CEE67B;
+			remoteInfo = WorldOfBeauty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyApp.swift; sourceTree = "<group>"; };
+		5A2077AF2C07088E00CEE67B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A2077B12C07089000CEE67B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A2077B42C07089000CEE67B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfBeautyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyTests.swift; sourceTree = "<group>"; };
+		5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfBeautyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyUITests.swift; sourceTree = "<group>"; };
+		5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A2077A72C07088E00CEE67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077B72C07089100CEE67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077C12C07089100CEE67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A2077A12C07088E00CEE67B = {
+			isa = PBXGroup;
+			children = (
+				5A2077AC2C07088E00CEE67B /* WorldOfBeauty */,
+				5A2077BD2C07089100CEE67B /* WorldOfBeautyTests */,
+				5A2077C72C07089100CEE67B /* WorldOfBeautyUITests */,
+				5A2077AB2C07088E00CEE67B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A2077AB2C07088E00CEE67B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */,
+				5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */,
+				5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A2077AC2C07088E00CEE67B /* WorldOfBeauty */ = {
+			isa = PBXGroup;
+			children = (
+				5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */,
+				5A2077AF2C07088E00CEE67B /* ContentView.swift */,
+				5A2077B12C07089000CEE67B /* Assets.xcassets */,
+				5A2077B32C07089000CEE67B /* Preview Content */,
+			);
+			path = WorldOfBeauty;
+			sourceTree = "<group>";
+		};
+		5A2077B32C07089000CEE67B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5A2077B42C07089000CEE67B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A2077BD2C07089100CEE67B /* WorldOfBeautyTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */,
+			);
+			path = WorldOfBeautyTests;
+			sourceTree = "<group>";
+		};
+		5A2077C72C07089100CEE67B /* WorldOfBeautyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */,
+				5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */,
+			);
+			path = WorldOfBeautyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A2077A92C07088E00CEE67B /* WorldOfBeauty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2077CE2C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeauty" */;
+			buildPhases = (
+				5A2077A62C07088E00CEE67B /* Sources */,
+				5A2077A72C07088E00CEE67B /* Frameworks */,
+				5A2077A82C07088E00CEE67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorldOfBeauty;
+			productName = WorldOfBeauty;
+			productReference = 5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A2077B92C07089100CEE67B /* WorldOfBeautyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2077D12C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyTests" */;
+			buildPhases = (
+				5A2077B62C07089100CEE67B /* Sources */,
+				5A2077B72C07089100CEE67B /* Frameworks */,
+				5A2077B82C07089100CEE67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A2077BC2C07089100CEE67B /* PBXTargetDependency */,
+			);
+			name = WorldOfBeautyTests;
+			productName = WorldOfBeautyTests;
+			productReference = 5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A2077C32C07089100CEE67B /* WorldOfBeautyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2077D42C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyUITests" */;
+			buildPhases = (
+				5A2077C02C07089100CEE67B /* Sources */,
+				5A2077C12C07089100CEE67B /* Frameworks */,
+				5A2077C22C07089100CEE67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A2077C62C07089100CEE67B /* PBXTargetDependency */,
+			);
+			name = WorldOfBeautyUITests;
+			productName = WorldOfBeautyUITests;
+			productReference = 5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A2077A22C07088E00CEE67B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					5A2077A92C07088E00CEE67B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					5A2077B92C07089100CEE67B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 5A2077A92C07088E00CEE67B;
+					};
+					5A2077C32C07089100CEE67B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 5A2077A92C07088E00CEE67B;
+					};
+				};
+			};
+			buildConfigurationList = 5A2077A52C07088E00CEE67B /* Build configuration list for PBXProject "WorldOfBeauty" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A2077A12C07088E00CEE67B;
+			productRefGroup = 5A2077AB2C07088E00CEE67B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A2077A92C07088E00CEE67B /* WorldOfBeauty */,
+				5A2077B92C07089100CEE67B /* WorldOfBeautyTests */,
+				5A2077C32C07089100CEE67B /* WorldOfBeautyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A2077A82C07088E00CEE67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2077B52C07089000CEE67B /* Preview Assets.xcassets in Resources */,
+				5A2077B22C07089000CEE67B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077B82C07089100CEE67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077C22C07089100CEE67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A2077A62C07088E00CEE67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2077B02C07088E00CEE67B /* ContentView.swift in Sources */,
+				5A2077AE2C07088E00CEE67B /* WorldOfBeautyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077B62C07089100CEE67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2077BF2C07089100CEE67B /* WorldOfBeautyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2077C02C07089100CEE67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2077CB2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift in Sources */,
+				5A2077C92C07089100CEE67B /* WorldOfBeautyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A2077BC2C07089100CEE67B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A2077A92C07088E00CEE67B /* WorldOfBeauty */;
+			targetProxy = 5A2077BB2C07089100CEE67B /* PBXContainerItemProxy */;
+		};
+		5A2077C62C07089100CEE67B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A2077A92C07088E00CEE67B /* WorldOfBeauty */;
+			targetProxy = 5A2077C52C07089100CEE67B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5A2077CC2C07089100CEE67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A2077CD2C07089100CEE67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A2077CF2C07089100CEE67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WorldOfBeauty/Preview Content\"";
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeauty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A2077D02C07089100CEE67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WorldOfBeauty/Preview Content\"";
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeauty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A2077D22C07089100CEE67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfBeauty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfBeauty";
+			};
+			name = Debug;
+		};
+		5A2077D32C07089100CEE67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfBeauty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfBeauty";
+			};
+			name = Release;
+		};
+		5A2077D52C07089100CEE67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorldOfBeauty;
+			};
+			name = Debug;
+		};
+		5A2077D62C07089100CEE67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58PZYN66TP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorldOfBeauty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A2077A52C07088E00CEE67B /* Build configuration list for PBXProject "WorldOfBeauty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2077CC2C07089100CEE67B /* Debug */,
+				5A2077CD2C07089100CEE67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2077CE2C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeauty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2077CF2C07089100CEE67B /* Debug */,
+				5A2077D02C07089100CEE67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2077D12C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2077D22C07089100CEE67B /* Debug */,
+				5A2077D32C07089100CEE67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2077D42C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2077D52C07089100CEE67B /* Debug */,
+				5A2077D62C07089100CEE67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A2077A22C07088E00CEE67B /* Project object */;
+}
