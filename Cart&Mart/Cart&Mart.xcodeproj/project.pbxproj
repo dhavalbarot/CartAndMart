@@ -7,61 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A2077AE2C07088E00CEE67B /* WorldOfBeautyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */; };
-		5A2077B02C07088E00CEE67B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077AF2C07088E00CEE67B /* ContentView.swift */; };
-		5A2077B22C07089000CEE67B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2077B12C07089000CEE67B /* Assets.xcassets */; };
-		5A2077B52C07089000CEE67B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2077B42C07089000CEE67B /* Preview Assets.xcassets */; };
-		5A2077BF2C07089100CEE67B /* WorldOfBeautyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */; };
-		5A2077C92C07089100CEE67B /* WorldOfBeautyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */; };
-		5A2077CB2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */; };
+		5A2078212C070DA700CEE67B /* Cart_MartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2078202C070DA700CEE67B /* Cart_MartApp.swift */; };
+		5A2078232C070DA700CEE67B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2078222C070DA700CEE67B /* ContentView.swift */; };
+		5A2078252C070DA900CEE67B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2078242C070DA900CEE67B /* Assets.xcassets */; };
+		5A2078282C070DA900CEE67B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2078272C070DA900CEE67B /* Preview Assets.xcassets */; };
+		5A2078322C070DA900CEE67B /* Cart_MartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2078312C070DA900CEE67B /* Cart_MartTests.swift */; };
+		5A20783C2C070DA900CEE67B /* Cart_MartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20783B2C070DA900CEE67B /* Cart_MartUITests.swift */; };
+		5A20783E2C070DA900CEE67B /* Cart_MartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20783D2C070DA900CEE67B /* Cart_MartUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5A2077BB2C07089100CEE67B /* PBXContainerItemProxy */ = {
+		5A20782E2C070DA900CEE67B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A2077A22C07088E00CEE67B /* Project object */;
+			containerPortal = 5A2078152C070DA700CEE67B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5A2077A92C07088E00CEE67B;
-			remoteInfo = WorldOfBeauty;
+			remoteGlobalIDString = 5A20781C2C070DA700CEE67B;
+			remoteInfo = "Cart&Mart";
 		};
-		5A2077C52C07089100CEE67B /* PBXContainerItemProxy */ = {
+		5A2078382C070DA900CEE67B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A2077A22C07088E00CEE67B /* Project object */;
+			containerPortal = 5A2078152C070DA700CEE67B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5A2077A92C07088E00CEE67B;
-			remoteInfo = WorldOfBeauty;
+			remoteGlobalIDString = 5A20781C2C070DA700CEE67B;
+			remoteInfo = "Cart&Mart";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyApp.swift; sourceTree = "<group>"; };
-		5A2077AF2C07088E00CEE67B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5A2077B12C07089000CEE67B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A2077B42C07089000CEE67B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfBeautyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyTests.swift; sourceTree = "<group>"; };
-		5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfBeautyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyUITests.swift; sourceTree = "<group>"; };
-		5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfBeautyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A20781D2C070DA700CEE67B /* Cart&Mart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cart&Mart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2078202C070DA700CEE67B /* Cart_MartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart_MartApp.swift; sourceTree = "<group>"; };
+		5A2078222C070DA700CEE67B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A2078242C070DA900CEE67B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A2078272C070DA900CEE67B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A20782D2C070DA900CEE67B /* Cart&MartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cart&MartTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2078312C070DA900CEE67B /* Cart_MartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart_MartTests.swift; sourceTree = "<group>"; };
+		5A2078372C070DA900CEE67B /* Cart&MartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cart&MartUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A20783B2C070DA900CEE67B /* Cart_MartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart_MartUITests.swift; sourceTree = "<group>"; };
+		5A20783D2C070DA900CEE67B /* Cart_MartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart_MartUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5A2077A72C07088E00CEE67B /* Frameworks */ = {
+		5A20781A2C070DA700CEE67B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077B72C07089100CEE67B /* Frameworks */ = {
+		5A20782A2C070DA900CEE67B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077C12C07089100CEE67B /* Frameworks */ = {
+		5A2078342C070DA900CEE67B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,142 +71,190 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A2077A12C07088E00CEE67B = {
+		5A2078142C070DA700CEE67B = {
 			isa = PBXGroup;
 			children = (
-				5A2077AC2C07088E00CEE67B /* WorldOfBeauty */,
-				5A2077BD2C07089100CEE67B /* WorldOfBeautyTests */,
-				5A2077C72C07089100CEE67B /* WorldOfBeautyUITests */,
-				5A2077AB2C07088E00CEE67B /* Products */,
+				5A20781F2C070DA700CEE67B /* Cart&Mart */,
+				5A2078302C070DA900CEE67B /* Cart&MartTests */,
+				5A20783A2C070DA900CEE67B /* Cart&MartUITests */,
+				5A20781E2C070DA700CEE67B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5A2077AB2C07088E00CEE67B /* Products */ = {
+		5A20781E2C070DA700CEE67B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */,
-				5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */,
-				5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */,
+				5A20781D2C070DA700CEE67B /* Cart&Mart.app */,
+				5A20782D2C070DA900CEE67B /* Cart&MartTests.xctest */,
+				5A2078372C070DA900CEE67B /* Cart&MartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5A2077AC2C07088E00CEE67B /* WorldOfBeauty */ = {
+		5A20781F2C070DA700CEE67B /* Cart&Mart */ = {
 			isa = PBXGroup;
 			children = (
-				5A2077AD2C07088E00CEE67B /* WorldOfBeautyApp.swift */,
-				5A2077AF2C07088E00CEE67B /* ContentView.swift */,
-				5A2077B12C07089000CEE67B /* Assets.xcassets */,
-				5A2077B32C07089000CEE67B /* Preview Content */,
+				5A20784F2C070DE000CEE67B /* Application */,
+				5A20784E2C070DDA00CEE67B /* Presentation */,
+				5A20784D2C070DD500CEE67B /* Domain */,
+				5A20784C2C070DD000CEE67B /* Data */,
+				5A20784B2C070DBA00CEE67B /* Network */,
+				5A20784A2C070DB300CEE67B /* Resources */,
+				5A2078262C070DA900CEE67B /* Preview Content */,
 			);
-			path = WorldOfBeauty;
+			path = "Cart&Mart";
 			sourceTree = "<group>";
 		};
-		5A2077B32C07089000CEE67B /* Preview Content */ = {
+		5A2078262C070DA900CEE67B /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				5A2077B42C07089000CEE67B /* Preview Assets.xcassets */,
+				5A2078272C070DA900CEE67B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5A2077BD2C07089100CEE67B /* WorldOfBeautyTests */ = {
+		5A2078302C070DA900CEE67B /* Cart&MartTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A2077BE2C07089100CEE67B /* WorldOfBeautyTests.swift */,
+				5A2078312C070DA900CEE67B /* Cart_MartTests.swift */,
 			);
-			path = WorldOfBeautyTests;
+			path = "Cart&MartTests";
 			sourceTree = "<group>";
 		};
-		5A2077C72C07089100CEE67B /* WorldOfBeautyUITests */ = {
+		5A20783A2C070DA900CEE67B /* Cart&MartUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5A2077C82C07089100CEE67B /* WorldOfBeautyUITests.swift */,
-				5A2077CA2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift */,
+				5A20783B2C070DA900CEE67B /* Cart_MartUITests.swift */,
+				5A20783D2C070DA900CEE67B /* Cart_MartUITestsLaunchTests.swift */,
 			);
-			path = WorldOfBeautyUITests;
+			path = "Cart&MartUITests";
+			sourceTree = "<group>";
+		};
+		5A20784A2C070DB300CEE67B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A2078242C070DA900CEE67B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5A20784B2C070DBA00CEE67B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5A20784C2C070DD000CEE67B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5A20784D2C070DD500CEE67B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5A20784E2C070DDA00CEE67B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5A20784F2C070DE000CEE67B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5A2078202C070DA700CEE67B /* Cart_MartApp.swift */,
+				5A2078222C070DA700CEE67B /* ContentView.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A2077A92C07088E00CEE67B /* WorldOfBeauty */ = {
+		5A20781C2C070DA700CEE67B /* Cart&Mart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A2077CE2C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeauty" */;
+			buildConfigurationList = 5A2078412C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&Mart" */;
 			buildPhases = (
-				5A2077A62C07088E00CEE67B /* Sources */,
-				5A2077A72C07088E00CEE67B /* Frameworks */,
-				5A2077A82C07088E00CEE67B /* Resources */,
+				5A2078192C070DA700CEE67B /* Sources */,
+				5A20781A2C070DA700CEE67B /* Frameworks */,
+				5A20781B2C070DA700CEE67B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WorldOfBeauty;
-			productName = WorldOfBeauty;
-			productReference = 5A2077AA2C07088E00CEE67B /* WorldOfBeauty.app */;
+			name = "Cart&Mart";
+			productName = "Cart&Mart";
+			productReference = 5A20781D2C070DA700CEE67B /* Cart&Mart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5A2077B92C07089100CEE67B /* WorldOfBeautyTests */ = {
+		5A20782C2C070DA900CEE67B /* Cart&MartTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A2077D12C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyTests" */;
+			buildConfigurationList = 5A2078442C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&MartTests" */;
 			buildPhases = (
-				5A2077B62C07089100CEE67B /* Sources */,
-				5A2077B72C07089100CEE67B /* Frameworks */,
-				5A2077B82C07089100CEE67B /* Resources */,
+				5A2078292C070DA900CEE67B /* Sources */,
+				5A20782A2C070DA900CEE67B /* Frameworks */,
+				5A20782B2C070DA900CEE67B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5A2077BC2C07089100CEE67B /* PBXTargetDependency */,
+				5A20782F2C070DA900CEE67B /* PBXTargetDependency */,
 			);
-			name = WorldOfBeautyTests;
-			productName = WorldOfBeautyTests;
-			productReference = 5A2077BA2C07089100CEE67B /* WorldOfBeautyTests.xctest */;
+			name = "Cart&MartTests";
+			productName = "Cart&MartTests";
+			productReference = 5A20782D2C070DA900CEE67B /* Cart&MartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5A2077C32C07089100CEE67B /* WorldOfBeautyUITests */ = {
+		5A2078362C070DA900CEE67B /* Cart&MartUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A2077D42C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyUITests" */;
+			buildConfigurationList = 5A2078472C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&MartUITests" */;
 			buildPhases = (
-				5A2077C02C07089100CEE67B /* Sources */,
-				5A2077C12C07089100CEE67B /* Frameworks */,
-				5A2077C22C07089100CEE67B /* Resources */,
+				5A2078332C070DA900CEE67B /* Sources */,
+				5A2078342C070DA900CEE67B /* Frameworks */,
+				5A2078352C070DA900CEE67B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5A2077C62C07089100CEE67B /* PBXTargetDependency */,
+				5A2078392C070DA900CEE67B /* PBXTargetDependency */,
 			);
-			name = WorldOfBeautyUITests;
-			productName = WorldOfBeautyUITests;
-			productReference = 5A2077C42C07089100CEE67B /* WorldOfBeautyUITests.xctest */;
+			name = "Cart&MartUITests";
+			productName = "Cart&MartUITests";
+			productReference = 5A2078372C070DA900CEE67B /* Cart&MartUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5A2077A22C07088E00CEE67B /* Project object */ = {
+		5A2078152C070DA700CEE67B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					5A2077A92C07088E00CEE67B = {
+					5A20781C2C070DA700CEE67B = {
 						CreatedOnToolsVersion = 15.3;
 					};
-					5A2077B92C07089100CEE67B = {
+					5A20782C2C070DA900CEE67B = {
 						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 5A2077A92C07088E00CEE67B;
+						TestTargetID = 5A20781C2C070DA700CEE67B;
 					};
-					5A2077C32C07089100CEE67B = {
+					5A2078362C070DA900CEE67B = {
 						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 5A2077A92C07088E00CEE67B;
+						TestTargetID = 5A20781C2C070DA700CEE67B;
 					};
 				};
 			};
-			buildConfigurationList = 5A2077A52C07088E00CEE67B /* Build configuration list for PBXProject "WorldOfBeauty" */;
+			buildConfigurationList = 5A2078182C070DA700CEE67B /* Build configuration list for PBXProject "Cart&Mart" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,36 +262,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 5A2077A12C07088E00CEE67B;
-			productRefGroup = 5A2077AB2C07088E00CEE67B /* Products */;
+			mainGroup = 5A2078142C070DA700CEE67B;
+			productRefGroup = 5A20781E2C070DA700CEE67B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A2077A92C07088E00CEE67B /* WorldOfBeauty */,
-				5A2077B92C07089100CEE67B /* WorldOfBeautyTests */,
-				5A2077C32C07089100CEE67B /* WorldOfBeautyUITests */,
+				5A20781C2C070DA700CEE67B /* Cart&Mart */,
+				5A20782C2C070DA900CEE67B /* Cart&MartTests */,
+				5A2078362C070DA900CEE67B /* Cart&MartUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5A2077A82C07088E00CEE67B /* Resources */ = {
+		5A20781B2C070DA700CEE67B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A2077B52C07089000CEE67B /* Preview Assets.xcassets in Resources */,
-				5A2077B22C07089000CEE67B /* Assets.xcassets in Resources */,
+				5A2078282C070DA900CEE67B /* Preview Assets.xcassets in Resources */,
+				5A2078252C070DA900CEE67B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077B82C07089100CEE67B /* Resources */ = {
+		5A20782B2C070DA900CEE67B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077C22C07089100CEE67B /* Resources */ = {
+		5A2078352C070DA900CEE67B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,49 +301,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5A2077A62C07088E00CEE67B /* Sources */ = {
+		5A2078192C070DA700CEE67B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A2077B02C07088E00CEE67B /* ContentView.swift in Sources */,
-				5A2077AE2C07088E00CEE67B /* WorldOfBeautyApp.swift in Sources */,
+				5A2078232C070DA700CEE67B /* ContentView.swift in Sources */,
+				5A2078212C070DA700CEE67B /* Cart_MartApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077B62C07089100CEE67B /* Sources */ = {
+		5A2078292C070DA900CEE67B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A2077BF2C07089100CEE67B /* WorldOfBeautyTests.swift in Sources */,
+				5A2078322C070DA900CEE67B /* Cart_MartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A2077C02C07089100CEE67B /* Sources */ = {
+		5A2078332C070DA900CEE67B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A2077CB2C07089100CEE67B /* WorldOfBeautyUITestsLaunchTests.swift in Sources */,
-				5A2077C92C07089100CEE67B /* WorldOfBeautyUITests.swift in Sources */,
+				5A20783E2C070DA900CEE67B /* Cart_MartUITestsLaunchTests.swift in Sources */,
+				5A20783C2C070DA900CEE67B /* Cart_MartUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5A2077BC2C07089100CEE67B /* PBXTargetDependency */ = {
+		5A20782F2C070DA900CEE67B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A2077A92C07088E00CEE67B /* WorldOfBeauty */;
-			targetProxy = 5A2077BB2C07089100CEE67B /* PBXContainerItemProxy */;
+			target = 5A20781C2C070DA700CEE67B /* Cart&Mart */;
+			targetProxy = 5A20782E2C070DA900CEE67B /* PBXContainerItemProxy */;
 		};
-		5A2077C62C07089100CEE67B /* PBXTargetDependency */ = {
+		5A2078392C070DA900CEE67B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A2077A92C07088E00CEE67B /* WorldOfBeauty */;
-			targetProxy = 5A2077C52C07089100CEE67B /* PBXContainerItemProxy */;
+			target = 5A20781C2C070DA700CEE67B /* Cart&Mart */;
+			targetProxy = 5A2078382C070DA900CEE67B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5A2077CC2C07089100CEE67B /* Debug */ = {
+		5A20783F2C070DA900CEE67B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -358,7 +406,7 @@
 			};
 			name = Debug;
 		};
-		5A2077CD2C07089100CEE67B /* Release */ = {
+		5A2078402C070DA900CEE67B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -414,14 +462,14 @@
 			};
 			name = Release;
 		};
-		5A2077CF2C07089100CEE67B /* Debug */ = {
+		5A2078422C070DA900CEE67B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WorldOfBeauty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Cart&Mart/Preview Content\"";
 				DEVELOPMENT_TEAM = 58PZYN66TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -435,7 +483,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeauty;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-Mart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -443,14 +491,14 @@
 			};
 			name = Debug;
 		};
-		5A2077D02C07089100CEE67B /* Release */ = {
+		5A2078432C070DA900CEE67B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WorldOfBeauty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Cart&Mart/Preview Content\"";
 				DEVELOPMENT_TEAM = 58PZYN66TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -464,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeauty;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-Mart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -472,7 +520,7 @@
 			};
 			name = Release;
 		};
-		5A2077D22C07089100CEE67B /* Debug */ = {
+		5A2078452C070DA900CEE67B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -483,16 +531,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-MartTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfBeauty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfBeauty";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cart&Mart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cart&Mart";
 			};
 			name = Debug;
 		};
-		5A2077D32C07089100CEE67B /* Release */ = {
+		5A2078462C070DA900CEE67B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -503,16 +551,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-MartTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfBeauty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfBeauty";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cart&Mart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cart&Mart";
 			};
 			name = Release;
 		};
-		5A2077D52C07089100CEE67B /* Debug */ = {
+		5A2078482C070DA900CEE67B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -521,16 +569,16 @@
 				DEVELOPMENT_TEAM = 58PZYN66TP;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-MartUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WorldOfBeauty;
+				TEST_TARGET_NAME = "Cart&Mart";
 			};
 			name = Debug;
 		};
-		5A2077D62C07089100CEE67B /* Release */ = {
+		5A2078492C070DA900CEE67B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -539,55 +587,55 @@
 				DEVELOPMENT_TEAM = 58PZYN66TP;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmb.WorldOfBeautyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmb.Cart-MartUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WorldOfBeauty;
+				TEST_TARGET_NAME = "Cart&Mart";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A2077A52C07088E00CEE67B /* Build configuration list for PBXProject "WorldOfBeauty" */ = {
+		5A2078182C070DA700CEE67B /* Build configuration list for PBXProject "Cart&Mart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A2077CC2C07089100CEE67B /* Debug */,
-				5A2077CD2C07089100CEE67B /* Release */,
+				5A20783F2C070DA900CEE67B /* Debug */,
+				5A2078402C070DA900CEE67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A2077CE2C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeauty" */ = {
+		5A2078412C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&Mart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A2077CF2C07089100CEE67B /* Debug */,
-				5A2077D02C07089100CEE67B /* Release */,
+				5A2078422C070DA900CEE67B /* Debug */,
+				5A2078432C070DA900CEE67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A2077D12C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyTests" */ = {
+		5A2078442C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&MartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A2077D22C07089100CEE67B /* Debug */,
-				5A2077D32C07089100CEE67B /* Release */,
+				5A2078452C070DA900CEE67B /* Debug */,
+				5A2078462C070DA900CEE67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A2077D42C07089100CEE67B /* Build configuration list for PBXNativeTarget "WorldOfBeautyUITests" */ = {
+		5A2078472C070DA900CEE67B /* Build configuration list for PBXNativeTarget "Cart&MartUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A2077D52C07089100CEE67B /* Debug */,
-				5A2077D62C07089100CEE67B /* Release */,
+				5A2078482C070DA900CEE67B /* Debug */,
+				5A2078492C070DA900CEE67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5A2077A22C07088E00CEE67B /* Project object */;
+	rootObject = 5A2078152C070DA700CEE67B /* Project object */;
 }

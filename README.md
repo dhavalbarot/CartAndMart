@@ -1,4 +1,4 @@
-# World of Beauty
+# Cart & Mart
 This is a dummy project developed with SwiftUI. This project follows the clean architecture with MVVM and includes the following.
 - SwiftUI
 - Clean Architecture
@@ -8,4 +8,4 @@ This is a dummy project developed with SwiftUI. This project follows the clean a
 - Snapshot Testing
 
 # Abount
-This dummy application uses the dummy JSON API to fetch the list of beauty products and their details.
+This dummy application uses the dummy JSON API to fetch the list of products and their details.

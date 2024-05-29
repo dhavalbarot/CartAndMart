@@ -1,13 +1,13 @@
 //
-//  WorldOfBeautyUITestsLaunchTests.swift
-//  WorldOfBeautyUITests
+//  Cart_MartUITestsLaunchTests.swift
+//  Cart&MartUITests
 //
 //  Created by Dhaval Barot on 29/05/24.
 //
 
 import XCTest
 
-final class WorldOfBeautyUITestsLaunchTests: XCTestCase {
+final class Cart_MartUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

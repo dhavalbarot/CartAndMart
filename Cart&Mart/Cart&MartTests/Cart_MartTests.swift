@@ -1,14 +1,14 @@
 //
-//  WorldOfBeautyTests.swift
-//  WorldOfBeautyTests
+//  Cart_MartTests.swift
+//  Cart&MartTests
 //
 //  Created by Dhaval Barot on 29/05/24.
 //
 
 import XCTest
-@testable import WorldOfBeauty
+@testable import Cart_Mart
 
-final class WorldOfBeautyTests: XCTestCase {
+final class Cart_MartTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
