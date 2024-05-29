@@ -19,9 +19,9 @@ struct ProductItemView: View {
         // PHOTO
         ZStack {
           Rectangle()
-            .fill(UIColor.productColor(product.id))
-            .cornerRadius(12)
+            .fill(UIColor.productColor(product.id).gradient)
             .aspectRatio(contentMode: .fill)
+            .cornerRadius(12)
           AsyncImage(url: URL(string: product.thumbnail)) { image in
             image
               .resizable()

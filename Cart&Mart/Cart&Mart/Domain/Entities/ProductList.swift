@@ -15,9 +15,21 @@ struct ProductList: Codable {
 
 // MARK: - Product
 struct Product: Codable, Identifiable {
-    let id: Int
-    let title, description, category, brand: String
-    let price, discountPercentage, rating: Double
-    let stock: Int
-    let thumbnail: String
+  let id: Int
+  let title: String
+  let description: String?
+  let category: String?
+  let brand: String?
+  let price: Double
+  let discountPercentage: Double?
+  let rating: Double
+  let stock: Int?
+  let thumbnail: String
+}
+
+// MARK: - Mappings to Domain
+extension ProductList {
+    func toDomain() -> ProductList {
+      return .init(products: products, total: total, limit: limit)
+    }
 }

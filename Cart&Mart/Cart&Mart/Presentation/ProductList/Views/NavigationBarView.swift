@@ -10,11 +10,16 @@ import SwiftUI
 struct NavigationBarView: View {
   
   // MARK: - Property
-  @State private var isAnimated: Bool = false
+  @State var isAnimated: Bool = false
   
   // MARK: - Body
   var body: some View {
     HStack {
+      Image("CartAndMartLogo")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: 44)
+      
       Spacer()
       
       LogoView()
@@ -27,6 +32,12 @@ struct NavigationBarView: View {
         })
       
       Spacer()
+      
+      Image(systemName: "cart")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: 32)
+        .foregroundColor(.accentColor)
     }
   }
 }

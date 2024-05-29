@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct Configuration {
+// MARK: - Configuration
+protocol AppConfiguration {
+  var baseURL: String { get }
+}
+
+// MARK: - DeafultAppConfiguration
+final class DefaultAppConfiguration: AppConfiguration {
   lazy var baseURL: String = {
       guard let apiBaseURL = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else {
-          fatalError("ApiBaseURL must not be empty in plist")
+          fatalError("BaseURL must not be empty in plist")
       }
       return apiBaseURL
   }()

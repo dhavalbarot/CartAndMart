@@ -31,7 +31,21 @@ var gridLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
 
 // MARK: - UIScreen
 extension UIScreen {
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
+  static let screenWidth = UIScreen.main.bounds.size.width
+  static let screenHeight = UIScreen.main.bounds.size.height
+  static let screenSize = UIScreen.main.bounds.size
+}
+
+// MARK: - ViewContentState
+enum ViewContentState {
+  case idle
+  case loading
+  case data
+  case error
+}
+
+// MARK: - ImageName
+struct ImageName {
+    static let back = "chevron.left"
+    static let unavailable = "chart.bar.xaxis.ascending"
 }

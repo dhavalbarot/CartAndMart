@@ -8,6 +8,6 @@
 import Foundation
 
 //MARK: - Cancallable
-protocol Cancallable {
+protocol Cancellable {
   func cancel()
 }
