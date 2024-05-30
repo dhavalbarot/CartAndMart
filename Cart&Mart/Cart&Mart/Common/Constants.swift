@@ -46,6 +46,12 @@ enum ViewContentState {
 
 // MARK: - ImageName
 struct ImageName {
-    static let back = "chevron.left"
-    static let unavailable = "chart.bar.xaxis.ascending"
+    static let basket = "basket"
+}
+
+// MARK: - String Constants
+struct StringConstants {
+  static let somethingWentWrong = "Something went wrong"
+  static let noItem = "No item found"
+  static let tryAgainLater = "Please try again later in sometime."
 }

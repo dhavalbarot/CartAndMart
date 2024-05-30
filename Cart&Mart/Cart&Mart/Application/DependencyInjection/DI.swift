@@ -68,7 +68,7 @@ final class DefaultProductSceneDIContainer: ProductSceneDIContainer {
 
 // MARK: - ViewModelDIContainer
 extension DefaultProductSceneDIContainer: ViewModelDIContainer {
-  public var defaultProductListViewModel: DefaultProductListViewModel {
+  var defaultProductListViewModel: DefaultProductListViewModel {
     DefaultProductListViewModel(productListUseCase: defaultProductListUseCase)
   }
   

@@ -16,15 +16,14 @@ protocol ProductListViewModelInput {
 protocol ProductListViewModelOutput: ObservableObject {
   var productList: [Product] { get }
   var viewContentState: ViewContentState { get }
+  var contentModel: ContentModel { get }
 }
 
 // MARK: - ProductListViewAction
-protocol ProductListViewModelAction {
-  
-}
+protocol ProductListViewModelAction { }
 
 // MARK: - ProductListViewModel
-protocol ProductListViewModel: ProductListViewModelInput, ProductListViewModelOutput, ProductListViewModelAction {}
+typealias ProductListViewModel = ProductListViewModelInput & ProductListViewModelOutput & ProductListViewModelAction
 
 // MARK: - ProductListViewModel
 final class DefaultProductListViewModel: ProductListViewModel {
@@ -32,7 +31,8 @@ final class DefaultProductListViewModel: ProductListViewModel {
   // MARK: - Properties
   @Published private(set) var productList: [Product] = []
   @Published private(set) var viewContentState: ViewContentState = .idle
-  
+  @Published private(set) var contentModel: ContentModel = .init(title: "", message: "")
+
   private let getProductListUseCase: GetProductListUseCase
 
   private var loadingTask: Cancellable? {
@@ -61,6 +61,7 @@ extension DefaultProductListViewModel {
             self.viewContentState = .data
           case .failure(let error):
             self.viewContentState = .error
+            self.contentModel = .init(imageName: ImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
           }
         }
       }

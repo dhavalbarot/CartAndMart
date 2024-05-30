@@ -21,7 +21,6 @@ struct ProductItemView: View {
           Rectangle()
             .fill(UIColor.productColor(product.id).gradient)
             .aspectRatio(contentMode: .fill)
-            .cornerRadius(12)
           AsyncImage(url: URL(string: product.thumbnail)) { image in
             image
               .resizable()
@@ -35,6 +34,8 @@ struct ProductItemView: View {
               .font(.system(size: 30))
           }
         }
+        .cornerRadius(12)
+
         
         // NAME
         Text(product.title)

@@ -10,7 +10,19 @@ import SwiftUI
 struct ProductListView: View {
   
   // MARK: - Properties
-  @ObservedObject var viewModel: DefaultProductListViewModel
+  @ObservedObject private var viewModel: DefaultProductListViewModel
+  
+  private var showError: Binding<Bool> {
+      Binding(
+          get: { viewModel.viewContentState == .error },
+          set: { _ in }
+      )
+  }
+  
+  // MARK: - Initilizer
+  init(viewModel: DefaultProductListViewModel) {
+    self.viewModel = viewModel
+  }
   
   // MARK: - Body
   var body: some View {
@@ -31,6 +43,7 @@ struct ProductListView: View {
       }//: ZSTACK
       .ignoresSafeArea(.all, edges: .all)
     }
+    .showAlert(isPresented: showError, model: viewModel.contentModel)
     .task {
       guard viewModel.productList.isEmpty else { return }
       viewModel.fetchProductList()
@@ -59,14 +72,15 @@ struct ProductListView: View {
       })
     case .error:
         ContentUnavailableView {
-            Label("viewModel.titles.unavailableViewTitle", systemImage: ImageName.unavailable)
+          Label(viewModel.contentModel.title, systemImage: viewModel.contentModel.imageName ?? "")
         } description: {
-            Text("Test")
+          Text(viewModel.contentModel.message)
         }
     }
   }
 }
 
-//#Preview {
-//    ProductListView(viewModel: <#T##ProductListViewModel#>)
-//}
+#Preview {
+  let container = DefaultProductSceneDIContainer(apiDataTransferService: DefaultAppDIContainer().apiDataTransferService)
+  return ProductListView(viewModel: container.defaultProductListViewModel)
+}
