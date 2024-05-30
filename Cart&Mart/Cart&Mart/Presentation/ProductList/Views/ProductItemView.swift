@@ -45,10 +45,25 @@ struct ProductItemView: View {
           .lineLimit(2)
         
         // PRICE
-        Text(product.price, format: .currency(code: "USD"))
-          .fontWeight(.semibold)
-          .foregroundColor(.gray)
-          .multilineTextAlignment(.leading)
+        HStack(alignment: .center, spacing: 5, content: {
+          Text(product.price, format: .currency(code: "USD"))
+            .fontWeight(.semibold)
+            .foregroundColor(.gray)
+            .multilineTextAlignment(.leading)
+          
+          Spacer()
+          
+          Text(String(format: "%.1f", product.rating))
+            .fontWeight(.semibold)
+            .foregroundColor(.gray)
+            .multilineTextAlignment(.leading)
+          Image(systemName: "star.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(maxWidth: 16)
+            .foregroundColor(.accentColor)
+        })
+        
       })
       .padding(12)
     })
