@@ -23,11 +23,14 @@ struct ProductHeaderView: View {
         .fontWeight(.black)
         .lineLimit(2)
       
-      HStack {
-        Text("Brand: \(product.brand)")
-        Spacer()
-        DiscountTagView(discount: product.discountPercentage)
+      if let brand = product.brand {
+        HStack {
+          Text("Brand: \(brand)")
+          Spacer()
+          DiscountTagView(discount: product.discountPercentage)
+        }
       }
+      
     })
     .foregroundColor(.white)
     .padding(.top)

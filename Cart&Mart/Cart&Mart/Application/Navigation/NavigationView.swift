@@ -13,6 +13,8 @@ struct NavigationView: View {
   // MARK: - Property
   @StateObject private var navigate = NavigationManager()
   
+  private let appContainer = DefaultAppDIContainer()
+  
   // MARK: - Body
   var body: some View {
     NavigationStack(path: $navigate.path) {
@@ -28,11 +30,12 @@ struct NavigationView: View {
   private func navigate(to page: Route) -> some View {
     switch page {
     case .productList:
-      let appContainer = DefaultAppDIContainer()
       let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
       ProductListView(viewModel: productSceneContainer.defaultProductListViewModel)
     case .productDetail(let productID):
-      ProductDetailView(product: sampleProductDetail)
+      let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
+      let viewModel = productSceneContainer.defaultProductDetailViewModel(productID)
+      ProductDetailView(viewModel: viewModel)
     }
   }
 }

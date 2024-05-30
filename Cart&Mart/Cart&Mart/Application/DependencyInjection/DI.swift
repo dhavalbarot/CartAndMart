@@ -41,7 +41,7 @@ protocol ProductSceneDIContainer {
 // MARK: - ViewModelDIContainer
 protocol ViewModelDIContainer {
   var defaultProductListViewModel: DefaultProductListViewModel { get }
-  var defaultProductDetailViewModel: ProductDetailViewModel { get }
+  func defaultProductDetailViewModel(_ productID: Int) -> DefaultProductDetailViewModel
 }
 
 // MARK: - UseCaseDIContainer
@@ -72,9 +72,10 @@ extension DefaultProductSceneDIContainer: ViewModelDIContainer {
     DefaultProductListViewModel(productListUseCase: defaultProductListUseCase)
   }
   
-  var defaultProductDetailViewModel: ProductDetailViewModel {
-    DefaultProductDetailViewModel()
+  func defaultProductDetailViewModel(_ productID: Int) -> DefaultProductDetailViewModel {
+    DefaultProductDetailViewModel(productID: productID, productDetailUseCase: defaultProductDetailUseCase)
   }
+  
 }
 
 // MARK: - UseCaseDIContainer

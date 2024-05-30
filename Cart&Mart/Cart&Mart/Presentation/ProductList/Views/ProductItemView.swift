@@ -51,6 +51,8 @@ struct ProductItemView: View {
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
           
           Spacer()
           
@@ -58,6 +60,7 @@ struct ProductItemView: View {
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
+          
           Image(systemName: "star.fill")
             .resizable()
             .aspectRatio(contentMode: .fit)

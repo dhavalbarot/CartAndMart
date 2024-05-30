@@ -50,7 +50,7 @@ struct ProductListView: View {
     .navigationViewStyle(StackNavigationViewStyle())
     .showAlert(isPresented: showError, model: viewModel.contentModel)
     .task {
-      guard viewModel.productList.isEmpty else { return }
+      guard viewModel.viewContentState == .idle else { return }
       viewModel.fetchProductList()
     }
   }
@@ -59,7 +59,7 @@ struct ProductListView: View {
   @ViewBuilder
   func getBodyItem(_ contentState: ViewContentState) -> some View {
     switch contentState {
-    case .idle: EmptyView().background(.red)
+    case .idle: EmptyView()
     case .loading:
         ProgressView()
             .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -25,6 +25,8 @@ struct ProductDetailImageView: View {
           .font(.largeTitle)
           .fontWeight(.black)
           .scaleEffect(1.35, anchor: .leading)
+          .minimumScaleFactor(0.4)
+          .lineLimit(1)
       })
       .offset(y: isAnimating ? -50 : -75)
       
