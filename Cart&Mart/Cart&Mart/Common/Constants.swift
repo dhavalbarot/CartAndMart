@@ -10,10 +10,13 @@ import SwiftUI
 // MARK: - Data
 let sampleProductList: ProductList = Bundle.main.decode("products.json")
 let sampleProduct: Product = sampleProductList.products[0]
+let sampleProductDetail: ProductDetail = Bundle.main.decode("productDetail.json")
 
 // MARK: - Color
-let accentColor: Color = .accentColor
-let backgroundColor: Color = Color("BackgroundColor")
+let colorAccent: Color = Color.accentColor
+let colorBackground: Color = Color("BackgroundColor")
+let colorGray: Color = Color(UIColor.systemGray2)
+let colorYellow: Color = Color("LowStockColor")
 
 extension UIColor {
   static func productColor(_ id: Int) -> Color {
@@ -28,6 +31,7 @@ let columnSpacing: CGFloat = 10
 let rowSpacing: CGFloat = 10
 let itemWidth = (UIScreen.screenWidth/2) - (rowSpacing * 3)
 var gridLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+var threeColumn:[GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
 
 // MARK: - UIScreen
 extension UIScreen {
@@ -46,7 +50,11 @@ enum ViewContentState {
 
 // MARK: - ImageName
 struct ImageName {
-    static let basket = "basket"
+  static let basket = "basket"
+  static let returnItem = "dollarsign.arrow.circlepath"
+  static let discountTag = "tag.fill"
+  static let shippingTime = "truck.box.badge.clock"
+  static let warrenty = "newspaper"
 }
 
 // MARK: - String Constants

@@ -32,9 +32,7 @@ struct NavigationView: View {
       let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
       ProductListView(viewModel: productSceneContainer.defaultProductListViewModel)
     case .productDetail(let productID):
-      let appContainer = DefaultAppDIContainer()
-      let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
-      ProductListView(viewModel: productSceneContainer.defaultProductListViewModel)
+      ProductDetailView(product: sampleProductDetail)
     }
   }
 }

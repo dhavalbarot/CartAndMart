@@ -11,6 +11,8 @@ struct ProductListView: View {
   
   // MARK: - Properties
   @ObservedObject private var viewModel: DefaultProductListViewModel
+
+  @EnvironmentObject private var navigationManager: NavigationManager
   
   private var showError: Binding<Bool> {
       Binding(
@@ -26,23 +28,26 @@ struct ProductListView: View {
   
   // MARK: - Body
   var body: some View {
-    GeometryReader { geometry in
-      ZStack {
-        VStack(spacing: 0) {
-          NavigationBarView()
-            .padding(.horizontal, 15)
-            .padding(.bottom)
-            .padding(.top, geometry.safeAreaInsets.top)
-            .background(Color.white)
-            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-          
-          getBodyItem(viewModel.viewContentState)
-          
-        } //: VSTACK
-        .background(backgroundColor.ignoresSafeArea(.all, edges: .all))
-      }//: ZSTACK
-      .ignoresSafeArea(.all, edges: .all)
+    NavigationStack {
+      GeometryReader { geometry in
+        ZStack {
+          VStack(spacing: 0) {
+            NavigationBarView()
+              .padding(.horizontal, 15)
+              .padding(.bottom)
+              .padding(.top, geometry.safeAreaInsets.top)
+              .background(Color.white)
+              .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+            
+            getBodyItem(viewModel.viewContentState)
+            
+          }
+          .background(colorBackground.ignoresSafeArea(.all, edges: .all))
+        }
+        .ignoresSafeArea(.all, edges: .all)
+      }
     }
+    .navigationViewStyle(StackNavigationViewStyle())
     .showAlert(isPresented: showError, model: viewModel.contentModel)
     .task {
       guard viewModel.productList.isEmpty else { return }
@@ -54,7 +59,7 @@ struct ProductListView: View {
   @ViewBuilder
   func getBodyItem(_ contentState: ViewContentState) -> some View {
     switch contentState {
-    case .idle: EmptyView()
+    case .idle: EmptyView().background(.red)
     case .loading:
         ProgressView()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -65,10 +70,13 @@ struct ProductListView: View {
           LazyVGrid(columns: gridLayout, spacing: rowSpacing, content: {
             ForEach(viewModel.productList) { product in
               ProductItemView(product: product)
-            } //: LOOP
-          }) //: GRID
+                .onTapGesture {
+                  navigationManager.push(.productDetail(productID: product.id))
+                }
+            }
+          })
           .padding(15)
-        } //: VSTACK
+        }
       })
     case .error:
         ContentUnavailableView {

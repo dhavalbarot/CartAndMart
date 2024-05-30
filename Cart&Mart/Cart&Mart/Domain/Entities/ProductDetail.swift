@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum StockStatus: String, Codable {
+  case outOfStock = "Out Of Stock"
+  case lowStock = "Low Stock"
+  case inStock = "In Stock"
+}
+
 // MARK: - ProductDetail
 struct ProductDetail: Identifiable, Codable {
     let id: Int
@@ -16,7 +22,8 @@ struct ProductDetail: Identifiable, Codable {
     let tags: [String]
     let brand, sku: String
     let weight: Int
-    let warrantyInformation, shippingInformation, availabilityStatus: String
+    let warrantyInformation, shippingInformation: String
+  let availabilityStatus: StockStatus
     let reviews: [Review]
     let returnPolicy: String
     let minimumOrderQuantity: Int
