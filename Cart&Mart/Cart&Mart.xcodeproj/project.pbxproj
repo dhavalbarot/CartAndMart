@@ -47,6 +47,8 @@
 		5AE838E22C07B4FD00D3E2C1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE838E12C07B4FD00D3E2C1 /* ProductDetailView.swift */; };
 		5AE838E42C08790700D3E2C1 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE838E32C08790700D3E2C1 /* AlertView.swift */; };
 		5AE838E82C087AA300D3E2C1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE838E72C087AA300D3E2C1 /* ContentModel.swift */; };
+		5AE838EB2C08830000D3E2C1 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE838EA2C08830000D3E2C1 /* NavigationManager.swift */; };
+		5AE838ED2C08862B00D3E2C1 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE838EC2C08862B00D3E2C1 /* NavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		5AE838E12C07B4FD00D3E2C1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		5AE838E32C08790700D3E2C1 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		5AE838E72C087AA300D3E2C1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		5AE838EA2C08830000D3E2C1 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		5AE838EC2C08862B00D3E2C1 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 				5A2078202C070DA700CEE67B /* Cart_MartApp.swift */,
 				5AE8389F2C0733A200D3E2C1 /* Configuration.swift */,
 				5AE838DA2C07991D00D3E2C1 /* DependencyInjection */,
+				5AE838E92C0882DB00D3E2C1 /* Navigation */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -404,6 +409,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5AE838E92C0882DB00D3E2C1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5AE838EA2C08830000D3E2C1 /* NavigationManager.swift */,
+				5AE838EC2C08862B00D3E2C1 /* NavigationView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -544,6 +558,8 @@
 				5AE838D72C078B2F00D3E2C1 /* GetProductListUseCase.swift in Sources */,
 				5AE8389A2C07228900D3E2C1 /* Cancallable.swift in Sources */,
 				5AE838E02C079C2000D3E2C1 /* ProductDetailViewModel.swift in Sources */,
+				5AE838EB2C08830000D3E2C1 /* NavigationManager.swift in Sources */,
+				5AE838ED2C08862B00D3E2C1 /* NavigationView.swift in Sources */,
 				5AE838D92C078B3A00D3E2C1 /* GetProductDetailUseCase.swift in Sources */,
 				5AE838DC2C07997200D3E2C1 /* DI.swift in Sources */,
 				5AE838B62C074EC800D3E2C1 /* ProductListView.swift in Sources */,
