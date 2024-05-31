@@ -10,20 +10,20 @@ import SwiftUI
 struct ProductListView: View {
   
   // MARK: - Properties
-  @ObservedObject private var viewModel: DefaultProductListViewModel
-
+  @StateObject private var viewModel: DefaultProductListViewModel
+  
   @EnvironmentObject private var navigationManager: NavigationManager
   
   private var showError: Binding<Bool> {
-      Binding(
-          get: { viewModel.viewContentState == .error },
-          set: { _ in }
-      )
+    Binding(
+      get: { viewModel.viewContentState == .error },
+      set: { _ in }
+    )
   }
   
   // MARK: - Initilizer
   init(viewModel: DefaultProductListViewModel) {
-    self.viewModel = viewModel
+    _viewModel = StateObject(wrappedValue: viewModel)
   }
   
   // MARK: - Body
@@ -61,9 +61,9 @@ struct ProductListView: View {
     switch contentState {
     case .idle: EmptyView()
     case .loading:
-        ProgressView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(.systemBackground))
+      ProgressView()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemBackground))
     case .data:
       ScrollView(.vertical, showsIndicators: false, content: {
         VStack(spacing: 0) {
@@ -79,15 +79,16 @@ struct ProductListView: View {
         }
       })
     case .error:
-        ContentUnavailableView {
-          Label(viewModel.contentModel.title, systemImage: viewModel.contentModel.imageName ?? "")
-        } description: {
-          Text(viewModel.contentModel.message)
-        }
+      ContentUnavailableView {
+        Label(viewModel.contentModel.title, systemImage: viewModel.contentModel.imageName ?? "")
+      } description: {
+        Text(viewModel.contentModel.message)
+      }
     }
   }
 }
 
+// MARK: - Preview
 #Preview {
   let container = DefaultProductSceneDIContainer(apiDataTransferService: DefaultAppDIContainer().apiDataTransferService)
   return ProductListView(viewModel: container.defaultProductListViewModel)

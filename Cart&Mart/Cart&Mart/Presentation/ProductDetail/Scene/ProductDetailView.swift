@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
   
   // MARK: - Properties
-  @ObservedObject private var viewModel: DefaultProductDetailViewModel
+  @StateObject private var viewModel: DefaultProductDetailViewModel
   
   private var showError: Binding<Bool> {
       Binding(
@@ -21,10 +21,10 @@ struct ProductDetailView: View {
   
   // MARK: - Initilizer
   init(viewModel: DefaultProductDetailViewModel) {
-    self.viewModel = viewModel
+    _viewModel = StateObject(wrappedValue: viewModel)
   }
   
-
+  // MARK: - Body
   var body: some View {
     VStack(alignment: .leading, spacing: 5, content: {
       ProductDetailNavigationBarView()
@@ -98,6 +98,7 @@ struct ProductDetailView: View {
   }
 }
 
+// MARK: - Preview
 #Preview {
   let container = DefaultProductSceneDIContainer(apiDataTransferService: DefaultAppDIContainer().apiDataTransferService)
   return ProductDetailView(viewModel: container.defaultProductDetailViewModel(sampleProduct.id))
