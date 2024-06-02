@@ -12,7 +12,7 @@ struct NavigationBarView: View {
   // MARK: - Body
   var body: some View {
     HStack {
-      Image("CartAndMartLogo")
+      Image(ImageName.logo)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 44)
@@ -23,20 +23,21 @@ struct NavigationBarView: View {
       
       Spacer()
       
-      Image(systemName: "cart")
+      Image(systemName: SystemImageName.cart)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 32)
         .foregroundColor(.accentColor)
     }
+    .padding(8)
+    .background(Color.white)
+    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
   }
 }
 
 // MARK: - PREVIEW
-struct NavigationBarView_Previews: PreviewProvider {
-  static var previews: some View {
-    NavigationBarView()
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+#Preview {
+  NavigationBarView()
+    .previewLayout(.sizeThatFits)
+    .padding()
 }

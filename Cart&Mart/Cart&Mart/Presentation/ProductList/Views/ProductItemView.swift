@@ -21,18 +21,7 @@ struct ProductItemView: View {
           Rectangle()
             .fill(UIColor.productColor(product.id).gradient)
             .aspectRatio(contentMode: .fill)
-          AsyncImage(url: URL(string: product.thumbnail)) { image in
-            image
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(maxWidth: 150)
-          } placeholder: {
-            Image(systemName: "cart")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(maxWidth: 50)
-              .font(.system(size: 30))
-          }
+          ProductImageView(imageURL: product.thumbnail, placeholderImage: Image(systemName: SystemImageName.cart))
         }
         .cornerRadius(12)
 
@@ -61,7 +50,7 @@ struct ProductItemView: View {
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
           
-          Image(systemName: "star.fill")
+          Image(systemName: SystemImageName.rattingStar)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: 16)
@@ -77,11 +66,10 @@ struct ProductItemView: View {
 }
 
 // MARK: - Preview
-struct ProductItemView_Previews: PreviewProvider {
-  static var previews: some View {
-    ProductItemView(product: sampleProduct)
-      .previewLayout(.fixed(width: 200, height: 300))
-      .background(Color.red)
-  }
+#Preview {
+  ProductItemView(product: sampleProduct)
+    .previewLayout(.fixed(width: 200, height: 300))
+    .background(Color.red)
+    .padding()
 }
 

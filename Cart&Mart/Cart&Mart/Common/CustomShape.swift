@@ -15,10 +15,9 @@ struct CustomShape: Shape {
   }
 }
 
-struct CustomShape_Previews: PreviewProvider {
-  static var previews: some View {
-    CustomShape()
-      .previewLayout(.fixed(width: 428, height: 120))
-      .padding()
-  }
+
+#Preview {
+  CustomShape()
+    .previewLayout(.fixed(width: 428, height: 120))
+    .padding()
 }

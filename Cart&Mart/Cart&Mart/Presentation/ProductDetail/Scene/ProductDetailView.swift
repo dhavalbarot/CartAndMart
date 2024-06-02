@@ -52,7 +52,7 @@ struct ProductDetailView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(.systemBackground))
     case .data:
-      withAnimation(.easeIn(duration: 1)) {
+      withAnimation(.easeInOut(duration: 2)) {
         productDetailContentView()
       }
     case .error:

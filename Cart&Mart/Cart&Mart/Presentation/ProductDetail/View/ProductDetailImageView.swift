@@ -33,14 +33,7 @@ struct ProductDetailImageView: View {
       Spacer()
       
       // PHOTO
-      AsyncImage(url: URL(string: product.thumbnail), content: { image in
-        image
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(maxWidth: 170)
-          .animation(.easeInOut(duration: 1.0), value: 2)
-      }, placeholder: {})
-      .frame(height: 170)
+      ProductImageView(imageURL: product.thumbnail, placeholderImage: nil)
     })
     .padding(.horizontal)
     .onAppear(perform: {
@@ -52,12 +45,8 @@ struct ProductDetailImageView: View {
 }
 
 // MARK: - BODY
-
-struct ProductDetailImageView_Previews: PreviewProvider {
-  static var previews: some View {
-    ProductDetailImageView(product: sampleProductDetail)
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+#Preview {
+  ProductDetailImageView(product: sampleProductDetail)
+    .previewLayout(.sizeThatFits)
+    .padding()
 }
-

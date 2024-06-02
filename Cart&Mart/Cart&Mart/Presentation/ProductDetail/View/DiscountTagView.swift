@@ -13,7 +13,7 @@ struct DiscountTagView: View {
   
   var body: some View {
     HStack(spacing: 5, content: {
-      Image(systemName: ImageName.discountTag)
+      Image(systemName: SystemImageName.discountTag)
         .font(.system(size: 16))
         .foregroundColor(.white)
       
@@ -28,10 +28,9 @@ struct DiscountTagView: View {
   }
 }
 
-struct DiscountTagView_Previews: PreviewProvider {
-  static var previews: some View {
-    DiscountTagView(discount: 25)
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+// MARK: - Preview
+#Preview {
+  DiscountTagView(discount: 25)
+    .previewLayout(.sizeThatFits)
+    .padding()
 }

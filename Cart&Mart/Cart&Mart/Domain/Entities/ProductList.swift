@@ -8,13 +8,13 @@
 import Foundation
 
 // MARK: - ProductList
-struct ProductList: Codable {
+struct ProductList: Codable, Equatable {
     let products: [Product]
     let total, limit: Int
 }
 
 // MARK: - Product
-struct Product: Codable, Identifiable {
+struct Product: Codable, Identifiable, Equatable {
   let id: Int
   let title: String
   let description: String?

@@ -14,7 +14,7 @@ enum StockStatus: String, Codable {
 }
 
 // MARK: - ProductDetail
-struct ProductDetail: Identifiable, Codable {
+struct ProductDetail: Identifiable, Codable, Equatable {
   let id: Int
   let title: String
   let description: String

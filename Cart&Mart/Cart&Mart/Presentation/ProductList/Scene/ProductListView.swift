@@ -29,22 +29,12 @@ struct ProductListView: View {
   // MARK: - Body
   var body: some View {
     NavigationStack {
-      GeometryReader { geometry in
-        ZStack {
-          VStack(spacing: 0) {
-            NavigationBarView()
-              .padding(.horizontal, 15)
-              .padding(.bottom)
-              .padding(.top, geometry.safeAreaInsets.top)
-              .background(Color.white)
-              .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-            
-            getBodyItem(viewModel.viewContentState)
-            
-          }
-          .background(colorBackground.ignoresSafeArea(.all, edges: .all))
+      ZStack {
+        VStack(spacing: 0) {
+          NavigationBarView()
+          getBodyItem(viewModel.viewContentState)
         }
-        .ignoresSafeArea(.all, edges: .all)
+        .background(colorBackground.ignoresSafeArea(.all, edges: .all))
       }
     }
     .navigationViewStyle(StackNavigationViewStyle())

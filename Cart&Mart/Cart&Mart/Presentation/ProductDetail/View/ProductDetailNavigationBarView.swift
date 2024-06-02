@@ -20,7 +20,7 @@ struct ProductDetailNavigationBarView: View {
           navigationManager.pop()
         }
       }, label: {
-        Image(systemName: "chevron.left")
+        Image(systemName: SystemImageName.backButton)
           .font(.title)
           .foregroundColor(.white)
       })
@@ -28,7 +28,7 @@ struct ProductDetailNavigationBarView: View {
       Spacer()
       
       Button(action: {}, label: {
-        Image(systemName: "cart")
+        Image(systemName: SystemImageName.cart)
           .font(.title)
           .foregroundColor(.white)
       })
@@ -38,17 +38,9 @@ struct ProductDetailNavigationBarView: View {
 }
 
 // MARK: - PREVIEW
-
-struct ProductDetailNavigationBarView_Previews: PreviewProvider {
-  static var previews: some View {
-    ProductDetailNavigationBarView()
-      .previewLayout(.sizeThatFits)
-      .padding()
-      .background(Color.gray)
-  }
-}
-
-
 #Preview {
     ProductDetailNavigationBarView()
+    .previewLayout(.sizeThatFits)
+    .padding()
+    .background(Color.gray)
 }

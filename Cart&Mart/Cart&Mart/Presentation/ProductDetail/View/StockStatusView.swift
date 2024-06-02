@@ -42,10 +42,8 @@ struct StockStatusView: View {
 }
 
 // MARK: - PREVIEW
-struct StockStatusView_Previews: PreviewProvider {
-  static var previews: some View {
-    StockStatusView(stockStatus: StockStatus.inStock)
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+#Preview {
+  StockStatusView(stockStatus: StockStatus.inStock)
+    .previewLayout(.sizeThatFits)
+    .padding()
 }

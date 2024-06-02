@@ -16,7 +16,7 @@ struct LogoView: View {
         .fontWeight(.black)
         .foregroundColor(.accentColor)
       
-      Image("AndLogoGreen")
+      Image(ImageName.andLogo)
         .renderingMode(.template)
         .resizable()
         .scaledToFit()
@@ -32,10 +32,8 @@ struct LogoView: View {
 }
 
 // MARK: - Preview
-struct LogoView_Previews: PreviewProvider {
-  static var previews: some View {
-    LogoView()
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+#Preview {
+  LogoView()
+    .previewLayout(.sizeThatFits)
+    .padding()
 }

@@ -27,7 +27,7 @@ struct RatingView: View {
       
       HStack(alignment: .center, spacing: 3, content: {
         ForEach(1...5, id: \.self) { item in
-          Image(systemName: "star.fill")
+          Image(systemName: SystemImageName.rattingStar)
             .frame(width: 28, height: 28, alignment: .center)
             .background(item <= rating ? colorAccent.cornerRadius(5) : colorGray.cornerRadius(5))
             .foregroundColor(.white)
@@ -37,11 +37,9 @@ struct RatingView: View {
   }
 }
 
-struct RatingView_Previews: PreviewProvider {
-  static var previews: some View {
-    RatingView(rating: 3)
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+// MARK: - Preview
+#Preview {
+  RatingView(rating: 3)
+    .previewLayout(.sizeThatFits)
+    .padding()
 }
-

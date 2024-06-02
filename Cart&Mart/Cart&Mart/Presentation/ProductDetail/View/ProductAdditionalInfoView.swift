@@ -30,5 +30,5 @@ struct ProductAdditionalInfoView: View {
 }
 
 #Preview {
-  ProductAdditionalInfoView(imageName: ImageName.returnItem, contentMessage: "30 day return policy")
+  ProductAdditionalInfoView(imageName: SystemImageName.returnItem, contentMessage: "30 day return policy")
 }

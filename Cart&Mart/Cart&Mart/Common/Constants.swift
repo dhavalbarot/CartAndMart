@@ -49,12 +49,20 @@ enum ViewContentState {
 }
 
 // MARK: - ImageName
-struct ImageName {
+struct SystemImageName {
   static let basket = "basket"
   static let returnItem = "dollarsign.arrow.circlepath"
   static let discountTag = "tag.fill"
   static let shippingTime = "truck.box.badge.clock"
   static let warrenty = "newspaper"
+  static let cart = "cart"
+  static let rattingStar = "star.fill"
+  static let backButton = "chevron.left"
+}
+
+struct ImageName {
+  static let logo = "CartAndMartLogo"
+  static let andLogo = "AndLogoGreen"
 }
 
 // MARK: - String Constants
