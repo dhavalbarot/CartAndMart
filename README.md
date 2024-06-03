@@ -1,11 +1,31 @@
-# Cart & Mart
-This is a dummy project developed with SwiftUI. This project follows the clean architecture with MVVM and includes the following.
-- SwiftUI
-- Clean Architecture
-- MVVM
-- Unit Testing
-- UI Testing
-- Snapshot Testing
+<p align="left">
+  <img src="ReadMeResources/CartAndMartLogo.png" width="25%">
+</p>
 
-# Abount
-This dummy application uses the dummy JSON API to fetch the list of products and their details.
+# Cart & Mart (Dummy Application)
+
+## Overview
+Cart & Mart is sample application developed with SwiftUI, which provides user-friendly interface to explore limited list of products and it's detail.
+
+## Key Aspects Followed
+- Clean Architecture with MVVM with DI
+- SwiftUI + Combine
+- Unit Test cases (88.3% Code-Coverage)
+- Designed for scalability 
+- Modular code
+- Unit Testing + UI Testing + Snapshot Testing
+
+## API Details
+
+This App is using public apis. Find the api details by following link:
+
+Website: https://dummyjson.com/docs/products
+
+## App Demo
+<img src="ReadMeResources/CartAndMart.gif" alt="Demo" width="300">
+
+## Code Coverage Screenshot
+
+| Code Coverage                             |
+| -------------------------------------- |
+| ![Code Coverage](ReadMeResources/Coverage.png) |
