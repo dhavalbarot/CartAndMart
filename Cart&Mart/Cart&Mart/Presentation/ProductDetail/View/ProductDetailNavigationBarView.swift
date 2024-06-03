@@ -24,6 +24,9 @@ struct ProductDetailNavigationBarView: View {
           .font(.title)
           .foregroundColor(.white)
       })
+      .accessibilityIdentifier("productDetailBackButton")
+      .accessibilityLabel("Back")
+      .accessibilityHint("Double tap to see product list")
       
       Spacer()
       
@@ -32,6 +35,8 @@ struct ProductDetailNavigationBarView: View {
           .font(.title)
           .foregroundColor(.white)
       })
+      .accessibilityIdentifier("productDetailCartButton")
+      .accessibilityLabel("Cart")
     }
     .padding(.horizontal)
   }

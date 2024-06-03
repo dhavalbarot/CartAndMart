@@ -62,6 +62,9 @@ struct ProductItemView: View {
     })
     .background(Color.white)
     .cornerRadius(12)
+    .accessibilityElement(children: .ignore)
+    .accessibilityLabel("Product \(product.title), price \(String(format: "%.2f", product.price))USD, rating \(String(format: "%.1f", product.rating))")
+    .accessibilityHint("Double tap to see detail")
   }
 }
 

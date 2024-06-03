@@ -378,13 +378,6 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
-		5A92A0D32C0CD6DF00E16832 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		5AA5D8EC2C09D85C00C97659 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,7 +432,6 @@
 		5AA5D9012C0A0AD600C97659 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5A92A0D32C0CD6DF00E16832 /* Views */,
 				5AA5D9022C0A0AEA00C97659 /* ViewModels */,
 			);
 			path = Presentation;

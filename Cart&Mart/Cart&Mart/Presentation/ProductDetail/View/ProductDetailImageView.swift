@@ -29,7 +29,11 @@ struct ProductDetailImageView: View {
           .lineLimit(1)
       })
       .offset(y: isAnimating ? -50 : -75)
-      
+      .accessibilityElement(children: .ignore)
+      .accessibilityAddTraits(.isStaticText)
+      .accessibilityLabel(Text(product.price, format: .currency(code: "USD")))
+      .accessibilityIdentifier("productDetailPriceText")
+
       Spacer()
       
       // PHOTO

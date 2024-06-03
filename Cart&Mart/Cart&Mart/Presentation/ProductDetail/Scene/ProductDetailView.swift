@@ -81,6 +81,9 @@ struct ProductDetailView: View {
         Text(product.description)
           .font(.system(size: 14, weight: .semibold))
           .foregroundColor(colorGray)
+          .accessibilityIdentifier("productDetailDescriptionText")
+          .accessibilityLabel("Descripiton: \(product.description)")
+        
         ProductAdditionalInfoGroupView(product: product)
         Spacer()
         StockStatusView(stockStatus: product.availabilityStatus)

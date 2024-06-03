@@ -27,6 +27,7 @@ struct StockStatusView: View {
       Color(backgroundColor(stockStatus: stockStatus))
     )
     .clipShape(Capsule())
+    .accessibilityIdentifier("productDetailStockStatus")
   }
   
   private func backgroundColor(stockStatus: StockStatus) -> Color {

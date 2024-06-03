@@ -17,16 +17,24 @@ struct ProductHeaderView: View {
     VStack(alignment: .leading, spacing: 6, content: {
       Text(product.category)
         .font(.title3)
+        .accessibilityLabel("Category \(product.category)")
+        .accessibilityIdentifier("productDetailCategoryText")
 
       Text(product.title)
         .font(.largeTitle)
         .fontWeight(.black)
         .lineLimit(2)
-      
+        .accessibilityLabel("Product \(product.title)")
+        .accessibilityIdentifier("productDetailTitleText")
+
       if let brand = product.brand {
         HStack {
           Text("Brand: \(brand)")
+            .accessibilityLabel("Brand: \(brand)")
+            .accessibilityIdentifier("productDetailBrandText")
+
           Spacer()
+          
           DiscountTagView(discount: product.discountPercentage)
         }
       }

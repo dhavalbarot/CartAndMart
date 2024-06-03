@@ -25,6 +25,10 @@ struct DiscountTagView: View {
     .padding(5)
     .background(colorAccent)
     .cornerRadius(8, corners: [.bottomLeft, .topLeft])
+    .accessibilityElement(children: .ignore)
+    .accessibilityAddTraits(.isStaticText)
+    .accessibilityLabel("Discount \(Int(discount))%")
+    .accessibilityIdentifier("productDetailDiscountTag")
   }
 }
 

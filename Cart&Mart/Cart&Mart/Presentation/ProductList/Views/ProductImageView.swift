@@ -25,6 +25,9 @@ struct ProductImageView: View {
         .frame(maxWidth: 50)
         .font(.system(size: 30))
     }
+    .accessibilityElement(children: .ignore)
+    .accessibilityAddTraits(.isImage)
+    .accessibilityIdentifier("productImage")
   }
 }
 

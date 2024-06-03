@@ -26,6 +26,9 @@ struct ProductAdditionalInfoView: View {
           .multilineTextAlignment(.center)
           .frame(height: 34)
       }
+      .accessibilityElement(children: .ignore)
+      .accessibilityAddTraits(.isStaticText)
+      .accessibilityLabel("Info \(contentMessage)")
     }
 }
 

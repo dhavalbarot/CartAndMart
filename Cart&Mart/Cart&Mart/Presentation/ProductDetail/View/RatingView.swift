@@ -34,6 +34,10 @@ struct RatingView: View {
         }
       })
     })
+    .accessibilityElement(children: .ignore)
+    .accessibilityIdentifier("ratingView")
+    .accessibilityAddTraits(.isStaticText)
+    .accessibilityLabel("Rating \(rating) out of 5")
   }
 }
 

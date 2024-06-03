@@ -16,6 +16,9 @@ struct NavigationBarView: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 44)
+        .accessibilityAddTraits(.isImage)
+        .accessibilityIdentifier("CartAndMartLogo")
+        .accessibilityLabel("Cart and Mart logo")
       
       Spacer()
       
@@ -28,6 +31,9 @@ struct NavigationBarView: View {
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 32)
         .foregroundColor(.accentColor)
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel("Cart")
+        .accessibilityIdentifier("productListCartButton")
     }
     .padding(8)
     .background(Color.white)

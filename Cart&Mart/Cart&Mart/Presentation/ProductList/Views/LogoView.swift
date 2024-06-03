@@ -28,6 +28,10 @@ struct LogoView: View {
         .fontWeight(.black)
         .foregroundColor(.accentColor)
     }
+    .accessibilityElement(children: .ignore)
+    .accessibilityAddTraits(.isStaticText)
+    .accessibilityLabel("Cart And Mart Title")
+    .accessibilityIdentifier("CartAndMartTitle")
   }
 }
 

@@ -31,7 +31,7 @@ struct ProductListView: View {
     NavigationStack {
       ZStack {
         VStack(spacing: 0) {
-          NavigationBarView()
+          NavigationBarView()          
           getBodyItem(viewModel.viewContentState)
         }
         .background(colorBackground.ignoresSafeArea(.all, edges: .all))
@@ -58,13 +58,15 @@ struct ProductListView: View {
       ScrollView(.vertical, showsIndicators: false, content: {
         VStack(spacing: 0) {
           LazyVGrid(columns: gridLayout, spacing: rowSpacing, content: {
-            ForEach(viewModel.productList) { product in
+            ForEach(Array(viewModel.productList.enumerated()), id: \.1.id) { (index, product) in
               ProductItemView(product: product)
                 .onTapGesture {
                   navigationManager.push(.productDetail(productID: product.id))
                 }
+                .accessibilityIdentifier("ProductItem_\(index)")
             }
           })
+          .accessibilityIdentifier("productListGridView")
           .padding(15)
         }
       })
