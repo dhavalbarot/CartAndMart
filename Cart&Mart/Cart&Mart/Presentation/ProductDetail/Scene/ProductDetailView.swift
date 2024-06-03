@@ -46,58 +46,54 @@ struct ProductDetailView: View {
   @ViewBuilder
   func getBodyItem(_ contentState: ViewContentState) -> some View {
     switch contentState {
-    case .idle: EmptyView().background(.red)
+    case .idle: EmptyView()
     case .loading:
-        ProgressView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(.systemBackground))
+      ProgressView()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemBackground))
     case .data:
-      withAnimation(.easeInOut(duration: 2)) {
-        productDetailContentView()
+      if let productDetail = viewModel.productDetail {
+        withAnimation(.easeInOut(duration: 2)) {
+          productDetailContentView(productDetail)
+        }
+      } else {
+        EmptyView()
       }
     case .error:
-        ContentUnavailableView {
-          Label(viewModel.contentModel.title, systemImage: viewModel.contentModel.imageName ?? "")
-        } description: {
-          Text(viewModel.contentModel.message)
-        }
+      ErrorContentView(contentModel: viewModel.contentModel)
     }
   }
   
   @ViewBuilder
-  func productDetailContentView() -> some View {
-    if let product = viewModel.productDetail {
-      ProductHeaderView(product: product)
-        .padding(.leading)
-      Spacer()
-      ProductDetailImageView(product: product)
-        .zIndex(1)
-      VStack(alignment: .leading, spacing: 15, content: {
-        HStack(alignment: .bottom, content: {
-          RatingView(rating: Int(product.rating))
-          Spacer()
-        })
-        Divider()
-        Text(product.description)
-          .font(.system(size: 14, weight: .semibold))
-          .foregroundColor(colorGray)
-          .accessibilityIdentifier("productDetailDescriptionText")
-          .accessibilityLabel("Descripiton: \(product.description)")
-        
-        ProductAdditionalInfoGroupView(product: product)
+  func productDetailContentView(_ productDetail: ProductDetail) -> some View {
+    ProductHeaderView(product: productDetail)
+      .padding(.leading)
+    Spacer()
+    ProductDetailImageView(product: productDetail)
+      .zIndex(1)
+    VStack(alignment: .leading, spacing: 15, content: {
+      HStack(alignment: .bottom, content: {
+        RatingView(rating: Int(productDetail.rating))
         Spacer()
-        StockStatusView(stockStatus: product.availabilityStatus)
       })
-      .padding(.horizontal)
-      .padding(.bottom)
-      .background(
-        Color.white
-          .clipShape(CustomShape())
-          .padding(.top, -60)
-      )
-    } else {
-      EmptyView()
-    }
+      Divider()
+      Text(productDetail.description)
+        .font(.system(size: 14, weight: .semibold))
+        .foregroundColor(colorGray)
+        .accessibilityIdentifier("productDetailDescriptionText")
+        .accessibilityLabel("Descripiton: \(productDetail.description)")
+      
+      ProductAdditionalInfoGroupView(product: productDetail)
+      Spacer()
+      StockStatusView(stockStatus: productDetail.availabilityStatus)
+    })
+    .padding(.horizontal)
+    .padding(.bottom)
+    .background(
+      Color.white
+        .clipShape(CustomShape())
+        .padding(.top, -60)
+    )
   }
 }
 

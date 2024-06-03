@@ -36,6 +36,13 @@
 		5AB511B92C08DC48004F1A7B /* StockStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511B82C08DC48004F1A7B /* StockStatusView.swift */; };
 		5AB511BB2C08E2F7004F1A7B /* ProductAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511BA2C08E2F7004F1A7B /* ProductAdditionalInfoView.swift */; };
 		5AB511BD2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511BC2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift */; };
+		5AC1D9AF2C0DFF6900F0B19D /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */; };
+		5AC1D9B12C0DFF6900F0B19D /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */; };
+		5AC1D9B42C0E0BBC00F0B19D /* ProductListView_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B32C0E0BBC00F0B19D /* ProductListView_Test.swift */; };
+		5AC1D9B62C0E3C0B00F0B19D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B52C0E3C0B00F0B19D /* Helper.swift */; };
+		5AC1D9B82C0E3FB800F0B19D /* ProductListGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B72C0E3FB800F0B19D /* ProductListGridView.swift */; };
+		5AC1D9BA2C0E412300F0B19D /* ErrorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B92C0E412300F0B19D /* ErrorContentView.swift */; };
+		5AC1D9BC2C0E44F700F0B19D /* ProductDetailView_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9BB2C0E44F700F0B19D /* ProductDetailView_Tests.swift */; };
 		5AE8388B2C071A5300D3E2C1 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8388A2C071A5300D3E2C1 /* NetworkConfiguration.swift */; };
 		5AE8388D2C071AEB00D3E2C1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8388C2C071AEB00D3E2C1 /* APIRequest.swift */; };
 		5AE8388F2C071AFD00D3E2C1 /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8388E2C071AFD00D3E2C1 /* APIEndPoint.swift */; };
@@ -131,6 +138,11 @@
 		5AB511B82C08DC48004F1A7B /* StockStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockStatusView.swift; sourceTree = "<group>"; };
 		5AB511BA2C08E2F7004F1A7B /* ProductAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAdditionalInfoView.swift; sourceTree = "<group>"; };
 		5AB511BC2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAdditionalInfoGroupView.swift; sourceTree = "<group>"; };
+		5AC1D9B32C0E0BBC00F0B19D /* ProductListView_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView_Test.swift; sourceTree = "<group>"; };
+		5AC1D9B52C0E3C0B00F0B19D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		5AC1D9B72C0E3FB800F0B19D /* ProductListGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListGridView.swift; sourceTree = "<group>"; };
+		5AC1D9B92C0E412300F0B19D /* ErrorContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorContentView.swift; sourceTree = "<group>"; };
+		5AC1D9BB2C0E44F700F0B19D /* ProductDetailView_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView_Tests.swift; sourceTree = "<group>"; };
 		5AE838892C07152100D3E2C1 /* Cart-Mart-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Cart-Mart-Info.plist"; path = "Cart&Mart/Resources/Cart-Mart-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5AE8388A2C071A5300D3E2C1 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		5AE8388C2C071AEB00D3E2C1 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -189,6 +201,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC1D9AF2C0DFF6900F0B19D /* InlineSnapshotTesting in Frameworks */,
+				5AC1D9B12C0DFF6900F0B19D /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +412,7 @@
 		5AA5D8F42C09E0C000C97659 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5AC1D9B52C0E3C0B00F0B19D /* Helper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -432,6 +447,7 @@
 		5AA5D9012C0A0AD600C97659 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5AC1D9B22C0DFF8000F0B19D /* Views */,
 				5AA5D9022C0A0AEA00C97659 /* ViewModels */,
 			);
 			path = Presentation;
@@ -472,6 +488,15 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		5AC1D9B22C0DFF8000F0B19D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AC1D9B32C0E0BBC00F0B19D /* ProductListView_Test.swift */,
+				5AC1D9BB2C0E44F700F0B19D /* ProductDetailView_Tests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5AE838982C07227400D3E2C1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +508,7 @@
 				5AE838E72C087AA300D3E2C1 /* ContentModel.swift */,
 				5AE838F42C08A4C300D3E2C1 /* RoundedCorner.swift */,
 				5AE838FA2C08BE9800D3E2C1 /* CustomShape.swift */,
+				5AC1D9B92C0E412300F0B19D /* ErrorContentView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -544,10 +570,11 @@
 		5AE838C42C07740900D3E2C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5AE838B12C07475800D3E2C1 /* NavigationBarView.swift */,
 				5AE838B32C074A7000D3E2C1 /* LogoView.swift */,
+				5AE838B12C07475800D3E2C1 /* NavigationBarView.swift */,
 				5AE838BB2C075AA300D3E2C1 /* ProductItemView.swift */,
 				5A92A0D62C0CDB5700E16832 /* ProductImageView.swift */,
+				5AC1D9B72C0E3FB800F0B19D /* ProductListGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -670,6 +697,10 @@
 				5A20782F2C070DA900CEE67B /* PBXTargetDependency */,
 			);
 			name = "Cart&MartTests";
+			packageProductDependencies = (
+				5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */,
+				5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */,
+			);
 			productName = "Cart&MartTests";
 			productReference = 5A20782D2C070DA900CEE67B /* Cart&MartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -724,6 +755,9 @@
 				Base,
 			);
 			mainGroup = 5A2078142C070DA700CEE67B;
+			packageReferences = (
+				5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 5A20781E2C070DA700CEE67B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -788,9 +822,11 @@
 				5AE838ED2C08862B00D3E2C1 /* NavigationView.swift in Sources */,
 				5AE838D92C078B3A00D3E2C1 /* GetProductDetailUseCase.swift in Sources */,
 				5AB511B92C08DC48004F1A7B /* StockStatusView.swift in Sources */,
+				5AC1D9B82C0E3FB800F0B19D /* ProductListGridView.swift in Sources */,
 				5AE838DC2C07997200D3E2C1 /* DI.swift in Sources */,
 				5AE838F92C08B7B200D3E2C1 /* ProductDetailImageView.swift in Sources */,
 				5AE838B62C074EC800D3E2C1 /* ProductListView.swift in Sources */,
+				5AC1D9BA2C0E412300F0B19D /* ErrorContentView.swift in Sources */,
 				5AE838BA2C0752DF00D3E2C1 /* SafeAreaSwiftUI.swift in Sources */,
 				5AB511B72C08D8AB004F1A7B /* ProductDetailNavigationBarView.swift in Sources */,
 				5AE838912C071B7100D3E2C1 /* ResponseDecoder.swift in Sources */,
@@ -832,10 +868,13 @@
 				5A732D782C09BF5D00E56750 /* Configuration_Test.swift in Sources */,
 				5A732D852C09CAC800E56750 /* ProductDetailUseCase_Test.swift in Sources */,
 				5AA5D8EE2C09D8A100C97659 /* ProductDetail_Test.swift in Sources */,
+				5AC1D9B62C0E3C0B00F0B19D /* Helper.swift in Sources */,
+				5AC1D9BC2C0E44F700F0B19D /* ProductDetailView_Tests.swift in Sources */,
 				5A2078322C070DA900CEE67B /* Cart_MartTests.swift in Sources */,
 				5AA5D90B2C0A0CF400C97659 /* ProductDetailUseCaseMock.swift in Sources */,
 				5AA5D9092C0A0CE900C97659 /* ProductListUseCaseMock.swift in Sources */,
 				5A732D812C09C72A00E56750 /* ProductDetailRepositoryMock.swift in Sources */,
+				5AC1D9B42C0E0BBC00F0B19D /* ProductListView_Test.swift in Sources */,
 				5AA5D8F82C09EBEA00C97659 /* DeafultProductListRepository_Test.swift in Sources */,
 				5A732D7F2C09C71500E56750 /* ProductListRepositoryMock.swift in Sources */,
 				5AA5D8FE2C09F54F00C97659 /* DataTransferServicesMock.swift in Sources */,
@@ -1003,8 +1042,7 @@
 				INFOPLIST_FILE = "Cart&Mart/Resources/Cart-Mart-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,8 +1072,7 @@
 				INFOPLIST_FILE = "Cart&Mart/Resources/Cart-Mart-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1166,6 +1203,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A2078152C070DA700CEE67B /* Project object */;
 }

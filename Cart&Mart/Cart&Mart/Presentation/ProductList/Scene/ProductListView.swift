@@ -11,9 +11,7 @@ struct ProductListView: View {
   
   // MARK: - Properties
   @StateObject private var viewModel: DefaultProductListViewModel
-  
-  @EnvironmentObject private var navigationManager: NavigationManager
-  
+    
   private var showError: Binding<Bool> {
     Binding(
       get: { viewModel.viewContentState == .error },
@@ -55,30 +53,13 @@ struct ProductListView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemBackground))
     case .data:
-      ScrollView(.vertical, showsIndicators: false, content: {
-        VStack(spacing: 0) {
-          LazyVGrid(columns: gridLayout, spacing: rowSpacing, content: {
-            ForEach(Array(viewModel.productList.enumerated()), id: \.1.id) { (index, product) in
-              ProductItemView(product: product)
-                .onTapGesture {
-                  navigationManager.push(.productDetail(productID: product.id))
-                }
-                .accessibilityIdentifier("ProductItem_\(index)")
-            }
-          })
-          .accessibilityIdentifier("productListGridView")
-          .padding(15)
-        }
-      })
+      ProductListGridView(products: viewModel.productList)
     case .error:
-      ContentUnavailableView {
-        Label(viewModel.contentModel.title, systemImage: viewModel.contentModel.imageName ?? "")
-      } description: {
-        Text(viewModel.contentModel.message)
-      }
+      ErrorContentView(contentModel: viewModel.contentModel)
     }
   }
 }
+
 
 // MARK: - Preview
 #Preview {

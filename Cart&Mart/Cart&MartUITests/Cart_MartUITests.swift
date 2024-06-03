@@ -25,7 +25,7 @@ final class Cart_MartUITests: XCTestCase {
     let logoElement = app.images["CartAndMartLogo"]
     XCTAssertTrue(logoElement.waitForExistence(timeout: 5), "Cart and Mart, logo should be visible.")
 
-    let titleElement = app.images["CartAndMartTitle"]
+    let titleElement = app.staticTexts["CartAndMartTitle"]
     XCTAssertTrue(titleElement.waitForExistence(timeout: 5), "Cart and Mart, title should be visible.")
     
     let buttonElement = app.buttons["productListCartButton"]
