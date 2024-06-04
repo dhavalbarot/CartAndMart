@@ -20,6 +20,8 @@
 		5A732D852C09CAC800E56750 /* ProductDetailUseCase_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D842C09CAC800E56750 /* ProductDetailUseCase_Test.swift */; };
 		5A732D882C09CBBD00E56750 /* ProductListStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D872C09CBBD00E56750 /* ProductListStubs.swift */; };
 		5A732D8A2C09CBC900E56750 /* ProductDetailStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D892C09CBC900E56750 /* ProductDetailStubs.swift */; };
+		5A7C2C782C0F403100D4084D /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5A7C2C772C0F403100D4084D /* InlineSnapshotTesting */; };
+		5A7C2C7A2C0F403100D4084D /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5A7C2C792C0F403100D4084D /* SnapshotTesting */; };
 		5A92A0D72C0CDB5700E16832 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A92A0D62C0CDB5700E16832 /* ProductImageView.swift */; };
 		5AA5D8EE2C09D8A100C97659 /* ProductDetail_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA5D8ED2C09D8A100C97659 /* ProductDetail_Test.swift */; };
 		5AA5D8F22C09DE0500C97659 /* productDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5D8EF2C09DE0500C97659 /* productDetail.json */; };
@@ -36,8 +38,6 @@
 		5AB511B92C08DC48004F1A7B /* StockStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511B82C08DC48004F1A7B /* StockStatusView.swift */; };
 		5AB511BB2C08E2F7004F1A7B /* ProductAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511BA2C08E2F7004F1A7B /* ProductAdditionalInfoView.swift */; };
 		5AB511BD2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB511BC2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift */; };
-		5AC1D9AF2C0DFF6900F0B19D /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */; };
-		5AC1D9B12C0DFF6900F0B19D /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */; };
 		5AC1D9B42C0E0BBC00F0B19D /* ProductListView_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B32C0E0BBC00F0B19D /* ProductListView_Test.swift */; };
 		5AC1D9B62C0E3C0B00F0B19D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B52C0E3C0B00F0B19D /* Helper.swift */; };
 		5AC1D9B82C0E3FB800F0B19D /* ProductListGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D9B72C0E3FB800F0B19D /* ProductListGridView.swift */; };
@@ -199,8 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC1D9AF2C0DFF6900F0B19D /* InlineSnapshotTesting in Frameworks */,
-				5AC1D9B12C0DFF6900F0B19D /* SnapshotTesting in Frameworks */,
+				5A7C2C782C0F403100D4084D /* InlineSnapshotTesting in Frameworks */,
+				5A7C2C7A2C0F403100D4084D /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,8 +703,8 @@
 			);
 			name = "Cart&MartTests";
 			packageProductDependencies = (
-				5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */,
-				5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */,
+				5A7C2C772C0F403100D4084D /* InlineSnapshotTesting */,
+				5A7C2C792C0F403100D4084D /* SnapshotTesting */,
 			);
 			productName = "Cart&MartTests";
 			productReference = 5A20782D2C070DA900CEE67B /* Cart&MartTests.xctest */;
@@ -761,7 +761,7 @@
 			);
 			mainGroup = 5A2078142C070DA700CEE67B;
 			packageReferences = (
-				5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				5A7C2C762C0F403100D4084D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 5A20781E2C070DA700CEE67B /* Products */;
 			projectDirPath = "";
@@ -1209,7 +1209,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+		5A7C2C762C0F403100D4084D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
@@ -1220,14 +1220,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */ = {
+		5A7C2C772C0F403100D4084D /* InlineSnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = 5A7C2C762C0F403100D4084D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = InlineSnapshotTesting;
 		};
-		5AC1D9B02C0DFF6900F0B19D /* SnapshotTesting */ = {
+		5A7C2C792C0F403100D4084D /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = 5A7C2C762C0F403100D4084D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
