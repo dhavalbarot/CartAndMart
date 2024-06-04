@@ -14,6 +14,7 @@ Cart & Mart is sample application developed with SwiftUI, which provides user-fr
 - Designed for scalability 
 - Modular code
 - Unit Testing + UI Testing + Snapshot Testing
+- Accessibility
 
 ## API Details
 
