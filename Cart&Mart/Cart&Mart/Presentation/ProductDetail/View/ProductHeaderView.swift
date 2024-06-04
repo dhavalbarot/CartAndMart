@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - ProductHeaderView
 struct ProductHeaderView: View {
   
   // MARK: - PROPERTY
@@ -45,6 +46,7 @@ struct ProductHeaderView: View {
   }
 }
 
+// MARK: - Preview
 #Preview {
   ProductHeaderView(product: sampleProductDetail)
     .background(colorAccent)

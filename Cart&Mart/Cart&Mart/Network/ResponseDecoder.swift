@@ -7,12 +7,17 @@
 
 import Foundation
 
-//MARK: - ResponseDecoder
+// MARK: - ResponseDecoder
+/**
+ A protocol defining a method for decoding response data into a decodable object.
+
+ Conform to this protocol to provide custom implementations for decoding data received from network responses.
+ */
 protocol ResponseDecoder {
   func decode<T: Decodable>(_ data: Data) throws -> T
 }
 
-//MARK: - JSONResponseDecoder
+// MARK: - JSONResponseDecoder
 final class JSONResponseDecoder: ResponseDecoder {
   
   private let jsonDecoder = JSONDecoder()
@@ -24,7 +29,7 @@ final class JSONResponseDecoder: ResponseDecoder {
   }
 }
 
-//MARK: - JSONResponseDecoder
+// MARK: - RawDataResponseDecoder
 final class RawDataResponseDecoder: ResponseDecoder {
   
   init(){}

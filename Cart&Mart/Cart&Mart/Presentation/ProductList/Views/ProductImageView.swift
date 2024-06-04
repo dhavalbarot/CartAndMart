@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+// MARK: - ProductImageView
 struct ProductImageView: View {
   
+  // MARK: - Properties
   let imageURL: String
   let placeholderImage: Image?
   
+  // MARK: - Body
   var body: some View {
     AsyncImage(url: URL(string: imageURL)) { image in
       image
@@ -31,6 +34,7 @@ struct ProductImageView: View {
   }
 }
 
+// MARK: - Preview
 #Preview {
   let thumbnailURL = "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
   return ProductImageView(imageURL: thumbnailURL, placeholderImage: Image(systemName: SystemImageName.cart))

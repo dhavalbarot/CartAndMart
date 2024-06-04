@@ -47,7 +47,7 @@ final class DefaultProductListViewModel: ProductListViewModel {
   }
 }
 
-// MARK: - ProductListViewInput
+// MARK: - ProductListViewInput Implementation
 extension DefaultProductListViewModel {
   func fetchProductList() {
     viewContentState = .loading

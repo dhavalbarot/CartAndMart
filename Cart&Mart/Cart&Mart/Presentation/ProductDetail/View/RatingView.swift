@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - RatingView
 struct RatingView: View {
   
   // MARK: - PROPERTY

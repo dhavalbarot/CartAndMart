@@ -48,7 +48,7 @@ enum ViewContentState {
   case error
 }
 
-// MARK: - ImageName
+// MARK: - SystemImageName
 struct SystemImageName {
   static let basket = "basket"
   static let returnItem = "dollarsign.arrow.circlepath"
@@ -60,6 +60,7 @@ struct SystemImageName {
   static let backButton = "chevron.left"
 }
 
+// MARK: - ImageName
 struct ImageName {
   static let logo = "CartAndMartLogo"
   static let andLogo = "AndLogoGreen"

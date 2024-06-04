@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+// MARK: - ProductAdditionalInfoView
 struct ProductAdditionalInfoView: View {
+  
   // MARK: - Property
   let imageName: String
   let contentMessage: String
@@ -32,6 +34,7 @@ struct ProductAdditionalInfoView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
   ProductAdditionalInfoView(imageName: SystemImageName.returnItem, contentMessage: "30 day return policy")
 }

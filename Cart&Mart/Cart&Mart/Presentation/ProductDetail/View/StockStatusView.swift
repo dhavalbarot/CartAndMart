@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - StockStatusView
 struct StockStatusView: View {
   
   // MARK: - PROPERTY
@@ -42,7 +43,7 @@ struct StockStatusView: View {
   }
 }
 
-// MARK: - PREVIEW
+// MARK: - Preview
 #Preview {
   StockStatusView(stockStatus: StockStatus.inStock)
     .previewLayout(.sizeThatFits)

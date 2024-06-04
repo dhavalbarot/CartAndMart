@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+// MARK: - ProductListView
 struct ProductListView: View {
   
   // MARK: - Properties
   @StateObject private var viewModel: DefaultProductListViewModel
-    
+  
   private var showError: Binding<Bool> {
     Binding(
       get: { viewModel.viewContentState == .error },
@@ -29,7 +30,7 @@ struct ProductListView: View {
     NavigationStack {
       ZStack {
         VStack(spacing: 0) {
-          NavigationBarView()          
+          NavigationBarView()
           getBodyItem(viewModel.viewContentState)
         }
         .background(colorBackground.ignoresSafeArea(.all, edges: .all))
@@ -59,7 +60,6 @@ struct ProductListView: View {
     }
   }
 }
-
 
 // MARK: - Preview
 #Preview {

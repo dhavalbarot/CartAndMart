@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - ErrorContentView
 struct ErrorContentView: View {
   
   // MARK: - Property
@@ -22,6 +23,7 @@ struct ErrorContentView: View {
   }
 }
 
+// MARK: - Preview
 #Preview {
   let contentModel = ContentModel(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: StringConstants.tryAgainLater)
   return ErrorContentView(contentModel: contentModel)

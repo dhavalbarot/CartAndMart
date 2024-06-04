@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - DefaultProductDetailRepository
 final class DefaultProductDetailRepository {
   private let dataTransferService: DataTransferService
   
@@ -15,6 +16,7 @@ final class DefaultProductDetailRepository {
   }
 }
 
+// MARK: - ProductDetailRepository Implementation
 extension DefaultProductDetailRepository: ProductDetailRepository {
   func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, any Error>) -> Void) -> (any Cancellable)? {
     let task = RepositoryTask()

@@ -7,7 +7,19 @@
 
 import Foundation
 
-//MARK: - NetworkError
+// MARK: - NetworkError
+/**
+ An enumeration representing possible network-related errors.
+
+ Conform to this enum to handle different types of network errors that may occur during network interactions.
+
+ - Cases:
+   - error(statusCode: Int, data: Data?): Indicates an error with a specific HTTP status code and optional response data.
+   - notConnected: Indicates that the device is not connected to the network.
+   - cancelled: Indicates that the network operation was cancelled.
+   - generic(Error): Indicates a generic error with an associated `Error` object.
+   - urlGeneration: Indicates an error occurred while generating a URL.
+ */
 enum NetworkError: Error {
   case error(statusCode: Int, data: Data?)
   case notConnected
@@ -16,27 +28,34 @@ enum NetworkError: Error {
   case urlGeneration
 }
 
-//MARK: - NetworkError
+// MARK: - NetworkError
 extension NetworkError {
-    var isNotFoundError: Bool { return hasStatusCode(404) }
-    
-    func hasStatusCode(_ codeError: Int) -> Bool {
-        switch self {
-        case let .error(code, _):
-            return code == codeError
-        default: return false
-        }
+  var isNotFoundError: Bool { return hasStatusCode(404) }
+  
+  func hasStatusCode(_ codeError: Int) -> Bool {
+    switch self {
+    case let .error(code, _):
+      return code == codeError
+    default: return false
     }
+  }
 }
 
-//MARK: - NetworkErrorLogger
+// MARK: - NetworkErrorLogger
+/**
+ A protocol defining methods for logging network request, response, and error details.
+ 
+ Conform to this protocol to implement custom logging behaviors for network interactions.
+ 
+ - Note: Implement `log(request:)`, `log(responseData:response:)`, and `log(error:)` to handle logging of request details, response data, and errors respectively.
+ */
 protocol NetworkErrorLogger {
   func log(request: URLRequest)
   func log(responseData data: Data?, response: URLResponse?)
   func log(error: Error)
 }
 
-//MARK: - DefaultNetworkErrorLogger
+// MARK: - DefaultNetworkErrorLogger
 final class DefaultNetworkErrorLogger: NetworkErrorLogger {
   init(){}
   
@@ -45,7 +64,7 @@ final class DefaultNetworkErrorLogger: NetworkErrorLogger {
     print("request: \(String(describing: request.url))")
     print("headers: \(request.allHTTPHeaderFields ?? [:])")
     print("method: \(request.httpMethod ?? "")")
-    if let httpBody = request.httpBody, 
+    if let httpBody = request.httpBody,
         let result = ((try? JSONSerialization.jsonObject(with: httpBody, options: []) as? [String: AnyObject]) as [String: AnyObject]??) {
       printIfDebug("body: \(String(describing: result))")
     } else if let httpBody = request.httpBody, let resultString = String(data: httpBody, encoding: .utf8) {
@@ -66,9 +85,16 @@ final class DefaultNetworkErrorLogger: NetworkErrorLogger {
 }
 
 
-//MARK: - PrintIfDebug
+// MARK: - PrintIfDebug
+/**
+ Prints the given string to the console if the build configuration is set to DEBUG.
+ 
+ Use this function to print debugging information that should only be active in DEBUG builds.
+ 
+ - Parameter string: The string to print.
+ */
 func printIfDebug(_ string: String) {
-    #if DEBUG
-    print(string)
-    #endif
+#if DEBUG
+  print(string)
+#endif
 }

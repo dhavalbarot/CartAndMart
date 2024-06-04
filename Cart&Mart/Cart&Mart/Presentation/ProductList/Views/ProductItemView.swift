@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - ProductItemView
 struct ProductItemView: View {
   
   // MARK: - Property
@@ -24,7 +25,6 @@ struct ProductItemView: View {
           ProductImageView(imageURL: product.thumbnail, placeholderImage: Image(systemName: SystemImageName.cart))
         }
         .cornerRadius(12)
-
         
         // NAME
         Text(product.title)
@@ -34,7 +34,7 @@ struct ProductItemView: View {
           .frame(height: 40)
           .lineLimit(2)
         
-        // PRICE
+        // PRICE & RATTING
         HStack(alignment: .center, spacing: 5, content: {
           Text(product.price, format: .currency(code: "USD"))
             .fontWeight(.semibold)
@@ -49,7 +49,6 @@ struct ProductItemView: View {
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
-          
           Image(systemName: SystemImageName.rattingStar)
             .resizable()
             .aspectRatio(contentMode: .fit)

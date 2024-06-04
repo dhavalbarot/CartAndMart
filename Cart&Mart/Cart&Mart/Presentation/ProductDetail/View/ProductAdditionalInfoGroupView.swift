@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+// MARK: - ProductAdditionalInfoGroupView
 struct ProductAdditionalInfoGroupView: View {
+  
   // MARK: - Property
   let product: ProductDetail
   
@@ -24,6 +26,7 @@ struct ProductAdditionalInfoGroupView: View {
   }
 }
 
+// MARK: - Preview
 #Preview {
   ProductAdditionalInfoGroupView(product: sampleProductDetail)
 }

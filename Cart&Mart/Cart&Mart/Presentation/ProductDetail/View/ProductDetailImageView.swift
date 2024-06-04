@@ -7,16 +7,18 @@
 
 import SwiftUI
 
+// MARK: - ProductDetailImageView
 struct ProductDetailImageView: View {
-  // MARK: - PROPERTY
+  
+  // MARK: - Property
   let product: ProductDetail
   
   @State private var isAnimating: Bool = false
   
-  // MARK: - BODY
+  // MARK: - Body
   var body: some View {
     HStack(alignment: .center, spacing: 6, content: {
-      // PRICE
+      //PRICE
       VStack(alignment: .leading, spacing: 6, content: {
         Text("Price")
           .fontWeight(.semibold)
@@ -33,10 +35,10 @@ struct ProductDetailImageView: View {
       .accessibilityAddTraits(.isStaticText)
       .accessibilityLabel(Text(product.price, format: .currency(code: "USD")))
       .accessibilityIdentifier("productDetailPriceText")
-
+      
       Spacer()
       
-      // PHOTO
+      //IMAGE
       ProductImageView(imageURL: product.thumbnail, placeholderImage: nil)
     })
     .padding(.horizontal)
@@ -48,7 +50,7 @@ struct ProductDetailImageView: View {
   }
 }
 
-// MARK: - BODY
+// MARK: - Preview
 #Preview {
   ProductDetailImageView(product: sampleProductDetail)
     .previewLayout(.sizeThatFits)

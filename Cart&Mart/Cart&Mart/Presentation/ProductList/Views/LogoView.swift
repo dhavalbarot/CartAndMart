@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+// MARK: - LogoView
 struct LogoView: View {
+  
   // MARK: - Body
   var body: some View {
     HStack(spacing: 4) {

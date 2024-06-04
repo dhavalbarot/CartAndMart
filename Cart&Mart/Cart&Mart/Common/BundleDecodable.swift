@@ -7,7 +7,18 @@
 
 import Foundation
 
+// MARK: - Bundle
 extension Bundle {
+  /**
+   Decodes a Codable object from a file.
+
+   - Parameter file: The name of the file containing the Codable object data.
+   - Returns: An instance of type `T`, decoded from the file.
+
+   - Note: The file should be located in the application's bundle or filesystem accessible to the application.
+
+   - Throws: An error if decoding fails, such as `DecodingError.dataCorrupted` or `DecodingError.keyNotFound`.
+  **/
   func decode<T: Codable>(_ file: String) -> T {
     
     // Creating a decoder

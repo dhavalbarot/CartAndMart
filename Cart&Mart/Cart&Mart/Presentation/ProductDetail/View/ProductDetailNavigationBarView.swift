@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+// MARK: - ProductDetailNavigationBarView
 struct ProductDetailNavigationBarView: View {
   
   // MARK: - PROPERTY
   @EnvironmentObject private var navigationManager: NavigationManager
-    
+  
   // MARK: - BODY
   var body: some View {
     HStack {

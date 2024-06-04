@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+// MARK: - ProductListGridView
 struct ProductListGridView: View {
   
   // MARK: - Environment Property
   @EnvironmentObject private var navigationManager: NavigationManager
-
+  
   // MARK: - Property
   let products: [Product]
-
+  
   // MARK: - Body
   var body: some View {
     ScrollView(.vertical, showsIndicators: false, content: {

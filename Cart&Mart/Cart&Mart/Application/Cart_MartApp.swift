@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct Cart_MartApp: App {
+
   var body: some Scene {
     WindowGroup {
+      // Initial view which contians and host navigation stack and other views
       NavigationView()
     }
   }

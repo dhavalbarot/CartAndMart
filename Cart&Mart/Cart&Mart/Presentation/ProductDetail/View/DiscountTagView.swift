@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+// MARK: - DiscountTagView
 struct DiscountTagView: View {
   
+  // MARK: - Property
   let discount: Double
   
+  // MARK: - Body
   var body: some View {
     HStack(spacing: 5, content: {
       Image(systemName: SystemImageName.discountTag)

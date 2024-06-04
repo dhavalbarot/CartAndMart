@@ -50,7 +50,7 @@ final class DefaultProductDetailViewModel: ProductDetailViewModel {
   }
 }
 
-// MARK: - ProductDetailViewInput
+// MARK: - ProductDetailViewInput Implementation
 extension DefaultProductDetailViewModel {
   func fetchProductDetail() {
     viewContentState = .loading

@@ -7,19 +7,46 @@
 
 import Foundation
 
-//MARK: - NetworkCancellable
+// MARK: - NetworkCancellable
+/**
+ A protocol representing a cancellable network task.
+ 
+ Conform to this protocol to define objects that can cancel network requests or tasks.
+ 
+ - Note: Implement `cancel()` to define the cancellation behavior of the network task.
+ */
 protocol NetworkCancellable {
+  /**
+   Cancels the network task.
+   
+   Implement this method to cancel the ongoing network task associated with the conforming object.
+   */
   func cancel()
 }
 
-//MARK: - NetworkService
+// MARK: - NetworkService
+/**
+ A protocol defining methods for making network requests and handling responses.
+
+ Conform to this protocol to implement networking functionality, including making requests and handling responses.
+
+ - Note: Implement `request(endpoint:completion:)` to initiate a network request with a `Requestable` endpoint.
+ */
 protocol NetworkService {
+  /// Defines a completion handler type for network request responses.
   typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
   
+  /**
+   Initiates a network request with the provided `Requestable` endpoint.
+   
+   - Parameter endpoint: The `Requestable` object defining details of the network request.
+   - Parameter completion: A closure that receives the result of the network request: a `Result` enum containing either response data (`Data?`) or an error (`NetworkError`).
+   - Returns: An object conforming to `NetworkCancellable` that can be used to cancel the request, or `nil` if cancellation is not supported.
+   */
   func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
 }
 
-//MARK: - DefaultNetworkService
+// MARK: - DefaultNetworkService
 final class DefaultNetworkService: NetworkService {
   
   private let config: NetworkConfigurable
