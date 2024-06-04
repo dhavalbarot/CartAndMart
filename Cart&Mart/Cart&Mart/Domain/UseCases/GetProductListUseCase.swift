@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 // MARK: - GetProductListUseCase
 
@@ -18,7 +19,7 @@ import Foundation
  - Returns: An optional `Cancellable` to cancel the operation.
  */
 protocol GetProductListUseCase {
-  func getProductList(completion: @escaping (Result<ProductList, Error>) -> Void) -> Cancellable?
+  func getProductListPromise() -> Promise<ProductList>
 }
 
 // MARK: - DefaultGetProductListUseCase
@@ -35,7 +36,16 @@ final class DefaultGetProductListUseCase {
 
 // MARK: - GetProductListUseCase Implemention
 extension DefaultGetProductListUseCase: GetProductListUseCase {
-  func getProductList(completion: @escaping (Result<ProductList, any Error>) -> Void) -> (any Cancellable)? {
-    return repository.getProductList(completion: completion)
+  func getProductListPromise() -> Promise<ProductList> {
+    return Promise<ProductList> { seal in
+      repository.getProductList { result in
+        switch result {
+        case .success(let productList):
+          seal.fulfill(productList)
+        case .failure(let error):
+          seal.reject(error)
+        }
+      }
+    }
   }
 }

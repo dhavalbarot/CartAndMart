@@ -20,6 +20,7 @@
 		5A732D852C09CAC800E56750 /* ProductDetailUseCase_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D842C09CAC800E56750 /* ProductDetailUseCase_Test.swift */; };
 		5A732D882C09CBBD00E56750 /* ProductListStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D872C09CBBD00E56750 /* ProductListStubs.swift */; };
 		5A732D8A2C09CBC900E56750 /* ProductDetailStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D892C09CBC900E56750 /* ProductDetailStubs.swift */; };
+		5A7C2C6F2C0F158700D4084D /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5A7C2C6E2C0F158700D4084D /* PromiseKit */; };
 		5A92A0D72C0CDB5700E16832 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A92A0D62C0CDB5700E16832 /* ProductImageView.swift */; };
 		5AA5D8EE2C09D8A100C97659 /* ProductDetail_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA5D8ED2C09D8A100C97659 /* ProductDetail_Test.swift */; };
 		5AA5D8F22C09DE0500C97659 /* productDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5D8EF2C09DE0500C97659 /* productDetail.json */; };
@@ -194,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A7C2C6F2C0F158700D4084D /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +681,9 @@
 			dependencies = (
 			);
 			name = "Cart&Mart";
+			packageProductDependencies = (
+				5A7C2C6E2C0F158700D4084D /* PromiseKit */,
+			);
 			productName = "Cart&Mart";
 			productReference = 5A20781D2C070DA700CEE67B /* Cart&Mart.app */;
 			productType = "com.apple.product-type.application";
@@ -757,6 +762,7 @@
 			mainGroup = 5A2078142C070DA700CEE67B;
 			packageReferences = (
 				5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				5A7C2C6D2C0F158600D4084D /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 5A20781E2C070DA700CEE67B /* Products */;
 			projectDirPath = "";
@@ -1205,6 +1211,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A7C2C6D2C0F158600D4084D /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.2;
+			};
+		};
 		5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -1216,6 +1230,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A7C2C6E2C0F158700D4084D /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A7C2C6D2C0F158600D4084D /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
 		5AC1D9AE2C0DFF6900F0B19D /* InlineSnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AC1D9AD2C0DFF6900F0B19D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
