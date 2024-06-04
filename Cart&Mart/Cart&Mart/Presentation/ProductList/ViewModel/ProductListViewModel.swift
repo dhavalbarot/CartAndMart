@@ -51,18 +51,16 @@ final class DefaultProductListViewModel: ProductListViewModel {
 extension DefaultProductListViewModel {
   func fetchProductList() {
     viewContentState = .loading
-    Task {
-      loadingTask = getProductListUseCase.getProductList { [weak self] result in
-        DispatchQueue.main.async { [weak self] in
-          guard let self else { return }
-          switch result {
-          case .success(let productList):
-            self.productList = productList.products
-            self.viewContentState = .data
-          case .failure(let error):
-            self.viewContentState = .error
-            self.contentModel = .init(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
-          }
+    loadingTask = getProductListUseCase.getProductList { [weak self] result in
+      DispatchQueue.main.async { [weak self] in
+        guard let self else { return }
+        switch result {
+        case .success(let productList):
+          self.productList = productList.products
+          self.viewContentState = .data
+        case .failure(let error):
+          self.viewContentState = .error
+          self.contentModel = .init(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
         }
       }
     }

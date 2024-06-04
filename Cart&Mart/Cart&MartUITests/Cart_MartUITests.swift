@@ -57,17 +57,20 @@ final class Cart_MartUITests: XCTestCase {
     
     // Add assertions to verify expected output
     let backButtonItem = app.buttons["productDetailBackButton"]
+    
+    // Assert
     XCTAssertTrue(backButtonItem.waitForExistence(timeout: 5), "Back button should be visible.")
   }
   
   func testProductDetailExistence() throws {
+    // Arrange
     let grid = app.otherElements["productListGridView"]
     let predicate = NSPredicate(format: "identifier BEGINSWITH 'ProductItem_'")
     let gridItems = grid.descendants(matching: .any).matching(predicate)
     let firstGridItem = gridItems.element(boundBy: 0)
     firstGridItem.tap()
 
-    //Detail Screen Elements
+    // Act
     let categoryElement = app.staticTexts["productDetailCategoryText"]
     let titleElement = app.staticTexts["productDetailTitleText"]
     let brandElement = app.staticTexts["productDetailBrandText"]
@@ -75,7 +78,7 @@ final class Cart_MartUITests: XCTestCase {
     let ratingElement = app.staticTexts["ratingView"]
     let descriiptionElement = app.staticTexts["productDetailDescriptionText"]
 
-    //Add more elements...
+    // Assert
     XCTAssertTrue(categoryElement.waitForExistence(timeout: 5), "Category should be visible")
     XCTAssertTrue(titleElement.waitForExistence(timeout: 5), "Title should be visible")
     XCTAssertTrue(brandElement.waitForExistence(timeout: 5), "Brand should be visible")

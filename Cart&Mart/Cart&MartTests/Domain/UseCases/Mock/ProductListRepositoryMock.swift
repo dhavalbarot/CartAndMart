@@ -8,10 +8,12 @@
 import Foundation
 @testable import Cart_Mart
 
+// MARK: - ProductListRepositoryMockError
 enum ProductListRepositoryMockError: Error {
     case failed
 }
 
+// MARK: - ProductListRepositoryMock
 final class ProductListRepositoryMock: ProductListRepository {
   let result: Result<ProductList, Error>
   

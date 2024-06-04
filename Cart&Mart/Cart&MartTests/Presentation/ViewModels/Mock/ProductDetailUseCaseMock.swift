@@ -8,6 +8,7 @@
 import Foundation
 @testable import Cart_Mart
 
+// MARK: - ProductDetailUseCaseMock
 final class ProductDetailUseCaseMock: GetProductDetailUseCase {
   let result: Result<ProductDetail, Error>
   

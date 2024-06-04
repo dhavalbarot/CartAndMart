@@ -10,24 +10,38 @@ import SnapshotTesting
 @testable import Cart_Mart
 
 final class ProductDetailView_Tests: XCTestCase {
+  
   func testProductDetailLoadingView() {
+    // Arrange
     let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
     let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
+    
+    // Act
     let productDetailLoadingView = productDetailView.getBodyItem(.loading).toVC
-    assertSnapshot(of: productDetailLoadingView, as: .image, named: "ProductDetailLoadingView", testName: "ProductDetailLoadingViewTest")
+    
+    // Assert
+    assertSnapshot(of: productDetailLoadingView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailLoadingView", testName: "ProductDetailLoadingViewTest")
   }
   
   func testProductDetailDataView() {
+    // Arrange
     let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
     let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
+    
+    // Act
     let productDetailDataView = productDetailView.productDetailContentView(testProductDetail).toVC
-    assertSnapshot(of: productDetailDataView, as: .image, named: "ProductDetailDataView", testName: "ProductDetailDataTest")
+    
+    // Assert
+    assertSnapshot(of: productDetailDataView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailDataView", testName: "ProductDetailDataTest")
   }
   
   func testNavigationBarView() {
+    // Act
     let navigationView = ProductDetailNavigationBarView().toVC
-    assertSnapshot(of: navigationView, as: .image, named: "ProductDetailNavigationBarView", testName: "ProductDetailNavigationBarViewTest")
+    
+    // Assert
+    assertSnapshot(of: navigationView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailNavigationBarView", testName: "ProductDetailNavigationBarViewTest")
   }
 }
