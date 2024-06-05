@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 @testable import Cart_Mart
 
 enum ProductUseCaseError: Error {
@@ -14,16 +15,21 @@ enum ProductUseCaseError: Error {
 }
 
 final class ProductListUseCaseMock: GetProductListUseCase {
-  let result: Result<ProductList, Error>
+  let productList: ProductList?
+  let error: Error?
   
-  init(result: Result<ProductList, Error>) {
-    self.result = result
+  init(productList: ProductList? = nil, error: Error? = nil) {
+    self.productList = productList
+    self.error = error
   }
   
-  func getProductList(completion: @escaping (Result<ProductList, Error>) -> Void) -> Cancellable? {
-    completion(result)
-    return nil
+  func getProductListPromise() -> PromiseKit.Promise<Cart_Mart.ProductList> {
+    return Promise<ProductList> { seal in
+      if let productList = productList {
+        seal.fulfill(productList)
+      } else {
+        seal.reject(error ?? ProductUseCaseError.productListFailure)
+      }
+    }
   }
 }
-
-

@@ -14,7 +14,7 @@ import SwiftUI
 final class ProductListView_Test: XCTestCase {
 
   func testProductListLoadingView() {
-    let mockUseCase = ProductListUseCaseMock(result: .success(testProductListData))
+    let mockUseCase = ProductListUseCaseMock(productList: testProductListData, error: nil)
     let model = DefaultProductListViewModel(productListUseCase: mockUseCase)
     let productListView = ProductListView(viewModel: model)
     let productListLoadingView = productListView.getBodyItem(.loading).toVC

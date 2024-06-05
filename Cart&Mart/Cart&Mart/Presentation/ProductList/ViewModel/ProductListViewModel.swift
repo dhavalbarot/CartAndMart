@@ -36,12 +36,6 @@ final class DefaultProductListViewModel: ProductListViewModel {
 
   private let getProductListUseCase: GetProductListUseCase
 
-  private var loadingTask: Cancellable? {
-    willSet {
-      loadingTask?.cancel()
-    }
-  }
-
   // MARK: - Initializer
   init(productListUseCase: GetProductListUseCase) {
     self.getProductListUseCase = productListUseCase

@@ -1,5 +1,5 @@
 {
-  "originHash" : "a64c039496e4b45e6facd91043e60d187cadbfc4536843445b5b7f9de21b9b44",
+  "originHash" : "78cf34eb274af306979a22c130b7d121e93c808f1a75764c285734c78b197fd9",
   "pins" : [
     {
       "identity" : "promisekit",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-snapshot-testing",
       "state" : {
-        "revision" : "625ccca8570773dd84a34ee51a81aa2bc5a4f97a",
-        "version" : "1.16.0"
+        "branch" : "main",
+        "revision" : "837238a091f56d935469d4fdadc23fef9bb7e2d1"
       }
     },
     {

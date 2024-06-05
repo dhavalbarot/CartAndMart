@@ -13,14 +13,13 @@ enum ProductListRepositoryMockError: Error {
 }
 
 final class ProductListRepositoryMock: ProductListRepository {
-  let result: Result<ProductList, Error>
   
-  init(result: Result<ProductList, Error>) {
-    self.result = result
-  }
+  var result: Result<ProductList, Error>?
   
-  func getProductList(completion: @escaping (Result<ProductList, Error>) -> Void) -> Cancellable? {
-    completion(result)
+  func getProductList(completion: @escaping (Result<ProductList, any Error>) -> Void) -> (any Cancellable)? {
+    if let result = result {
+      completion(result)
+    }
     return nil
   }
 }

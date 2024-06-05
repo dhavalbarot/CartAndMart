@@ -6,17 +6,25 @@
 //
 
 import Foundation
+import PromiseKit
 @testable import Cart_Mart
 
 final class ProductDetailUseCaseMock: GetProductDetailUseCase {
-  let result: Result<ProductDetail, Error>
+  let productDetail: ProductDetail?
+  let error: Error?
   
-  init(result: Result<ProductDetail, Error>) {
-    self.result = result
+  init(productDetail: ProductDetail? = nil, error: Error? = nil){
+    self.productDetail = productDetail
+    self.error = error
   }
   
-  func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, Error>) -> Void) -> Cancellable? {
-    completion(result)
-    return nil
+  func getProductDetail(_ productID: Int) -> Promise<ProductDetail> {
+    return Promise<ProductDetail> { seal in
+      if let detail = productDetail {
+        seal.fulfill(detail)
+      } else {
+        seal.reject(error ?? ProductUseCaseError.productDetailFailure)
+      }
+    }
   }
 }

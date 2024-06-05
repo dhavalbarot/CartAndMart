@@ -11,7 +11,7 @@ import XCTest
 final class ProductDetailViewModel_Test: XCTestCase {
   func test_fetchProductListSucess() {
     let expectation = XCTestExpectation()
-    let productDetailUseCaseMock = ProductDetailUseCaseMock(result: .success(testProductDetail))
+    let productDetailUseCaseMock = ProductDetailUseCaseMock(productDetail: ProductDetail.stub)
     let model = DefaultProductDetailViewModel(productID: defaultProductDetailId, productDetailUseCase: productDetailUseCaseMock)
     
     model.fetchProductDetail()
@@ -27,7 +27,7 @@ final class ProductDetailViewModel_Test: XCTestCase {
   
   func test_fetchProductListFailure() {
     let expectation = XCTestExpectation()
-    let productDetailUseCaseMock = ProductDetailUseCaseMock(result: .failure(ProductUseCaseError.productDetailFailure))
+    let productDetailUseCaseMock = ProductDetailUseCaseMock(error: ProductUseCaseError.productDetailFailure)
     let model = DefaultProductDetailViewModel(productID: defaultProductDetailId, productDetailUseCase: productDetailUseCaseMock)
 
     model.fetchProductDetail()
@@ -42,7 +42,7 @@ final class ProductDetailViewModel_Test: XCTestCase {
   
   func test_fetchProductDetailAfterDeallocation() {
     let expectation = XCTestExpectation()
-    let productDetailUseCaseMock = ProductDetailUseCaseMock(result: .failure(ProductUseCaseError.productDetailFailure))
+    let productDetailUseCaseMock = ProductDetailUseCaseMock(error: ProductUseCaseError.productDetailFailure)
     var model: DefaultProductDetailViewModel? = DefaultProductDetailViewModel(productID: defaultProductDetailId, productDetailUseCase: productDetailUseCaseMock)
 
     model?.fetchProductDetail()

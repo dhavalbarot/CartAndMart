@@ -12,7 +12,7 @@ final class ProductListViewModelTest_Test: XCTestCase {
   
   func test_fetchProductListSucess() {
     let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .success(testProductListData))
+    let productListUseCaseMock = ProductListUseCaseMock(productList: ProductList.stub)
     let model = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
     
     model.fetchProductList()
@@ -28,7 +28,7 @@ final class ProductListViewModelTest_Test: XCTestCase {
   
   func test_fetchProductListFailure() {
     let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .failure(ProductUseCaseError.productListFailure))
+    let productListUseCaseMock = ProductListUseCaseMock(error: ProductUseCaseError.productListFailure)
     let model = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
     
     model.fetchProductList()
@@ -43,7 +43,7 @@ final class ProductListViewModelTest_Test: XCTestCase {
   
   func test_fetchProductListAfterDeallocation() {
     let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .failure(ProductUseCaseError.productListFailure))
+    let productListUseCaseMock = ProductListUseCaseMock(error: ProductUseCaseError.productListFailure)
     var model: DefaultProductListViewModel? = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
     
     model?.fetchProductList()

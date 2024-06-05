@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 // MARK: - ProductDetailViewInput
 protocol ProductDetailViewModelInput {
@@ -36,12 +37,6 @@ final class DefaultProductDetailViewModel: ProductDetailViewModel {
   @Published private(set) var productID: Int
 
   private let getProductDetailUseCase: GetProductDetailUseCase
-  
-  private var loadingTask: Cancellable? {
-    willSet {
-      loadingTask?.cancel()
-    }
-  }
 
   // MARK: - Initializer
   init(productID: Int, productDetailUseCase: GetProductDetailUseCase) {
@@ -54,20 +49,14 @@ final class DefaultProductDetailViewModel: ProductDetailViewModel {
 extension DefaultProductDetailViewModel {
   func fetchProductDetail() {
     viewContentState = .loading
-    Task {
-      loadingTask = getProductDetailUseCase.getProductDetail(productID, completion: { [weak self] result in
-        DispatchQueue.main.async { [weak self] in
-          guard let self else { return }
-          switch result {
-          case .success(let productDetail):
-            self.productDetail = productDetail
-            self.viewContentState = .data
-          case .failure(let error):
-            self.viewContentState = .error
-            self.contentModel = .init(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
-          }
-        }
-      })
+    firstly {
+      getProductDetailUseCase.getProductDetail(productID)
+    } .done { productDetail in
+      self.productDetail = productDetail
+      self.viewContentState = .data
+    } .catch { error in
+      self.viewContentState = .error
+      self.contentModel = .init(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
     }
   }
 }

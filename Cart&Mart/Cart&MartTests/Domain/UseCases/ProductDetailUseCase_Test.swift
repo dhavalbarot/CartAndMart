@@ -9,33 +9,58 @@ import XCTest
 @testable import Cart_Mart
 
 final class ProductDetailUseCase_Test: XCTestCase {
-
+  var useCase: GetProductDetailUseCase!
+  var mockRepository: ProductDetailRepositoryMock!
+  
+  override func setUp() {
+    super.setUp()
+    mockRepository = ProductDetailRepositoryMock()
+    useCase = DefaultGetProductDetailUseCase(repository: mockRepository)
+  }
+  
+  override func tearDown() {
+    useCase = nil
+    mockRepository = nil
+    super.tearDown()
+  }
+  
   func test_getProductDetail_success() {
-    var productDetail: ProductDetail? = nil
-    let productDetailStub = ProductDetail.stub
-    let productListRepositoryMock = ProductDetailRepositoryMock(result: .success(productDetailStub))
-    let useCase = DefaultGetProductDetailUseCase(repository: productListRepositoryMock)
+    // Arrange
+    let expectedProductDetail = ProductDetail.stub
+    mockRepository.result = .success(ProductDetail.stub)
     
-    _ = useCase.getProductDetail(ProductDetail.stub.id, completion: { result in
-      if case let .success(objProductDetail) = result {
-        productDetail = objProductDetail
-      }
-    })
+    // Act
+    let promise = useCase.getProductDetail(1)
     
-    XCTAssertTrue((productDetail != nil && productDetail?.id == productDetailStub.id))
+    // Assert
+    let expectation = self.expectation(description: "ProductDetail fetched successfully")
+    promise.done { productDetail in
+      XCTAssertEqual(productDetail, expectedProductDetail)
+      expectation.fulfill()
+    }.catch { error in
+      XCTFail("Expected success but got error: \(error)")
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
   }
   
   func test_getProductDetail_failure() {
-    var error: Error? = nil
-    let productListRepositoryMock = ProductDetailRepositoryMock(result: .failure(ProductDetailRepositoryMockError.failed))
-    let useCase = DefaultGetProductDetailUseCase(repository: productListRepositoryMock)
+    // Given
+    let expectedError = ProductDetailRepositoryMockError.failed
+    mockRepository.result = .failure(expectedError)
     
-    _ = useCase.getProductDetail(ProductDetail.stub.id, completion: { result in
-      if case let .failure(objError) = result {
-        error = objError
-      }
-    })
+    // When
+    let promise = useCase.getProductDetail(1)
     
-    XCTAssertNotNil(error)
+    // Then
+    let expectation = self.expectation(description: "ProductDetail fetch failed")
+    promise.done { productDetail in
+      XCTFail("Expected error but got success with product detail: \(productDetail)")
+    }.catch { error in
+      XCTAssertEqual(expectedError, ProductDetailRepositoryMockError.failed)
+      expectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
   }
 }

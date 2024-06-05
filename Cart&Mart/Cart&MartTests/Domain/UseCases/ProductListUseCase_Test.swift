@@ -6,35 +6,63 @@
 //
 
 import XCTest
+import PromiseKit
 @testable import Cart_Mart
 
 final class ProductListUseCase_Test: XCTestCase {
-
-  func test_getProductList_success() {
-    var productList: ProductList? = nil
-    let productListRepositoryMock = ProductListRepositoryMock(result: .success(ProductList.stub))
-    let useCase = DefaultGetProductListUseCase(repository: productListRepositoryMock)
-    
-    _ = useCase.getProductList(completion: { result in
-      if case let .success(objProductList) = result {
-        productList = objProductList
-      }
-    })
-    
-    XCTAssertNotNil(productList)
+  
+  var useCase: GetProductListUseCase!
+  var mockRepository: ProductListRepositoryMock!
+  
+  override func setUp() {
+    super.setUp()
+    mockRepository = ProductListRepositoryMock()
+    useCase = DefaultGetProductListUseCase(repository: mockRepository)
   }
   
-  func test_getProductList_failure() {
-    var error: Error? = nil
-    let productListRepositoryMock = ProductListRepositoryMock(result: .failure(ProductListRepositoryMockError.failed))
-    let useCase = DefaultGetProductListUseCase(repository: productListRepositoryMock)
+  override func tearDown() {
+    useCase = nil
+    mockRepository = nil
+    super.tearDown()
+  }
+  
+  func testGetProductListPromiseSuccess() {
+    // Arrange
+    let expectedProductList = ProductList.stub
+    mockRepository.result = .success(expectedProductList)
     
-    _ = useCase.getProductList(completion: { result in
-      if case let .failure(objError) = result {
-        error = objError
-      }
-    })
+    // Act
+    let promise = useCase.getProductListPromise()
     
-    XCTAssertNotNil(error)
+    // Assert
+    let expectation = self.expectation(description: "ProductList fetched successfully")
+    promise.done { productList in
+      XCTAssertEqual(productList, expectedProductList)
+      expectation.fulfill()
+    }.catch { error in
+      XCTFail("Expected success but got error: \(error)")
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
+  }
+  
+  func testGetProductListPromiseFailure() {
+    // Arrange
+    let expectedError = ProductListRepositoryMockError.failed
+    mockRepository.result = .failure(expectedError)
+    
+    // Act
+    let promise = useCase.getProductListPromise()
+    
+    // Assert
+    let expectation = self.expectation(description: "ProductList fetch failed")
+    promise.done { productList in
+      XCTFail("Expected error but got success with product list: \(productList)")
+    }.catch { error in
+      XCTAssertEqual(expectedError, ProductListRepositoryMockError.failed)
+      expectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
   }
 }

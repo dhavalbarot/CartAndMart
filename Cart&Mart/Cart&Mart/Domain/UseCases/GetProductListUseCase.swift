@@ -11,14 +11,16 @@ import PromiseKit
 // MARK: - GetProductListUseCase
 
 /**
- A protocol for fetching product list.
+ A protocol defining a use case for retrieving a product list.
 
- Conform to this protocol to implement a method that fetches product list asynchronously.
-
- - Parameter completion: A closure with `Result<ProductList, Error>`.
- - Returns: An optional `Cancellable` to cancel the operation.
+ Conform to this protocol to implement functionality for fetching a product list using a promise-based approach.
  */
 protocol GetProductListUseCase {
+  /**
+   Retrieves a product list as a `Promise`.
+   
+   - Returns: A `Promise` object that resolves with a `ProductList` on success or an error on failure.
+   */
   func getProductListPromise() -> Promise<ProductList>
 }
 

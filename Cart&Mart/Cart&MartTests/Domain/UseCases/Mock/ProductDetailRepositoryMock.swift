@@ -14,22 +14,11 @@ enum ProductDetailRepositoryMockError: Error {
 
 final class ProductDetailRepositoryMock: ProductDetailRepository {
   
-  let result: Result<ProductDetail, Error>
-  
-  init(result: Result<ProductDetail, Error>) {
-    self.result = result
-  }
-  
+  var result: Result<ProductDetail, Error>?
+
   func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, Error>) -> Void) -> Cancellable? {
-    switch result {
-    case .success(let detail):
-      if detail.id == productID {
-        completion(.success(detail))
-      } else {
-        completion(.success(sampleProductDetail))
-      }
-    case .failure(let error):
-      completion(.failure(error))
+    if let result = result {
+      completion(result)
     }
     return nil
   }
