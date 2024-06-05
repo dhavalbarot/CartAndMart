@@ -29,11 +29,25 @@ protocol SessionManager {
 // MARK: - DefaultSessionManager
 final class DefaultSessionManager: SessionManager {
   
-  private let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
+  private let session = URLSession(configuration: URLSessionConfiguration.default, delegate: SessionDelegate(), delegateQueue: nil)
   
   func request(_ request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
     let task = session.dataTask(with: request, completionHandler: completion)
     task.resume()
     return task
+  }
+}
+
+// MARK: - SessionDelegate
+class SessionDelegate: NSObject, URLSessionDelegate {
+  func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+      if let serverTrust = challenge.protectionSpace.serverTrust {
+        let credential = URLCredential(trust: serverTrust)
+        completionHandler(.useCredential, credential)
+        return
+      }
+    }
+    completionHandler(.performDefaultHandling, nil)
   }
 }
