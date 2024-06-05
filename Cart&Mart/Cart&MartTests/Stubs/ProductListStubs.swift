@@ -11,12 +11,14 @@ import Foundation
 let testProductListData: ProductList = Bundle.main.decode("products.json")
 let testProductData: Product = testProductListData.products[0]
 
+// MARK: - ProductList
 extension ProductList {
   static let stub: ProductList = {
     testProductListData
   }()
 }
 
+// MARK: - Product
 extension Product {
   static let stub: Product = {
     testProductData

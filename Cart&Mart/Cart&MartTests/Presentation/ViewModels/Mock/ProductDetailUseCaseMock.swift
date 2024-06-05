@@ -9,6 +9,7 @@ import Foundation
 import PromiseKit
 @testable import Cart_Mart
 
+// MARK: - ProductDetailUseCaseMock
 final class ProductDetailUseCaseMock: GetProductDetailUseCase {
   let productDetail: ProductDetail?
   let error: Error?

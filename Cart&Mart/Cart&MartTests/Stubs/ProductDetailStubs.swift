@@ -11,6 +11,7 @@ import Foundation
 let testProductDetail: ProductDetail = Bundle.main.decode("productDetail.json")
 let defaultProductDetailId: Int  = 1
 
+// MARK: - ProductDetail
 extension ProductDetail {
   static let stub: ProductDetail = {
     testProductDetail

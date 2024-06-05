@@ -8,6 +8,7 @@
 import Foundation
 @testable import Cart_Mart
 
+// MARK: - SuccessDataTransferServicesMock
 final class SuccessDataTransferServicesMock: DataTransferService {
   func request<T: Decodable, E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
     if endpoint.path.contains("products/") {
@@ -26,6 +27,7 @@ final class SuccessDataTransferServicesMock: DataTransferService {
   }
 }
 
+// MARK: - FailureDataTransferServicesMock
 final class FailureDataTransferServicesMock: DataTransferService {
   func request<T: Decodable, E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
     if endpoint.path.contains("products/") {

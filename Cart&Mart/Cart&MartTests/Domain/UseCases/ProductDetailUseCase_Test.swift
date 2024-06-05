@@ -26,6 +26,7 @@ final class ProductDetailUseCase_Test: XCTestCase {
   
   func test_getProductDetail_success() {
     // Arrange
+<<<<<<< HEAD
     let expectedProductDetail = ProductDetail.stub
     mockRepository.result = .success(ProductDetail.stub)
     
@@ -62,5 +63,38 @@ final class ProductDetailUseCase_Test: XCTestCase {
     }
     
     waitForExpectations(timeout: 1.0, handler: nil)
+=======
+    var productDetail: ProductDetail? = nil
+    let productDetailStub = ProductDetail.stub
+    let productListRepositoryMock = ProductDetailRepositoryMock(result: .success(productDetailStub))
+    let useCase = DefaultGetProductDetailUseCase(repository: productListRepositoryMock)
+    
+    // Act
+    _ = useCase.getProductDetail(ProductDetail.stub.id, completion: { result in
+      if case let .success(objProductDetail) = result {
+        productDetail = objProductDetail
+      }
+    })
+    
+    // Assert
+    XCTAssertTrue((productDetail != nil && productDetail?.id == productDetailStub.id))
+  }
+  
+  func test_getProductDetail_failure() {
+    // Arrange
+    var error: Error? = nil
+    let productListRepositoryMock = ProductDetailRepositoryMock(result: .failure(ProductDetailRepositoryMockError.failed))
+    let useCase = DefaultGetProductDetailUseCase(repository: productListRepositoryMock)
+    
+    // Act
+    _ = useCase.getProductDetail(ProductDetail.stub.id, completion: { result in
+      if case let .failure(objError) = result {
+        error = objError
+      }
+    })
+    
+    // Assert
+    XCTAssertNotNil(error)
+>>>>>>> 521a6d03d2e7b66cdbcc0c69d7b24f0ed82e5d30
   }
 }

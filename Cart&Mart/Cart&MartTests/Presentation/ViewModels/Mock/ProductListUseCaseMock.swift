@@ -9,11 +9,13 @@ import Foundation
 import PromiseKit
 @testable import Cart_Mart
 
+// MARK: - ProductUseCaseError
 enum ProductUseCaseError: Error {
   case productListFailure
   case productDetailFailure
 }
 
+// MARK: - ProductListUseCaseMock
 final class ProductListUseCaseMock: GetProductListUseCase {
   let productList: ProductList?
   let error: Error?

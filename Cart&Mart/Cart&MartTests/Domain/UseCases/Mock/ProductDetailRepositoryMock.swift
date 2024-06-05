@@ -8,10 +8,12 @@
 import Foundation
 @testable import Cart_Mart
 
+// MARK: - ProductDetailRepositoryMockError
 enum ProductDetailRepositoryMockError: Error {
   case failed
 }
 
+// MARK: - ProductDetailRepositoryMock
 final class ProductDetailRepositoryMock: ProductDetailRepository {
   
   var result: Result<ProductDetail, Error>?
