@@ -11,7 +11,7 @@ import Foundation
 /**
  A struct representing detailed information about a product.
 
- Conforms to `Identifiable`, `Codable`, and `Equatable` protocols.
+ Conforms to `Identifiable` protocols.
 
  - Properties:
    - id: The unique identifier of the product.
@@ -34,7 +34,7 @@ import Foundation
    - images: An array of URLs or paths to images of the product.
    - thumbnail: The URL or path to the thumbnail image of the product.
  */
-struct ProductDetail: Identifiable, Codable, Equatable {
+struct ProductDetail: Identifiable, Equatable, Encodable {
   let id: Int
   let title: String
   let description: String
@@ -54,34 +54,4 @@ struct ProductDetail: Identifiable, Codable, Equatable {
   let minimumOrderQuantity: Int
   let images: [String]
   let thumbnail: String
-}
-
-// MARK: - Review
-/**
- A struct representing a review.
-
- Conforms to `Codable` protocol.
-
- - Properties:
-   - rating: The rating given in the review (from 1 to 5).
-   - comment: The comment or review text.
-   - date: The date when the review was submitted.
-   - reviewerName: The name of the reviewer.
-   - reviewerEmail: The email address of the reviewer.
- */
-struct Review: Codable {
-  let rating: Int
-  let comment, date, reviewerName, reviewerEmail: String
-}
-
-// MARK: - Mappings to Domain
-extension ProductDetail {
-  /**
-   Converts the current instance to a `ProductDetail` domain model.
-   
-   - Returns: A `ProductDetail` initialized with the current instance's properties.
-   */
-  func toDomain() -> ProductDetail {
-    return .init(id: id, title: title, description: description, category: category, price: price, discountPercentage: discountPercentage, rating: rating, stock: stock, tags: tags, brand: brand, sku: sku, weight: weight, warrantyInformation: warrantyInformation, shippingInformation: shippingInformation, availabilityStatus: availabilityStatus, returnPolicy: returnPolicy, minimumOrderQuantity: minimumOrderQuantity, images: images, thumbnail: thumbnail)
-  }
 }

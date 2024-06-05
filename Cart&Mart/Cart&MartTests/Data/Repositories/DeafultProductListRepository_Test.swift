@@ -11,37 +11,63 @@ import XCTest
 // MARK: - DeafultProductListRepository_Test
 final class DeafultProductListRepository_Test: XCTestCase {
   
-  func test_getProductList_success() {
-    // Arrange
-    var productList: ProductList? = nil
-    let successDataTransferServices = SuccessDataTransferServicesMock()
-    let repository = DefaultProductListRepository(dataTransferService: successDataTransferServices)
-    
-    // Act
-    _ = repository.getProductList { result in
-      if case let .success(objProductList) = result {
-        productList = objProductList
-      }
-    }
-    
-    // Assert
-    XCTAssertNotNil(productList)
+  var repository: DefaultProductListRepository!
+  var mockDataTransferService: MockDataTransferService!
+  
+  override func setUp() {
+    super.setUp()
+    mockDataTransferService = MockDataTransferService()
+    repository = DefaultProductListRepository(dataTransferService: mockDataTransferService)
   }
   
-  func test_getProductList_failure() {
+  override func tearDown() {
+    repository = nil
+    mockDataTransferService = nil
+    super.tearDown()
+  }
+  
+  func testGetProductListSuccess() {
     // Arrange
-    var dataTransferError: Error? = nil
-    let failureDataTransferServices = FailureDataTransferServicesMock()
-    let repository = DefaultProductListRepository(dataTransferService: failureDataTransferServices)
+    let productDTO = ProductList.stub
+    let data = try! JSONEncoder().encode(productDTO)
+    mockDataTransferService.result = .success(data)
+
+    let expectation = self.expectation(description: "Completion")
     
     // Act
-    _ = repository.getProductList { result in
-      if case let .failure(error) = result {
-        dataTransferError = error
+    let task = repository.getProductList { result in
+      switch result {
+      case .success(let productList):
+        XCTAssertNotNil(productList)
+        expectation.fulfill()
+      case .failure:
+        XCTFail("Expected success but got failure")
       }
     }
     
     // Assert
-    XCTAssertNotNil(dataTransferError)
+    wait(for: [expectation], timeout: 1.0)
+    XCTAssertNotNil(task)
+  }
+  
+  func testGetProductListFailure() {
+    // Arrange
+    mockDataTransferService.result = .failure(.noResponse)
+    
+    let expectation = self.expectation(description: "Completion")
+    
+    // Act
+    let task = repository.getProductList { result in
+      switch result {
+      case .success:
+        XCTFail("Expected failure but got success")
+      case .failure(let receivedError):
+        expectation.fulfill()
+      }
+    }
+    
+    // Assert
+    wait(for: [expectation], timeout: 1.0)
+    XCTAssertNotNil(task)
   }
 }

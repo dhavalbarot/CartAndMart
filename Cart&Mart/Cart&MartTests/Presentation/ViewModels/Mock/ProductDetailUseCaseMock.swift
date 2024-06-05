@@ -10,14 +10,12 @@ import Foundation
 
 // MARK: - ProductDetailUseCaseMock
 final class ProductDetailUseCaseMock: GetProductDetailUseCase {
-  let result: Result<ProductDetail, Error>
+  var result: Result<ProductDetail, Error>?
   
-  init(result: Result<ProductDetail, Error>) {
-    self.result = result
-  }
-  
-  func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, Error>) -> Void) -> Cancellable? {
-    completion(result)
+  func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, any Error>) -> Void) -> Cancellable? {
+    if let result = result {
+        completion(result)
+    }
     return nil
   }
 }

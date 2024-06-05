@@ -16,7 +16,7 @@ final class Entity_Test: XCTestCase {
     let url = Bundle.main.url(forResource: "products", withExtension: "json")
     let data = try? Data(contentsOf: url!)
     let decoder = JSONDecoder()
-    let decodedData = try? decoder.decode(ProductList.self, from: data!)
+    let decodedData = try? decoder.decode(ProductListResponseDTO.self, from: data!)
     
     // Act
     let productListObj = decodedData?.toDomain()
@@ -31,7 +31,7 @@ final class Entity_Test: XCTestCase {
     let url = Bundle.main.url(forResource: "productDetail", withExtension: "json")
     let data = try? Data(contentsOf: url!)
     let decoder = JSONDecoder()
-    let decodedData = try? decoder.decode(ProductDetail.self, from: data!)
+    let decodedData = try? decoder.decode(ProductDetailResponseDTO.self, from: data!)
     
     // Act
     let productDetailObject = decodedData?.toDomain()

@@ -11,37 +11,63 @@ import XCTest
 // MARK: - DeafultProductDetailRepository_Test
 final class DeafultProductDetailRepository_Test: XCTestCase {
   
-  func test_getProductList_success() {
-    // Arrange
-    var productDetailObj: ProductDetail? = nil
-    let successDataTransferServices = SuccessDataTransferServicesMock()
-    let repository = DefaultProductDetailRepository(dataTransferService: successDataTransferServices)
-    
-    // Act
-    _ = repository.getProductDetail(ProductDetail.stub.id, completion: { result in
-      if case let .success(productDetail) = result {
-        productDetailObj = productDetail
-      }
-    })
-    
-    // Assert
-    XCTAssertNotNil(productDetailObj)
+  var repository: DefaultProductDetailRepository!
+  var mockDataTransferService: MockDataTransferService!
+  
+  override func setUp() {
+    super.setUp()
+    mockDataTransferService = MockDataTransferService()
+    repository = DefaultProductDetailRepository(dataTransferService: mockDataTransferService)
   }
   
-  func test_getProductList_failure() {
+  override func tearDown() {
+    repository = nil
+    mockDataTransferService = nil
+    super.tearDown()
+  }
+  
+  func testGetProductDetailsuccess() {
     // Arrange
-    var dataTransferError: Error? = nil
-    let failureDataTransferServices = FailureDataTransferServicesMock()
-    let repository = DefaultProductDetailRepository(dataTransferService: failureDataTransferServices)
+    let productDetail = ProductDetail.stub
+    let data = try! JSONEncoder().encode(productDetail)
+    mockDataTransferService.result = .success(data)
     
+    let expectation = self.expectation(description: "Completion")
+
     // Act
-    _ = repository.getProductDetail(ProductDetail.stub.id, completion: { result in
-      if case let .failure(error) = result {
-        dataTransferError = error
+    let task = repository.getProductDetail(ProductDetail.mockProductId, completion: { result in
+      switch result {
+      case .success(let productDetail):
+        XCTAssertNotNil(productDetail)
+        expectation.fulfill()
+      case .failure:
+        XCTFail("Expected success but got failure")
       }
     })
     
     // Assert
-    XCTAssertNotNil(dataTransferError)
+    wait(for: [expectation], timeout: 1.0)
+    XCTAssertNotNil(task)
+  }
+  
+  func testGetProductDetailfailure() {
+    // Arrange
+    mockDataTransferService.result = .failure(.noResponse)
+
+    let expectation = self.expectation(description: "Completion")
+
+    // Act
+    let task = repository.getProductDetail(ProductDetail.mockProductId) { result in
+      switch result {
+      case .success:
+        XCTFail("Expected failure but got success")
+      case .failure:
+        expectation.fulfill()
+      }
+    }
+    
+    // Assert
+    wait(for: [expectation], timeout: 1.0)
+    XCTAssertNotNil(task)
   }
 }

@@ -8,8 +8,11 @@
 import Foundation
 @testable import Cart_Mart
 
-let testProductListData: ProductList = Bundle.main.decode("products.json")
-let testProductData: Product = testProductListData.products[0]
+fileprivate let sampleResponseDTOProductList: ProductListResponseDTO = Bundle.main.decode("products.json")
+fileprivate let sampleResponseDTOProduct: ProductListItemDTO = sampleResponseDTOProductList.products[0]
+
+fileprivate let testProductListData: ProductList = sampleResponseDTOProductList.toDomain()
+fileprivate let testProductData: Product = sampleResponseDTOProduct.toDomain()
 
 // MARK: - ProductList
 extension ProductList {
@@ -22,5 +25,19 @@ extension ProductList {
 extension Product {
   static let stub: Product = {
     testProductData
+  }()
+}
+
+// MARK: - ProductListResponseDTO
+extension ProductListResponseDTO {
+  static let stub: ProductListResponseDTO = {
+    sampleResponseDTOProductList
+  }()
+}
+
+// MARK: - ProductListResponseDTO
+extension ProductListItemDTO {
+  static let stub: ProductListItemDTO = {
+    sampleResponseDTOProduct
   }()
 }

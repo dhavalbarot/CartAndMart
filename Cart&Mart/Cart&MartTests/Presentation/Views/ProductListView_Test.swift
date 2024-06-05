@@ -15,7 +15,8 @@ final class ProductListView_Test: XCTestCase {
 
   func testProductListLoadingView() {
     // Arrange
-    let mockUseCase = ProductListUseCaseMock(result: .success(testProductListData))
+    var mockUseCase = ProductListUseCaseMock()
+    mockUseCase.result = .success(ProductList.stub)
     let model = DefaultProductListViewModel(productListUseCase: mockUseCase)
     let productListView = ProductListView(viewModel: model)
     
@@ -28,7 +29,7 @@ final class ProductListView_Test: XCTestCase {
   
   func testProductListDataView() {
     // Arange
-    let productList = testProductListData.products.map{ ProductPresentationModel(product: $0)}
+    let productList = ProductList.stub.products.map{ ProductPresentationModel(product: $0)}
     
     // Act
     let productListDataView = ProductListGridView(products: productList).toVC

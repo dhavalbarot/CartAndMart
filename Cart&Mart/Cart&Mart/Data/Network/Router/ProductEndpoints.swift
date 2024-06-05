@@ -8,11 +8,11 @@
 import Foundation
 
 struct ProductEndpoints {
-  static func getProductList() -> Endpoint<ProductList> {
+  static func getProductList() -> Endpoint<ProductListResponseDTO> {
     return Endpoint(path: "products", method: .get)
   }
   
-  static func getProductDetail(_ productID: Int) -> Endpoint<ProductDetail> {
+  static func getProductDetail(_ productID: Int) -> Endpoint<ProductDetailResponseDTO> {
     return Endpoint(path: "products/\(productID)", method: .get)
   }
 }

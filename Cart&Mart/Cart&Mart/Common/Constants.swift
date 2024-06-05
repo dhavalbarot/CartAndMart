@@ -8,9 +8,13 @@
 import SwiftUI
 
 // MARK: - Data
-let sampleProductList: ProductList = Bundle.main.decode("products.json")
+let sampleResponseDTOProductList: ProductListResponseDTO = Bundle.main.decode("products.json")
+let sampleResponseDTOProduct: ProductListItemDTO = sampleResponseDTOProductList.products[0]
+let sampleResponseDTOProductDetail: ProductDetailResponseDTO = Bundle.main.decode("productDetail.json")
+
+let sampleProductList: ProductList = sampleResponseDTOProductList.toDomain()
 let sampleProduct: Product = sampleProductList.products[0]
-let sampleProductDetail: ProductDetail = Bundle.main.decode("productDetail.json")
+let sampleProductDetail: ProductDetail = sampleResponseDTOProductDetail.toDomain()
 
 // MARK: - Color
 let colorAccent: Color = Color.accentColor

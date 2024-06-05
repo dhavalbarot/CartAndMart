@@ -17,6 +17,8 @@
 		5A5E001C2C10B3FA001BF72D /* ProductDetailPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E001B2C10B3FA001BF72D /* ProductDetailPresentationModel.swift */; };
 		5A5E001E2C10B81A001BF72D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E001D2C10B81A001BF72D /* Utility.swift */; };
 		5A5E00202C10B958001BF72D /* UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E001F2C10B958001BF72D /* UtilityTests.swift */; };
+		5A5E00232C10E4A3001BF72D /* ProductListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E00222C10E4A3001BF72D /* ProductListResponseDTO.swift */; };
+		5A5E00252C10E4B3001BF72D /* ProductDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E00242C10E4B3001BF72D /* ProductDetailResponseDTO.swift */; };
 		5A732D782C09BF5D00E56750 /* Configuration_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D772C09BF5D00E56750 /* Configuration_Test.swift */; };
 		5A732D7F2C09C71500E56750 /* ProductListRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D7E2C09C71500E56750 /* ProductListRepositoryMock.swift */; };
 		5A732D812C09C72A00E56750 /* ProductDetailRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A732D802C09C72A00E56750 /* ProductDetailRepositoryMock.swift */; };
@@ -122,6 +124,8 @@
 		5A5E001B2C10B3FA001BF72D /* ProductDetailPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresentationModel.swift; sourceTree = "<group>"; };
 		5A5E001D2C10B81A001BF72D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5A5E001F2C10B958001BF72D /* UtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
+		5A5E00222C10E4A3001BF72D /* ProductListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResponseDTO.swift; sourceTree = "<group>"; };
+		5A5E00242C10E4B3001BF72D /* ProductDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailResponseDTO.swift; sourceTree = "<group>"; };
 		5A732D772C09BF5D00E56750 /* Configuration_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration_Test.swift; sourceTree = "<group>"; };
 		5A732D7E2C09C71500E56750 /* ProductListRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRepositoryMock.swift; sourceTree = "<group>"; };
 		5A732D802C09C72A00E56750 /* ProductDetailRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRepositoryMock.swift; sourceTree = "<group>"; };
@@ -352,6 +356,15 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		5A5E00212C10E46E001BF72D /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				5A5E00222C10E4A3001BF72D /* ProductListResponseDTO.swift */,
+				5A5E00242C10E4B3001BF72D /* ProductDetailResponseDTO.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
 		5A732D762C09BF1B00E56750 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +544,7 @@
 		5AE838A12C0737E400D3E2C1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5A5E00212C10E46E001BF72D /* DataMapping */,
 				5AE838A22C0737F700D3E2C1 /* Router */,
 			);
 			path = Network;
@@ -829,12 +843,14 @@
 				5AB511BD2C08E9B7004F1A7B /* ProductAdditionalInfoGroupView.swift in Sources */,
 				5A5E001A2C10B2B8001BF72D /* ProductPresentationModel.swift in Sources */,
 				5AE838F32C08A28900D3E2C1 /* ProductHeaderView.swift in Sources */,
+				5A5E00252C10E4B3001BF72D /* ProductDetailResponseDTO.swift in Sources */,
 				5AE838CA2C07775100D3E2C1 /* DefaultProductListRepository.swift in Sources */,
 				5AE838B02C0741B300D3E2C1 /* ProductDetail.swift in Sources */,
 				5AE838F52C08A4C300D3E2C1 /* RoundedCorner.swift in Sources */,
 				5AE838952C071F0E00D3E2C1 /* NetworkError.swift in Sources */,
 				5AE838D72C078B2F00D3E2C1 /* GetProductListUseCase.swift in Sources */,
 				5AE8389A2C07228900D3E2C1 /* Cancallable.swift in Sources */,
+				5A5E00232C10E4A3001BF72D /* ProductListResponseDTO.swift in Sources */,
 				5AE838E02C079C2000D3E2C1 /* ProductDetailViewModel.swift in Sources */,
 				5AE838EB2C08830000D3E2C1 /* NavigationManager.swift in Sources */,
 				5AE838ED2C08862B00D3E2C1 /* NavigationView.swift in Sources */,

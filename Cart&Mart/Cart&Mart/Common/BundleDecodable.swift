@@ -19,7 +19,7 @@ extension Bundle {
 
    - Throws: An error if decoding fails, such as `DecodingError.dataCorrupted` or `DecodingError.keyNotFound`.
   **/
-  func decode<T: Codable>(_ file: String) -> T {
+  func decode<T: Decodable>(_ file: String) -> T {
     
     // Creating a decoder
     let decoder = JSONDecoder()

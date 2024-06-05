@@ -11,57 +11,67 @@ import XCTest
 // MARK: - ProductListViewModelTest_Test
 final class ProductListViewModelTest_Test: XCTestCase {
   
-  func test_fetchProductListSucess() {
-    // Arrange
-    let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .success(testProductListData))
-    let model = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
-    let expectedProductList = testProductListData.products.map({ ProductPresentationModel(product: $0)})
-    
-    // Act
-    model.fetchProductList()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-      expectation.fulfill()
-    })
-    
-    // Assert
-    wait(for: [expectation], timeout: 2.0)
-    XCTAssert(model.viewContentState == ViewContentState.data)
-    XCTAssert(model.productItemList == expectedProductList)
+  var viewModel: DefaultProductListViewModel!
+  var productListuseCaseMock: ProductListUseCaseMock!
+  
+  override func setUp() {
+    super.setUp()
+    productListuseCaseMock = ProductListUseCaseMock()
+    viewModel = DefaultProductListViewModel(productListUseCase: productListuseCaseMock)
   }
   
-  func test_fetchProductListFailure() {
-    // Arrange
-    let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .failure(ProductUseCaseError.productListFailure))
-    let model = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
-    
-    // Act
-    model.fetchProductList()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-      expectation.fulfill()
-    })
-    
-    // Assert
-    wait(for: [expectation], timeout: 2.0)
-    XCTAssert(model.viewContentState == ViewContentState.error)
+  override func tearDown() {
+    viewModel = nil
+    productListuseCaseMock = nil
+    super.tearDown()
   }
   
-  func test_fetchProductListAfterDeallocation() {
+  func testFetchProductListLoadingState() {
     // Arrange
-    let expectation = XCTestExpectation()
-    let productListUseCaseMock = ProductListUseCaseMock(result: .failure(ProductUseCaseError.productListFailure))
-    var model: DefaultProductListViewModel? = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
+    productListuseCaseMock.result = .success(ProductList.stub)
     
     // Act
-    model?.fetchProductList()
-    model = nil
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-      expectation.fulfill()
-    })
+    viewModel.fetchProductList()
     
     // Assert
-    wait(for: [expectation], timeout: 2.0)
-    XCTAssertNil(model?.viewContentState)
+    XCTAssertEqual(viewModel.viewContentState, .loading)
+  }
+  
+  func testFetchProductListSuccess() {
+    // Arrange
+    let productList = ProductList.stub
+    productListuseCaseMock.result = .success(productList)
+    
+    // Act
+    viewModel.fetchProductList()
+    
+    // Simulate async completion
+    let expectation = self.expectation(description: "Completion")
+    DispatchQueue.main.async {
+      expectation.fulfill()
+    }
+    wait(for: [expectation], timeout: 1.0)
+    
+    // Assert
+    XCTAssertEqual(viewModel.viewContentState, .data)
+    XCTAssertEqual(viewModel.productItemList, productList.products.map { ProductPresentationModel(product: $0) })
+  }
+  
+  func testFetchProductListFailure() {
+    // Arrange
+    productListuseCaseMock.result = .failure(ProductUseCaseError.productListFailure)
+    
+    // Act
+    viewModel.fetchProductList()
+    
+    // Simulate async completion
+    let expectation = self.expectation(description: "Completion")
+    DispatchQueue.main.async {
+      expectation.fulfill()
+    }
+    wait(for: [expectation], timeout: 1.0)
+    
+    // Assert
+    XCTAssertEqual(viewModel.viewContentState, .error)
   }
 }

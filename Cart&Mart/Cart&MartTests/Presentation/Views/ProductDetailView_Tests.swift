@@ -13,8 +13,9 @@ final class ProductDetailView_Tests: XCTestCase {
   
   func testProductDetailLoadingView() {
     // Arrange
-    let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
-    let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
+    let mockUseCase = ProductDetailUseCaseMock()
+    mockUseCase.result = .success(ProductDetail.stub)
+    let model = DefaultProductDetailViewModel(productID: ProductDetail.mockProductId, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
     
     // Act
@@ -26,10 +27,11 @@ final class ProductDetailView_Tests: XCTestCase {
   
   func testProductDetailDataView() {
     // Arrange
-    let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
-    let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
+    let mockUseCase = ProductDetailUseCaseMock()
+    mockUseCase.result = .success(ProductDetail.stub)
+    let model = DefaultProductDetailViewModel(productID: ProductDetail.mockProductId, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
-    let productDetail = ProductDetailPresentationModel(productDetail: testProductDetail)
+    let productDetail = ProductDetailPresentationModel(productDetail: ProductDetail.stub)
     
     // Act
     let productDetailDataView = productDetailView.productDetailContentView(productDetail).toVC

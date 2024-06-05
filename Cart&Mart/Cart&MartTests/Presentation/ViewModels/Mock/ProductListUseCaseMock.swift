@@ -16,14 +16,12 @@ enum ProductUseCaseError: Error {
 
 // MARK: - ProductListUseCaseMock
 final class ProductListUseCaseMock: GetProductListUseCase {
-  let result: Result<ProductList, Error>
-  
-  init(result: Result<ProductList, Error>) {
-    self.result = result
-  }
+  var result: Result<ProductList, Error>?
   
   func getProductList(completion: @escaping (Result<ProductList, Error>) -> Void) -> Cancellable? {
-    completion(result)
+    if let result = result {
+        completion(result)
+    }
     return nil
   }
 }
