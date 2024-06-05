@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductHeaderView: View {
   
   // MARK: - PROPERTY
-  let product: ProductDetail
+  let product: ProductDetailPresentationModel
   
   // MARK: - BODY
   var body: some View {
@@ -36,7 +36,7 @@ struct ProductHeaderView: View {
 
           Spacer()
           
-          DiscountTagView(discount: product.discountPercentage)
+          DiscountTagView(discount: product.discount)
         }
       }
       
@@ -48,6 +48,6 @@ struct ProductHeaderView: View {
 
 // MARK: - Preview
 #Preview {
-  ProductHeaderView(product: sampleProductDetail)
+  ProductHeaderView(product: ProductDetailPresentationModel(productDetail: sampleProductDetail))
     .background(colorAccent)
 }

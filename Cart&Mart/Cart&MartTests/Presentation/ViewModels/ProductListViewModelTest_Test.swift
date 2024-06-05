@@ -16,6 +16,7 @@ final class ProductListViewModelTest_Test: XCTestCase {
     let expectation = XCTestExpectation()
     let productListUseCaseMock = ProductListUseCaseMock(result: .success(testProductListData))
     let model = DefaultProductListViewModel(productListUseCase: productListUseCaseMock)
+    let expectedProductList = testProductListData.products.map({ ProductPresentationModel(product: $0)})
     
     // Act
     model.fetchProductList()
@@ -26,7 +27,7 @@ final class ProductListViewModelTest_Test: XCTestCase {
     // Assert
     wait(for: [expectation], timeout: 2.0)
     XCTAssert(model.viewContentState == ViewContentState.data)
-    XCTAssert(model.productList == testProductListData.products)
+    XCTAssert(model.productItemList == expectedProductList)
   }
   
   func test_fetchProductListFailure() {

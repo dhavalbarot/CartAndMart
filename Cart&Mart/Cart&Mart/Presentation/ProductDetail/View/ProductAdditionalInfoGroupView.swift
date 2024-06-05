@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductAdditionalInfoGroupView: View {
   
   // MARK: - Property
-  let product: ProductDetail
+  let product: ProductDetailPresentationModel
   
   // MARK: - Body
   var body: some View {
@@ -28,5 +28,5 @@ struct ProductAdditionalInfoGroupView: View {
 
 // MARK: - Preview
 #Preview {
-  ProductAdditionalInfoGroupView(product: sampleProductDetail)
+  ProductAdditionalInfoGroupView(product: ProductDetailPresentationModel(productDetail: sampleProductDetail))
 }

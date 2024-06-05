@@ -14,7 +14,7 @@ struct ProductListGridView: View {
   @EnvironmentObject private var navigationManager: NavigationManager
   
   // MARK: - Property
-  let products: [Product]
+  let products: [ProductPresentationModel]
   
   // MARK: - Body
   var body: some View {
@@ -38,5 +38,5 @@ struct ProductListGridView: View {
 
 // MARK: - Preview
 #Preview {
-  ProductListGridView(products: sampleProductList.products)
+  ProductListGridView(products: sampleProductList.products.map({ ProductPresentationModel(product: $0)}))
 }

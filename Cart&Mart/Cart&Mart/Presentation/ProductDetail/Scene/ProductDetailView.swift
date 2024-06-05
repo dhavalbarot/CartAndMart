@@ -65,7 +65,7 @@ struct ProductDetailView: View {
   }
   
   @ViewBuilder
-  func productDetailContentView(_ productDetail: ProductDetail) -> some View {
+  func productDetailContentView(_ productDetail: ProductDetailPresentationModel) -> some View {
     ProductHeaderView(product: productDetail)
       .padding(.leading)
     Spacer()
@@ -85,7 +85,7 @@ struct ProductDetailView: View {
       
       ProductAdditionalInfoGroupView(product: productDetail)
       Spacer()
-      StockStatusView(stockStatus: productDetail.availabilityStatus)
+      StockStatusView(stockStatus: productDetail.stockStatus)
     })
     .padding(.horizontal)
     .padding(.bottom)

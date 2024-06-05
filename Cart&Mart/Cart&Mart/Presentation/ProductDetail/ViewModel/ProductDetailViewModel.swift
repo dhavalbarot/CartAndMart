@@ -15,7 +15,7 @@ protocol ProductDetailViewModelInput {
 // MARK: - ProductDetailViewOutput
 protocol ProductDetailViewModelOutput: ObservableObject {
   var productID: Int { get }
-  var productDetail: ProductDetail? { get }
+  var productDetail: ProductDetailPresentationModel? { get }
   var viewContentState: ViewContentState { get }
   var contentModel: ContentModel { get }
 }
@@ -30,7 +30,7 @@ typealias ProductDetailViewModel = ProductDetailViewModelInput & ProductDetailVi
 final class DefaultProductDetailViewModel: ProductDetailViewModel {
 
   // MARK: - Properties
-  @Published private(set) var productDetail: ProductDetail?
+  @Published private(set) var productDetail: ProductDetailPresentationModel?
   @Published private(set) var viewContentState: ViewContentState = .idle
   @Published private(set) var contentModel: ContentModel = .init(title: "", message: "")
   @Published private(set) var productID: Int
@@ -59,7 +59,7 @@ extension DefaultProductDetailViewModel {
         guard let self else { return }
         switch result {
         case .success(let productDetail):
-          self.productDetail = productDetail
+          self.productDetail = ProductDetailPresentationModel(productDetail: productDetail)
           self.viewContentState = .data
         case .failure(let error):
           self.viewContentState = .error

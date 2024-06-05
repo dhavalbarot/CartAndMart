@@ -15,6 +15,7 @@ final class ProductDetailViewModel_Test: XCTestCase {
     let expectation = XCTestExpectation()
     let productDetailUseCaseMock = ProductDetailUseCaseMock(result: .success(testProductDetail))
     let model = DefaultProductDetailViewModel(productID: defaultProductDetailId, productDetailUseCase: productDetailUseCaseMock)
+    let expectedProductDetail = ProductDetailPresentationModel(productDetail: testProductDetail)
     
     // Act
     model.fetchProductDetail()
@@ -25,7 +26,7 @@ final class ProductDetailViewModel_Test: XCTestCase {
     // Assert
     wait(for: [expectation], timeout: 2.0)
     XCTAssert(model.viewContentState == ViewContentState.data)
-    XCTAssert(model.productDetail == testProductDetail)
+    XCTAssert(model.productDetail == expectedProductDetail)
   }
   
   func test_fetchProductListFailure() {

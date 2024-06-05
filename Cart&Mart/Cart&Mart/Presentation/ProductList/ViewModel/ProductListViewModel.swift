@@ -14,7 +14,7 @@ protocol ProductListViewModelInput {
 
 // MARK: - ProductListViewOutput
 protocol ProductListViewModelOutput: ObservableObject {
-  var productList: [Product] { get }
+  var productItemList: [ProductPresentationModel] { get }
   var viewContentState: ViewContentState { get }
   var contentModel: ContentModel { get }
 }
@@ -29,7 +29,7 @@ typealias ProductListViewModel = ProductListViewModelInput & ProductListViewMode
 final class DefaultProductListViewModel: ProductListViewModel {
   
   // MARK: - Properties
-  @Published private(set) var productList: [Product] = []
+  @Published private(set) var productItemList: [ProductPresentationModel] = []
   @Published private(set) var viewContentState: ViewContentState = .idle
   @Published private(set) var contentModel: ContentModel = .init(title: "", message: "")
 
@@ -56,7 +56,7 @@ extension DefaultProductListViewModel {
         guard let self else { return }
         switch result {
         case .success(let productList):
-          self.productList = productList.products
+          self.productItemList = productList.products.map{ ProductPresentationModel(product: $0)}
           self.viewContentState = .data
         case .failure(let error):
           self.viewContentState = .error

@@ -54,7 +54,7 @@ struct ProductListView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemBackground))
     case .data:
-      ProductListGridView(products: viewModel.productList)
+      ProductListGridView(products: viewModel.productItemList)
     case .error:
       ErrorContentView(contentModel: viewModel.contentModel)
     }

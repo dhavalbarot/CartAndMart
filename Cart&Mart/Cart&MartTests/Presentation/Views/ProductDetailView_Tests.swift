@@ -29,9 +29,10 @@ final class ProductDetailView_Tests: XCTestCase {
     let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
     let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
+    let productDetail = ProductDetailPresentationModel(productDetail: testProductDetail)
     
     // Act
-    let productDetailDataView = productDetailView.productDetailContentView(testProductDetail).toVC
+    let productDetailDataView = productDetailView.productDetailContentView(productDetail).toVC
     
     // Assert
     assertSnapshot(of: productDetailDataView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailDataView", testName: "ProductDetailDataTest")

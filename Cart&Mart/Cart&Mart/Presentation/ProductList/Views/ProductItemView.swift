@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductItemView: View {
   
   // MARK: - Property
-  let product: Product
+  let product: ProductPresentationModel
   
   // MARK: - Body
   var body: some View {
@@ -22,7 +22,7 @@ struct ProductItemView: View {
           Rectangle()
             .fill(UIColor.productColor(product.id).gradient)
             .aspectRatio(contentMode: .fill)
-          ProductImageView(imageURL: product.thumbnail, placeholderImage: Image(systemName: SystemImageName.cart))
+          ProductImageView(imageURL: product.thumbnailURL, placeholderImage: Image(systemName: SystemImageName.cart))
         }
         .cornerRadius(12)
         
@@ -36,7 +36,7 @@ struct ProductItemView: View {
         
         // PRICE & RATTING
         HStack(alignment: .center, spacing: 5, content: {
-          Text(product.price, format: .currency(code: "USD"))
+          Text(product.price)
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
@@ -45,7 +45,7 @@ struct ProductItemView: View {
           
           Spacer()
           
-          Text(String(format: "%.1f", product.rating))
+          Text(product.rating)
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
@@ -62,14 +62,14 @@ struct ProductItemView: View {
     .background(Color.white)
     .cornerRadius(12)
     .accessibilityElement(children: .ignore)
-    .accessibilityLabel("Product \(product.title), price \(String(format: "%.2f", product.price))USD, rating \(String(format: "%.1f", product.rating))")
+    .accessibilityLabel("Product \(product.title), price \(product.price), rating \(product.rating)")
     .accessibilityHint("Double tap to see detail")
   }
 }
 
 // MARK: - Preview
 #Preview {
-  ProductItemView(product: sampleProduct)
+  ProductItemView(product: ProductPresentationModel(product: sampleProduct))
     .previewLayout(.fixed(width: 200, height: 300))
     .background(Color.red)
     .padding()

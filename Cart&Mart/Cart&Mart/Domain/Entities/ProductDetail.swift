@@ -7,23 +7,6 @@
 
 import Foundation
 
-// MARK: - StockStatus
-/**
- An enumeration representing the stock status of a product.
-
- Conforms to `Codable` and uses `String` raw values.
-
- - Cases:
-   - outOfStock: Indicates that the product is out of stock.
-   - lowStock: Indicates that the product has low stock.
-   - inStock: Indicates that the product is in stock.
- */
-enum StockStatus: String, Codable {
-  case outOfStock = "Out Of Stock"
-  case lowStock = "Low Stock"
-  case inStock = "In Stock"
-}
-
 // MARK: - ProductDetail
 /**
  A struct representing detailed information about a product.
@@ -66,7 +49,7 @@ struct ProductDetail: Identifiable, Codable, Equatable {
   let weight: Int
   let warrantyInformation: String
   let shippingInformation: String
-  let availabilityStatus: StockStatus
+  let availabilityStatus: String
   let returnPolicy: String
   let minimumOrderQuantity: Int
   let images: [String]

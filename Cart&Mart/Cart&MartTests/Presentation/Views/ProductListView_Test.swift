@@ -27,8 +27,11 @@ final class ProductListView_Test: XCTestCase {
   }
   
   func testProductListDataView() {
+    // Arange
+    let productList = testProductListData.products.map{ ProductPresentationModel(product: $0)}
+    
     // Act
-    let productListDataView = ProductListGridView(products: sampleProductList.products).toVC
+    let productListDataView = ProductListGridView(products: productList).toVC
     
     // Assert
     assertSnapshot(of: productListDataView, as: .image(on: .iPhone13(.portrait)), named: "ProductListDataView", testName: "ProductListDataTest")

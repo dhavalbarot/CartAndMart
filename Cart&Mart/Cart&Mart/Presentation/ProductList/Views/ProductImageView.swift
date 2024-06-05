@@ -11,12 +11,12 @@ import SwiftUI
 struct ProductImageView: View {
   
   // MARK: - Properties
-  let imageURL: String
+  let imageURL: URL?
   let placeholderImage: Image?
   
   // MARK: - Body
   var body: some View {
-    AsyncImage(url: URL(string: imageURL)) { image in
+    AsyncImage(url: imageURL) { image in
       image
         .resizable()
         .aspectRatio(contentMode: .fit)
@@ -37,5 +37,5 @@ struct ProductImageView: View {
 // MARK: - Preview
 #Preview {
   let thumbnailURL = "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
-  return ProductImageView(imageURL: thumbnailURL, placeholderImage: Image(systemName: SystemImageName.cart))
+  return ProductImageView(imageURL: URL(string: thumbnailURL), placeholderImage: Image(systemName: SystemImageName.cart))
 }

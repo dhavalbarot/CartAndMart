@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductDetailImageView: View {
   
   // MARK: - Property
-  let product: ProductDetail
+  let product: ProductDetailPresentationModel
   
   @State private var isAnimating: Bool = false
   
@@ -23,7 +23,7 @@ struct ProductDetailImageView: View {
         Text("Price")
           .fontWeight(.semibold)
         
-        Text(product.price, format: .currency(code: "USD"))
+        Text(product.price)
           .font(.largeTitle)
           .fontWeight(.black)
           .scaleEffect(1.35, anchor: .leading)
@@ -33,13 +33,13 @@ struct ProductDetailImageView: View {
       .offset(y: isAnimating ? -50 : -75)
       .accessibilityElement(children: .ignore)
       .accessibilityAddTraits(.isStaticText)
-      .accessibilityLabel(Text(product.price, format: .currency(code: "USD")))
+      .accessibilityLabel(product.price)
       .accessibilityIdentifier("productDetailPriceText")
       
       Spacer()
       
       //IMAGE
-      ProductImageView(imageURL: product.thumbnail, placeholderImage: nil)
+      ProductImageView(imageURL: product.thumbnailURL, placeholderImage: nil)
     })
     .padding(.horizontal)
     .onAppear(perform: {
@@ -52,7 +52,7 @@ struct ProductDetailImageView: View {
 
 // MARK: - Preview
 #Preview {
-  ProductDetailImageView(product: sampleProductDetail)
+  ProductDetailImageView(product: ProductDetailPresentationModel(productDetail: sampleProductDetail))
     .previewLayout(.sizeThatFits)
     .padding()
 }

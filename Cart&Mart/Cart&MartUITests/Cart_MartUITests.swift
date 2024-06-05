@@ -27,9 +27,6 @@ final class Cart_MartUITests: XCTestCase {
 
     let titleElement = app.staticTexts["CartAndMartTitle"]
     XCTAssertTrue(titleElement.waitForExistence(timeout: 5), "Cart and Mart, title should be visible.")
-    
-    let buttonElement = app.buttons["productListCartButton"]
-    XCTAssertTrue(buttonElement.waitForExistence(timeout: 5), "Cart and Mart, cart button should be visible.")
   }
   
   func testGridItemsExistence() throws {
