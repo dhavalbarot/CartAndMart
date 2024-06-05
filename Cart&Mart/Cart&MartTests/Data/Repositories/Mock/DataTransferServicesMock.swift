@@ -33,9 +33,4 @@ final class DataTransferServicesMock: DataTransferService {
     }
     return nil
   }
-  
-  func request<E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E.Response == Void {
-    // Handle the Void response case if necessary
-    return nil
-  }
 }

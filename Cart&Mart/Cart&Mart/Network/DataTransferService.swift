@@ -71,19 +71,6 @@ extension DefaultDataTransferService: DataTransferService {
     }
   }
   
-  func request<E>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-    networkService.request(endpoint: endpoint) { result in
-      switch result {
-      case .success:
-        completion(.success(()))
-      case .failure(let error):
-        self.errorLogger.log(error: error)
-        let error = self.resolve(networkError: error)
-        completion(.failure(error))
-      }
-    }
-  }
-  
   // MARK: - Private Functions
   private func decode<T: Decodable>(data: Data?, decoder: ResponseDecoder) -> Result<T, DataTransferError> {
     do {
@@ -126,7 +113,7 @@ enum DataTransferError: Error, Equatable {
           return true
       case (.parsing(let lhsError), .parsing(let rhsError)):
           return lhsError.localizedDescription == rhsError.localizedDescription
-      case (.networkFailure(let lhsError), .networkFailure(let rhsError)):
+      case (.networkFailure, .networkFailure):
           return true
       case (.resolvedNetworkFailure(let lhsError), .resolvedNetworkFailure(let rhsError)):
           return lhsError.localizedDescription == rhsError.localizedDescription
