@@ -10,38 +10,59 @@ import XCTest
 
 // MARK: - DeafultProductListRepository_Test
 final class DeafultProductListRepository_Test: XCTestCase {
+  var mockDataTransferService: DataTransferServicesMock!
+  var repository: DefaultProductListRepository!
   
-  func test_getProductList_success() {
-    // Arrange
-    var productList: ProductList? = nil
-    let successDataTransferServices = SuccessDataTransferServicesMock()
-    let repository = DefaultProductListRepository(dataTransferService: successDataTransferServices)
-    
-    // Act
-    _ = repository.getProductList { result in
-      if case let .success(objProductList) = result {
-        productList = objProductList
-      }
-    }
-    
-    // Assert
-    XCTAssertNotNil(productList)
+  override func setUp() {
+    super.setUp()
+    mockDataTransferService = DataTransferServicesMock()
+    repository = DefaultProductListRepository(dataTransferService: mockDataTransferService)
   }
   
-  func test_getProductList_failure() {
+  override func tearDown() {
+    mockDataTransferService = nil
+    repository = nil
+    super.tearDown()
+  }
+  
+  func testGetProductDetailSuccess() {
     // Arrange
-    var dataTransferError: Error? = nil
-    let failureDataTransferServices = FailureDataTransferServicesMock()
-    let repository = DefaultProductListRepository(dataTransferService: failureDataTransferServices)
+    let productList = ProductList.stub
+    let jsonData = try! JSONEncoder().encode(productList)
+    mockDataTransferService.result = .success(jsonData)
     
     // Act
-    _ = repository.getProductList { result in
-      if case let .failure(error) = result {
-        dataTransferError = error
-      }
-    }
+    let promise = repository.getProductList()
     
     // Assert
-    XCTAssertNotNil(dataTransferError)
+    let expectation = self.expectation(description: "ProductList fetched successfully")
+    promise.done { detail in
+      XCTAssertEqual(detail, productList)
+      expectation.fulfill()
+    }.catch { error in
+      XCTFail("Expected success but got error: \(error)")
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
+  }
+  
+  func testGetProductDetailFailure() {
+    // Arrange
+    let expectedError = DataTransferError.noResponse
+    mockDataTransferService.result = .failure(expectedError)
+    
+    // Act
+    let promise = repository.getProductList()
+    
+    // Assert
+    let expectation = self.expectation(description: "ProductList fetch failed")
+    promise.done { detail in
+      XCTFail("Expected error but got success with product detail: \(detail)")
+    }.catch { error in
+      XCTAssertEqual(error as? DataTransferError, expectedError)
+      expectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 1.0, handler: nil)
   }
 }

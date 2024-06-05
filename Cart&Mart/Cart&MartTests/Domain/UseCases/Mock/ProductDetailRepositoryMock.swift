@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 @testable import Cart_Mart
 
 // MARK: - ProductDetailRepositoryMockError
@@ -16,12 +17,20 @@ enum ProductDetailRepositoryMockError: Error {
 // MARK: - ProductDetailRepositoryMock
 final class ProductDetailRepositoryMock: ProductDetailRepository {
   
-  var result: Result<ProductDetail, Error>?
-
-  func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, Error>) -> Void) -> Cancellable? {
-    if let result = result {
-      completion(result)
+  var result: Swift.Result<ProductDetail, Error>?
+  
+  func getProductDetail(_ productID: Int) -> Promise<ProductDetail> {
+    return Promise<ProductDetail> { seal in
+      guard let result = result else {
+        seal.reject(ProductListRepositoryMockError.failed)
+        return
+      }
+      switch result {
+      case .success(let productDetail):
+        seal.fulfill(productDetail)
+      case .failure(let error):
+        seal.reject(error)
+      }
     }
-    return nil
   }
 }

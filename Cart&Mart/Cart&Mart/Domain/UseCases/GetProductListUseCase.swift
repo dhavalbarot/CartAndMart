@@ -39,15 +39,6 @@ final class DefaultGetProductListUseCase {
 // MARK: - GetProductListUseCase Implemention
 extension DefaultGetProductListUseCase: GetProductListUseCase {
   func getProductListPromise() -> Promise<ProductList> {
-    return Promise<ProductList> { seal in
-      repository.getProductList { result in
-        switch result {
-        case .success(let productList):
-          seal.fulfill(productList)
-        case .failure(let error):
-          seal.reject(error)
-        }
-      }
-    }
+    return repository.getProductList()
   }
 }

@@ -8,40 +8,34 @@
 import Foundation
 @testable import Cart_Mart
 
-// MARK: - SuccessDataTransferServicesMock
-final class SuccessDataTransferServicesMock: DataTransferService {
+// MARK: - DataTransferServicesMock
+final class DataTransferServicesMock: DataTransferService {
+  
+  var result: Result<Data, DataTransferError>?
+  
   func request<T: Decodable, E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
-    if endpoint.path.contains("products/") {
-      completion(.success(ProductDetail.stub as! T))
-    } else if endpoint.path.contains("products"){
-      completion(.success(ProductList.stub as! T))
-    } else {
+    guard let result = result else {
       completion(.failure(.noResponse))
+      return nil
+    }
+    
+    switch result {
+    case .success(let data):
+      do {
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(T.self, from: data)
+        completion(.success(response))
+      } catch {
+        completion(.failure(.parsing(error)))
+      }
+    case .failure(let error):
+      completion(.failure(error))
     }
     return nil
   }
   
-  func request<E>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-    completion(.success(()))
-    return nil
-  }
-}
-
-// MARK: - FailureDataTransferServicesMock
-final class FailureDataTransferServicesMock: DataTransferService {
-  func request<T: Decodable, E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
-    if endpoint.path.contains("products/") {
-      completion(.failure(.noResponse))
-    } else if endpoint.path.contains("products"){
-      completion(.failure(.noResponse))
-    } else {
-      completion(.failure(.noResponse))
-    }
-    return nil
-  }
-  
-  func request<E>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-    completion(.failure(.noResponse))
+  func request<E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E.Response == Void {
+    // Handle the Void response case if necessary
     return nil
   }
 }

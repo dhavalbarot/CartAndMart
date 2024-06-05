@@ -40,15 +40,6 @@ final class DefaultGetProductDetailUseCase {
 // MARK: - GetProductDetailUseCase
 extension DefaultGetProductDetailUseCase: GetProductDetailUseCase {
   func getProductDetail(_ productID: Int) -> Promise<ProductDetail> {
-    return Promise<ProductDetail> { seal in
-      repository.getProductDetail(productID) { result in
-        switch result {
-        case .success(let productList):
-          seal.fulfill(productList)
-        case .failure(let error):
-          seal.reject(error)
-        }
-      }
-    }
+    return repository.getProductDetail(productID)
   }
 }

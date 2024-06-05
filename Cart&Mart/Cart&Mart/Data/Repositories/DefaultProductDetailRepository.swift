@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 // MARK: - DefaultProductDetailRepository
 final class DefaultProductDetailRepository {
@@ -18,20 +19,17 @@ final class DefaultProductDetailRepository {
 
 // MARK: - ProductDetailRepository Implementation
 extension DefaultProductDetailRepository: ProductDetailRepository {
-  func getProductDetail(_ productID: Int, completion: @escaping (Result<ProductDetail, any Error>) -> Void) -> (any Cancellable)? {
-    let task = RepositoryTask()
+  func getProductDetail(_ productID: Int) -> Promise<ProductDetail> {
     let endpoint = ProductEndpoints.getProductDetail(productID)
-
-    task.networkTask = self.dataTransferService.request(
-        with: endpoint
-    ) { result in
+    return Promise<ProductDetail> { seal in
+      self.dataTransferService.request(with: endpoint) { result in
         switch result {
-        case .success(let responseDTO):
-          completion(.success(responseDTO.toDomain()))
+        case .success(let productDetailDTO):
+          seal.fulfill(productDetailDTO.toDomain())
         case .failure(let error):
-            completion(.failure(error))
+          seal.reject(error)
         }
+      }
     }
-    return task
   }
 }

@@ -114,11 +114,27 @@ extension DefaultDataTransferService: DataTransferService {
    - networkFailure(NetworkError): Indicates a failure in the network layer, represented by a `NetworkError`.
    - resolvedNetworkFailure(Error): Indicates a failure that was resolved but resulted in an associated error.
  */
-enum DataTransferError: Error {
+enum DataTransferError: Error, Equatable {
   case noResponse
   case parsing(Error)
   case networkFailure(NetworkError)
   case resolvedNetworkFailure(Error)
+  
+  static func ==(lhs: DataTransferError, rhs: DataTransferError) -> Bool {
+      switch (lhs, rhs) {
+      case (.noResponse, .noResponse):
+          return true
+      case (.parsing(let lhsError), .parsing(let rhsError)):
+          return lhsError.localizedDescription == rhsError.localizedDescription
+      case (.networkFailure(let lhsError), .networkFailure(let rhsError)):
+          return true
+      case (.resolvedNetworkFailure(let lhsError), .resolvedNetworkFailure(let rhsError)):
+          return lhsError.localizedDescription == rhsError.localizedDescription
+      default:
+          return false
+      }
+  }
+
 }
 
 // MARK: - DataTransferErrorResolver

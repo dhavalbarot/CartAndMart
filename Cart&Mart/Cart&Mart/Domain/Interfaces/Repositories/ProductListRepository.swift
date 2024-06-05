@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import PromiseKit
 
 /**
- A protocol for retrieving a list of products from a repository.
+ A protocol defining a repository for retrieving product lists.
 
- Conform to this protocol to implement a method that fetches product lists asynchronously.
-
- - Parameter completion: A closure with `Result<ProductList, Error>`.
- - Returns: An optional `Cancellable` to cancel the operation.
+ Conform to this protocol to implement functionality for fetching a product list using a promise-based approach.
  */
 protocol ProductListRepository {
-    @discardableResult
-    func getProductList(completion: @escaping (Result<ProductList, Error>) -> Void)-> Cancellable?
+  /**
+   Retrieves a product list as a `Promise`.
+   
+   - Returns: A `Promise` object that resolves with a `ProductList` on success or an error on failure.
+   */
+  func getProductList() -> Promise<ProductList>
 }
