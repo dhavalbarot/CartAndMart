@@ -27,14 +27,8 @@ struct NavigationBarView: View {
       
       Spacer()
       
-      Image(systemName: SystemImageName.cart)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(maxWidth: 32)
-        .foregroundColor(.accentColor)
-        .accessibilityAddTraits(.isButton)
-        .accessibilityLabel("Cart")
-        .accessibilityIdentifier("productListCartButton")
+      Spacer()
+        .frame(width: 44, height: 1)
     }
     .padding(8)
     .background(Color.white)

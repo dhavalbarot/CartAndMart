@@ -30,14 +30,6 @@ struct ProductDetailNavigationBarView: View {
       .accessibilityHint("Double tap to see product list")
       
       Spacer()
-      
-      Button(action: {}, label: {
-        Image(systemName: SystemImageName.cart)
-          .font(.title)
-          .foregroundColor(.white)
-      })
-      .accessibilityIdentifier("productDetailCartButton")
-      .accessibilityLabel("Cart")
     }
     .padding(.horizontal)
   }
