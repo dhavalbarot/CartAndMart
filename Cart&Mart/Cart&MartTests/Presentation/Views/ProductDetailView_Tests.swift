@@ -12,9 +12,8 @@ import SnapshotTesting
 final class ProductDetailView_Tests: XCTestCase {
   
   func testProductDetailLoadingView() {
-    let mockUseCase = ProductDetailUseCaseMock(productDetail: ProductDetail.stub)
     // Arrange
-    let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
+    let mockUseCase = ProductDetailUseCaseMock(productDetail: ProductDetail.stub)
     let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
     
@@ -26,9 +25,8 @@ final class ProductDetailView_Tests: XCTestCase {
   }
   
   func testProductDetailDataView() {
-    let mockUseCase = ProductDetailUseCaseMock(productDetail: ProductDetail.stub)
     // Arrange
-    let mockUseCase = ProductDetailUseCaseMock(result: .success(testProductDetail))
+    let mockUseCase = ProductDetailUseCaseMock(productDetail: ProductDetail.stub)
     let model = DefaultProductDetailViewModel(productID: testProductDetail.id, productDetailUseCase: mockUseCase)
     let productDetailView = ProductDetailView(viewModel: model)
     

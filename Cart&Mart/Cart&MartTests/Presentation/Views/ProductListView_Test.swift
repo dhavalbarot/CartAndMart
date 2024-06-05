@@ -15,7 +15,7 @@ final class ProductListView_Test: XCTestCase {
 
   func testProductListLoadingView() {
     // Arrange
-    let mockUseCase = ProductListUseCaseMock(result: .success(testProductListData))
+    let mockUseCase = ProductListUseCaseMock(productList: ProductList.stub)
     let model = DefaultProductListViewModel(productListUseCase: mockUseCase)
     let productListView = ProductListView(viewModel: model)
     
