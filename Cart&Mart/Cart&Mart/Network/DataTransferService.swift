@@ -29,16 +29,6 @@ protocol DataTransferService {
    */
   @discardableResult
   func request<T: Decodable, E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T
-  
-  /**
-   Initiates a data transfer request with the provided endpoint, expecting no response.
-   
-   - Parameter endpoint: The endpoint conforming to `ResponseRequestable`, defining details of the data transfer request.
-   - Parameter completion: A closure that receives the result of the data transfer request: a `Result` enum containing either `Void` or an error (`DataTransferError`).
-   - Returns: An object conforming to `NetworkCancellable` that can be used to cancel the request, or `nil` if cancellation is not supported.
-   */
-  @discardableResult
-  func request<E: ResponseRequestable>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E.Response == Void
 }
 
 // MARK: - DefaultDataTransferService
