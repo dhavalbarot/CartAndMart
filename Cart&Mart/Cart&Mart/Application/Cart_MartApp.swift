@@ -11,36 +11,36 @@ import SwiftUI
 struct Cart_MartApp: App {
   
   // MARK: - Property
-  @StateObject private var container: DIContainer
-
+  private var container: DIContainer = DIContainer.shared
+  
+  // MARK: - Initilize
   init() {
-    _container = StateObject(wrappedValue: DIContainer())
     registerDependenceis()
   }
-  
+
   // MARK: - Register Dependenceis
   private func registerDependenceis() {
-    // App Configuration
+    // MARK: - Register App Configuration
     container.register(type: AppConfiguration.self) {
       DefaultAppConfiguration()
     }
     
-    // Network Configuration
+    // MARK: - Register Network Configuration
     container.register(type: APINetworkConfiguration.self) {
       APINetworkConfiguration(baseURL: URL(string: container.resolve(type: AppConfiguration.self)!.baseURL)!)
     }
     
-    // Network Services
+    // MARK: - Register Network Services
     container.register(type: NetworkService.self) {
       DefaultNetworkService(config: container.resolve(type: APINetworkConfiguration.self)!)
     }
     
-    // Data Trasfer Services
+    // MARK: - Register Data Trasfer Services
     container.register(type: DataTransferService.self) {
       DefaultDataTransferService(with: container.resolve(type: NetworkService.self)!)
     }
     
-    // Repositoreis
+    // MARK: - Register Repositoreis
     container.register(type: ProductListRepository.self) {
       DefaultProductListRepository(dataTransferService: container.resolve(type: DataTransferService.self)!)
     }
@@ -49,7 +49,7 @@ struct Cart_MartApp: App {
       DefaultProductDetailRepository(dataTransferService: container.resolve(type: DataTransferService.self)!)
     }
     
-    // Use Cases
+    // MARK: - Register Use Cases
     container.register(type: GetProductListUseCase.self) {
       DefaultGetProductListUseCase(repository: container.resolve(type: ProductListRepository.self)!)
     }
@@ -58,7 +58,7 @@ struct Cart_MartApp: App {
       DefaultGetProductDetailUseCase(repository: container.resolve(type: ProductDetailRepository.self)!)
     }
     
-    // View Models
+    // MARK: - Register View Models
     container.register(type: DefaultProductListViewModel.self) {
       DefaultProductListViewModel(productListUseCase: container.resolve(type: GetProductListUseCase.self)!)
     }
@@ -72,7 +72,6 @@ struct Cart_MartApp: App {
   var body: some Scene {
     WindowGroup {
       AppNavigationView()
-        .environmentObject(container)
     }
   }
 }
