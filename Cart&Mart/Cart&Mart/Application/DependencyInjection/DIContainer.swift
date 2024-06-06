@@ -14,34 +14,34 @@ class DIContainer {
   static let shared: DIContainer = .init()
   
   // MARK: - Preoperty
-  private var factories: [String: Any] = [:]
+  private var dependencies: [String: Any] = [:]
   
   // MARK: - Function
-  func register<T>(type: T.Type, factory: @escaping () -> T) {
+  func register<T>(type: T.Type, dependency: @escaping () -> T) {
     let key = String(describing: type)
-    factories[key] =  { factory() }
+    dependencies[key] =  { dependency() }
   }
   
-  func register<T, Arg>(type: T.Type, factory: @escaping (Arg) -> T) {
+  func register<T, Arg>(type: T.Type, dependency: @escaping (Arg) -> T) {
     let key = String(describing: type)
-    factories[key] = { (arg: Int) in
-      return factory(arg as! Arg)
+    dependencies[key] = { (arg: Int) in
+      return dependency(arg as! Arg)
     }
   }
   
   func resolve<T>(type: T.Type) -> T? {
     let key = String(describing: type)
-    guard let factory = factories[key] as? () -> T else {
+    guard let dependency = dependencies[key] as? () -> T else {
       return nil
     }
-    return factory()
+    return dependency()
   }
   
   func resolve<T, Arg>(type: T.Type, argument: Arg) -> T? {
     let key = String(describing: type)
-    guard let factory = factories[key] as? (Arg) -> T else {
+    guard let dependency = dependencies[key] as? (Arg) -> T else {
       return nil
     }
-    return factory(argument)
+    return dependency(argument)
   }
 }

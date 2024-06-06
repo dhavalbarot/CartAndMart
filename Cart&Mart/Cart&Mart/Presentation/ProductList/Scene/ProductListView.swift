@@ -63,6 +63,6 @@ struct ProductListView: View {
 
 // MARK: - Preview
 #Preview {
-  let container = DefaultProductSceneDIContainer(apiDataTransferService: DefaultAppDIContainer().apiDataTransferService)
-  return ProductListView(viewModel: container.defaultProductListViewModel)
+  let viewModel = DIContainer.shared.resolve(type: DefaultProductListViewModel.self)!
+  return ProductListView(viewModel: viewModel)
 }
