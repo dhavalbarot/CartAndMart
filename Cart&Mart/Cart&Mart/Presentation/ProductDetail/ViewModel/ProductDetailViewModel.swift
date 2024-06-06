@@ -24,7 +24,7 @@ protocol ProductDetailViewModelOutput: ObservableObject {
 protocol ProductDetailViewModelAction { }
 
 // MARK: - ProductDetailViewModel
-typealias ProductDetailViewModel = ProductDetailViewModelInput & ProductDetailViewModelOutput & ProductDetailViewModelAction
+protocol ProductDetailViewModel: ProductDetailViewModelInput, ProductDetailViewModelOutput, ProductDetailViewModelAction {}
 
 // MARK: - ProductDetailViewModel
 final class DefaultProductDetailViewModel: ProductDetailViewModel {

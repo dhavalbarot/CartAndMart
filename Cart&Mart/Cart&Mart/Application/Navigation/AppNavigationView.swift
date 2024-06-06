@@ -8,13 +8,11 @@
 import SwiftUI
 
 // MARK: - NavigationView
-struct NavigationView: View {
+struct AppNavigationView: View {
   
   // MARK: - Property
   @StateObject private var navigate = NavigationManager()
-  
-  private let appContainer = DefaultAppDIContainer()
-  
+
   // MARK: - Body
   var body: some View {
     NavigationStack(path: $navigate.path) {
@@ -30,16 +28,13 @@ struct NavigationView: View {
   private func navigate(to page: Route) -> some View {
     switch page {
     case .productList:
-      let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
-      ProductListView(viewModel: productSceneContainer.defaultProductListViewModel)
+      ProductListView(viewModel: DIContainer.shared.resolve(type: DefaultProductListViewModel.self)!)
     case .productDetail(let productID):
-      let productSceneContainer = DefaultProductSceneDIContainer(apiDataTransferService: appContainer.apiDataTransferService)
-      let viewModel = productSceneContainer.defaultProductDetailViewModel(productID)
-      ProductDetailView(viewModel: viewModel)
+      ProductDetailView(viewModel: DIContainer.shared.resolve(type: DefaultProductDetailViewModel.self, argument: productID)!)
     }
   }
 }
 
 #Preview {
-    NavigationView()
+  AppNavigationView()
 }

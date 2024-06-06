@@ -23,7 +23,7 @@ protocol ProductListViewModelOutput: ObservableObject {
 protocol ProductListViewModelAction { }
 
 // MARK: - ProductListViewModel
-typealias ProductListViewModel = ProductListViewModelInput & ProductListViewModelOutput & ProductListViewModelAction
+protocol ProductListViewModel: ProductListViewModelInput, ProductListViewModelOutput, ProductListViewModelAction {}
 
 // MARK: - ProductListViewModel
 final class DefaultProductListViewModel: ProductListViewModel {
