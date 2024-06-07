@@ -15,7 +15,7 @@ final class ProductListView_Test: XCTestCase {
 
   func testProductListLoadingView() {
     // Arrange
-    var mockUseCase = ProductListUseCaseMock()
+    let mockUseCase = ProductListUseCaseMock()
     mockUseCase.result = .success(ProductList.stub)
     let model = DefaultProductListViewModel(productListUseCase: mockUseCase)
     let productListView = ProductListView(viewModel: model)
@@ -24,7 +24,7 @@ final class ProductListView_Test: XCTestCase {
     let productListLoadingView = productListView.getBodyItem(.loading).toVC
     
     // Accert
-    assertSnapshot(of: productListLoadingView, as: .image(on: .iPhone13(.portrait)), named: "ProductListLoadingView", testName: "ProductListLoadingTest")
+    assertSnapshot(of: productListLoadingView, as: .image, named: "ProductListLoadingView", testName: "ProductListLoadingTest")
   }
   
   func testProductListDataView() {
@@ -35,7 +35,7 @@ final class ProductListView_Test: XCTestCase {
     let productListDataView = ProductListGridView(products: productList).toVC
     
     // Assert
-    assertSnapshot(of: productListDataView, as: .image(on: .iPhone13(.portrait)), named: "ProductListDataView", testName: "ProductListDataTest")
+    assertSnapshot(of: productListDataView, as: .image, named: "ProductListDataView", testName: "ProductListDataTest")
   }
   
   func testErrorView() {
@@ -46,7 +46,7 @@ final class ProductListView_Test: XCTestCase {
     let errorView = ErrorContentView(contentModel: contentModel).toVC
     
     // Assert
-    assertSnapshot(of: errorView, as: .image(on: .iPhone13(.portrait)), named: "ErrorContentView", testName: "ErrorContentViewTest")
+    assertSnapshot(of: errorView, as: .image, named: "ErrorContentView", testName: "ErrorContentViewTest")
   }
   
   func testNavigationBarView() {
@@ -54,6 +54,6 @@ final class ProductListView_Test: XCTestCase {
     let navigationView = NavigationBarView().toVC
     
     // Assert
-    assertSnapshot(of: navigationView, as: .image(on: .iPhone13(.portrait)), named: "ProductListNavigationBarView", testName: "ProductListNavigationBarTest")
+    assertSnapshot(of: navigationView, as: .image, named: "ProductListNavigationBarView", testName: "ProductListNavigationBarTest")
   }
 }

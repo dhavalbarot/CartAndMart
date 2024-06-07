@@ -22,7 +22,7 @@ final class ProductDetailView_Tests: XCTestCase {
     let productDetailLoadingView = productDetailView.getBodyItem(.loading).toVC
     
     // Assert
-    assertSnapshot(of: productDetailLoadingView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailLoadingView", testName: "ProductDetailLoadingViewTest")
+    assertSnapshot(of: productDetailLoadingView, as: .image, named: "ProductDetailLoadingView", testName: "ProductDetailLoadingViewTest")
   }
   
   func testProductDetailDataView() {
@@ -37,7 +37,7 @@ final class ProductDetailView_Tests: XCTestCase {
     let productDetailDataView = productDetailView.productDetailContentView(productDetail).toVC
     
     // Assert
-    assertSnapshot(of: productDetailDataView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailDataView", testName: "ProductDetailDataTest")
+    assertSnapshot(of: productDetailDataView, as: .image, named: "ProductDetailDataView", testName: "ProductDetailDataTest")
   }
   
   func testNavigationBarView() {
@@ -45,6 +45,6 @@ final class ProductDetailView_Tests: XCTestCase {
     let navigationView = ProductDetailNavigationBarView().toVC
     
     // Assert
-    assertSnapshot(of: navigationView, as: .image(on: .iPhone13(.portrait)), named: "ProductDetailNavigationBarView", testName: "ProductDetailNavigationBarViewTest")
+    assertSnapshot(of: navigationView, as: .image, named: "ProductDetailNavigationBarView", testName: "ProductDetailNavigationBarViewTest")
   }
 }
