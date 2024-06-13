@@ -28,7 +28,7 @@ struct RatingView: View {
       
       HStack(alignment: .center, spacing: 3, content: {
         ForEach(1...5, id: \.self) { item in
-          Image(systemName: SystemImageName.rattingStar)
+          SystemImageName.rattingStar.image
             .frame(width: 28, height: 28, alignment: .center)
             .background(item <= rating ? colorAccent.cornerRadius(5) : colorGray.cornerRadius(5))
             .foregroundColor(.white)

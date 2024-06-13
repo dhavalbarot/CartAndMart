@@ -12,7 +12,7 @@ struct ProductImageView: View {
   
   // MARK: - Properties
   let imageURL: URL?
-  let placeholderImage: Image?
+  var placeholderImage: Image?
   
   // MARK: - Body
   var body: some View {
@@ -20,13 +20,11 @@ struct ProductImageView: View {
       image
         .resizable()
         .aspectRatio(contentMode: .fit)
-        .frame(maxWidth: 150)
     } placeholder: {
       placeholderImage?
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 50)
-        .font(.system(size: 30))
     }
     .accessibilityElement(children: .ignore)
     .accessibilityAddTraits(.isImage)
@@ -37,5 +35,5 @@ struct ProductImageView: View {
 // MARK: - Preview
 #Preview {
   let thumbnailURL = "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
-  return ProductImageView(imageURL: URL(string: thumbnailURL), placeholderImage: Image(systemName: SystemImageName.cart))
+  return ProductImageView(imageURL: URL(string: thumbnailURL), placeholderImage: SystemImageName.cart.image)
 }

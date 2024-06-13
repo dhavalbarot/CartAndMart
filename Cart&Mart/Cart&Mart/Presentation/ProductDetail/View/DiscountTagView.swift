@@ -16,7 +16,7 @@ struct DiscountTagView: View {
   // MARK: - Body
   var body: some View {
     HStack(spacing: 5, content: {
-      Image(systemName: SystemImageName.discountTag)
+      SystemImageName.discountTag.image
         .font(.system(size: 16))
         .foregroundColor(.white)
       

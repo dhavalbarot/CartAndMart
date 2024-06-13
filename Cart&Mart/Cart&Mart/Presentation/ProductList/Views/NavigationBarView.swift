@@ -13,7 +13,7 @@ struct NavigationBarView: View {
   // MARK: - Body
   var body: some View {
     HStack {
-      Image(ImageName.logo)
+      CustomImageName.logo.image
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: 44)

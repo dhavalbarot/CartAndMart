@@ -18,9 +18,9 @@ struct ProductAdditionalInfoGroupView: View {
     VStack {
       Divider()
       LazyVGrid(columns: threeColumn, spacing: rowSpacing, content: {
-        ProductAdditionalInfoView(imageName: SystemImageName.shippingTime, contentMessage: product.shippingInformation)
-        ProductAdditionalInfoView(imageName: SystemImageName.warrenty, contentMessage: product.warrantyInformation)
-        ProductAdditionalInfoView(imageName: SystemImageName.returnItem, contentMessage: product.returnPolicy)
+        ProductAdditionalInfoView(imageName: SystemImageName.shippingTime.rawValue, contentMessage: product.shippingInformation)
+        ProductAdditionalInfoView(imageName: SystemImageName.warrenty.rawValue, contentMessage: product.warrantyInformation)
+        ProductAdditionalInfoView(imageName: SystemImageName.returnItem.rawValue, contentMessage: product.returnPolicy)
       })
     }
   }

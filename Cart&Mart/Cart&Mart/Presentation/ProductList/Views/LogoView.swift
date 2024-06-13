@@ -18,7 +18,7 @@ struct LogoView: View {
         .fontWeight(.black)
         .foregroundColor(.accentColor)
       
-      Image(ImageName.andLogo)
+      CustomImageName.andLogo.image
         .renderingMode(.template)
         .resizable()
         .scaledToFit()

@@ -21,7 +21,7 @@ struct ProductDetailNavigationBarView: View {
           navigationManager.pop()
         }
       }, label: {
-        Image(systemName: SystemImageName.backButton)
+        SystemImageName.backButton.image
           .font(.title)
           .foregroundColor(.white)
       })

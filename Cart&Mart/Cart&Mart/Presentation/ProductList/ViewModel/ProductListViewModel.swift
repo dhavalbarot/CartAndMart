@@ -60,7 +60,7 @@ extension DefaultProductListViewModel {
           self.viewContentState = .data
         case .failure(let error):
           self.viewContentState = .error
-          self.contentModel = .init(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
+          self.contentModel = .init(imageName: SystemImageName.basket.rawValue, title: StringConstants.somethingWentWrong, message: error.localizedDescription)
         }
       }
     }

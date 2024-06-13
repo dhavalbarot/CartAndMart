@@ -53,21 +53,29 @@ enum ViewContentState {
 }
 
 // MARK: - SystemImageName
-struct SystemImageName {
-  static let basket = "basket"
-  static let returnItem = "dollarsign.arrow.circlepath"
-  static let discountTag = "tag.fill"
-  static let shippingTime = "truck.box.badge.clock"
-  static let warrenty = "newspaper"
-  static let cart = "cart"
-  static let rattingStar = "star.fill"
-  static let backButton = "chevron.left"
+enum SystemImageName: String {
+  case basket = "basket"
+  case returnItem = "dollarsign.arrow.circlepath"
+  case discountTag = "tag.fill"
+  case shippingTime = "truck.box.badge.clock"
+  case warrenty = "newspaper"
+  case cart = "cart"
+  case rattingStar = "star.fill"
+  case backButton = "chevron.left"
+  
+  var image: Image {
+    return Image(systemName: self.rawValue)
+  }
 }
 
 // MARK: - ImageName
-struct ImageName {
-  static let logo = "CartAndMartLogo"
-  static let andLogo = "AndLogoGreen"
+enum CustomImageName: String {
+  case logo = "CartAndMartLogo"
+  case andLogo = "AndLogoGreen"
+  
+  var image: Image {
+    return Image(self.rawValue)
+  }
 }
 
 // MARK: - String Constants

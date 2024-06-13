@@ -39,7 +39,9 @@ struct ProductDetailImageView: View {
       Spacer()
       
       //IMAGE
-      ProductImageView(imageURL: product.thumbnailURL, placeholderImage: nil)
+      ProductImageView(imageURL: product.thumbnailURL)
+        .frame(maxWidth: 150, maxHeight: 150)
+
     })
     .padding(.horizontal)
     .onAppear(perform: {

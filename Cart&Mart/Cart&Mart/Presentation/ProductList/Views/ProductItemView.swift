@@ -22,7 +22,7 @@ struct ProductItemView: View {
           Rectangle()
             .fill(UIColor.productColor(product.id).gradient)
             .aspectRatio(contentMode: .fill)
-          ProductImageView(imageURL: product.thumbnailURL, placeholderImage: Image(systemName: SystemImageName.cart))
+          ProductImageView(imageURL: product.thumbnailURL, placeholderImage: SystemImageName.cart.image)
         }
         .cornerRadius(12)
         
@@ -49,7 +49,7 @@ struct ProductItemView: View {
             .fontWeight(.semibold)
             .foregroundColor(.gray)
             .multilineTextAlignment(.leading)
-          Image(systemName: SystemImageName.rattingStar)
+          SystemImageName.rattingStar.image
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: 16)
