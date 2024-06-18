@@ -2,6 +2,10 @@
   <img src="ReadMeResources/CartAndMartLogo.png" width="25%">
 </p>
 
+![](https://img.shields.io/badge/Platform-iOS-orange?style=flat-square)
+![](https://img.shields.io/badge/Language-Swift-blue?style=flat-square)
+![](https://img.shields.io/badge/Architecture-Clean_Architecture_with_MVVM_&_DI-darkgreen?style=flat-square)
+
 # Cart & Mart (Dummy Application)
 
 ## Overview
