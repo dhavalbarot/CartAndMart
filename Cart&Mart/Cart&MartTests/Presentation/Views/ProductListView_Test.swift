@@ -40,7 +40,7 @@ final class ProductListView_Test: XCTestCase {
   
   func testErrorView() {
     // Arrange
-    let contentModel = ContentModel(imageName: SystemImageName.basket, title: StringConstants.somethingWentWrong, message: StringConstants.tryAgainLater)
+    let contentModel = ContentModel(imageName: SystemImageName.basket.rawValue, title: StringConstants.somethingWentWrong, message: StringConstants.tryAgainLater)
     
     // Act
     let errorView = ErrorContentView(contentModel: contentModel).toVC
