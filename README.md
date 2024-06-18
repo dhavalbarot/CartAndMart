@@ -8,7 +8,7 @@
 Cart & Mart is sample application developed with SwiftUI, which provides user-friendly interface to explore limited list of products and it's detail.
 
 ## Key Aspects Followed
-- Clean Architecture with MVVM with DI
+- Clean Architecture with MVVM & DI
 - SwiftUI + Combine
 - Designed for scalability 
 - Modular code
